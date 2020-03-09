@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as Styled from './Layout.styles';
 
+const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500;
+const FIVE_MINUTES_IN_SECONDS = 300;
+
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 
@@ -21,8 +24,16 @@ function useInterval(callback, delay) {
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS);
   const [isTimerActive, setIsTimerActive] = useState(false);
+
+  const displayTime = () => {
+    let minutes = Math.floor(time / 60).toString();
+    let seconds = Math.floor(time % 60).toString();
+    if (minutes < 10) minutes = '0' + minutes;
+    if (seconds < 10) seconds = '0' + seconds;
+    return `${minutes}:${seconds}`;
+  };
 
   useInterval(
     intervalId => {
@@ -48,7 +59,7 @@ const Layout = () => {
         <h1>Pomodoro Timer</h1>
         <Styled.Raised>
           <h4>Time Left: </h4>
-          <p>{time}</p>
+          <p>{displayTime()}</p>
           <Styled.CircleButton>
             <span>›</span>
           </Styled.CircleButton>
@@ -62,11 +73,17 @@ const Layout = () => {
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() => setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)}
+            />
             <span></span>
           </Styled.Toggle>
           <Styled.Toggle>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() => setTime(FIVE_MINUTES_IN_SECONDS)}
+            />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
