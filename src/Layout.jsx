@@ -22,22 +22,25 @@ function useInterval(callback, delay) {
 
 const Layout = () => {
   const [time, setTime] = useState(5);
+  const [isTimerActive, setIsTimerActive] = useState(false);
 
-  useInterval(intervalId => {
-    if (time <= 0) {
-      clearInterval(intervalId);
-      const myNotification = new Notification('Time is up!', {
-        body:
-          'Have a relaxing break, and try not to think about what you have been working on.',
-      });
+  useInterval(
+    intervalId => {
+      if (time <= 0) {
+        clearInterval(intervalId);
+        const myNotification = new Notification('Time is up!', {
+          body: 'Have a relaxing break.',
+        });
 
-      myNotification.onclick = () => {
-        console.log('Notification clicked');
-      };
-    } else {
-      setTime(time - 1);
-    }
-  }, 1000);
+        myNotification.onclick = () => {
+          console.log('Notification clicked');
+        };
+      } else {
+        setTime(time - 1);
+      }
+    },
+    isTimerActive ? 1000 : null
+  );
 
   return (
     <Styled.Wrapper>
@@ -52,7 +55,10 @@ const Layout = () => {
         </Styled.Raised>
         <Styled.NavWrapper>
           <Styled.Toggle>
-            <input type="checkbox" checked />
+            <input
+              type="checkbox"
+              onClick={() => setIsTimerActive(!isTimerActive)}
+            />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
