@@ -4,6 +4,9 @@ import * as Styled from "./Layout.styles";
 import tomato from "./assets/tomato.svg";
 import SVG from "react-inlinesvg";
 
+const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500;
+const FIVE_MINUTES_IN_SECONDS = 300;
+
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 
@@ -24,23 +27,34 @@ function useInterval(callback, delay) {
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS);
+  const [isTimerActive, setIsTimerActive] = useState(false);
 
-  useInterval(intervalId => {
-    if (time <= 0) {
-      clearInterval(intervalId);
-      const myNotification = new Notification("Time is up!", {
-        body:
-          "Have a relaxing break, and try not to think about what you have been working on."
-      });
+  const displayTime = () => {
+    let minutes = Math.floor(time / 60).toString();
+    let seconds = Math.floor(time % 60).toString();
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    return `${minutes}:${seconds}`;
+  };
 
-      myNotification.onclick = () => {
-        console.log("Notification clicked");
-      };
-    } else {
-      setTime(time - 1);
-    }
-  }, 1000);
+  useInterval(
+    intervalId => {
+      if (time <= 0) {
+        clearInterval(intervalId);
+        const myNotification = new Notification("Time is up!", {
+          body: "Have a relaxing break."
+        });
+
+        myNotification.onclick = () => {
+          console.log("Notification clicked");
+        };
+      } else {
+        setTime(time - 1);
+      }
+    },
+    isTimerActive ? 1000 : null
+  );
 
   return (
     <Styled.Wrapper>
@@ -49,22 +63,31 @@ const Layout = () => {
         <SVG src={tomato}></SVG>
         <Styled.Raised>
           <h4>Time Left: </h4>
-          <p>{time}</p>
+          <p>{displayTime()}</p>
           <Styled.CircleButton>
             <span>›</span>
           </Styled.CircleButton>
         </Styled.Raised>
         <Styled.NavWrapper>
           <Styled.Toggle>
-            <input type="checkbox" checked />
+            <input
+              type="checkbox"
+              onClick={() => setIsTimerActive(!isTimerActive)}
+            />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() => setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)}
+            />
             <span></span>
           </Styled.Toggle>
           <Styled.Toggle>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() => setTime(FIVE_MINUTES_IN_SECONDS)}
+            />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
