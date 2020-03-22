@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import * as Styled from './Layout.styles';
+import React, { useState, useEffect, useRef } from "react";
+import * as Styled from "./Layout.styles";
+
+import tomato from "./assets/tomato.svg";
+import SVG from "react-inlinesvg";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -26,13 +29,13 @@ const Layout = () => {
   useInterval(intervalId => {
     if (time <= 0) {
       clearInterval(intervalId);
-      const myNotification = new Notification('Time is up!', {
+      const myNotification = new Notification("Time is up!", {
         body:
-          'Have a relaxing break, and try not to think about what you have been working on.',
+          "Have a relaxing break, and try not to think about what you have been working on."
       });
 
       myNotification.onclick = () => {
-        console.log('Notification clicked');
+        console.log("Notification clicked");
       };
     } else {
       setTime(time - 1);
@@ -43,6 +46,7 @@ const Layout = () => {
     <Styled.Wrapper>
       <Styled.Container>
         <h1>Pomodoro Timer</h1>
+        <SVG src={tomato}></SVG>
         <Styled.Raised>
           <h4>Time Left: </h4>
           <p>{time}</p>
