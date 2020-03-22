@@ -27,7 +27,8 @@ function useInterval(callback, delay) {
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS);
+  const [time, setTime] = useState(400);
+  const [pomo, setPomo] = useState(3);
   const [isTimerActive, setIsTimerActive] = useState(false);
 
   const displayTime = () => {
@@ -56,11 +57,24 @@ const Layout = () => {
     isTimerActive ? 1000 : null
   );
 
+  const currentSeeds = () => {
+    const minutes = Math.ceil(time / 60);
+    console.log("minutes", minutes, minutes / 5);
+    console.log(Math.ceil(minutes / 5));
+    return Math.ceil(minutes / 5);
+  };
+
   return (
     <Styled.Wrapper>
       <Styled.Container>
         <h1>Pomodoro Timer</h1>
-        <SVG src={tomato}></SVG>
+
+        <Styled.Tomato
+          src={tomato}
+          pomo={pomo}
+          seeds={currentSeeds()}
+        ></Styled.Tomato>
+
         <Styled.Raised>
           <h4>Time Left: </h4>
           <p>{displayTime()}</p>
