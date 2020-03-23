@@ -27,8 +27,9 @@ function useInterval(callback, delay) {
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(400);
-  const [pomo, setPomo] = useState(3);
+  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS);
+  const [pomo, setPomo] = useState(0);
+  const [isPomoActive, setIsPomoActive] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
 
   const displayTime = () => {
@@ -43,10 +44,15 @@ const Layout = () => {
     intervalId => {
       if (time <= 0) {
         clearInterval(intervalId);
+        setIsTimerActive(false);
+        setIsPomoActive(false);
+        setTime(TWENTY_FIVE_MINUTES_IN_SECONDS);
+        if (pomo === 4) setPomo(0);
         const myNotification = new Notification("Time is up!", {
           body: "Have a relaxing break."
         });
 
+        // TODO: Make sure we need this
         myNotification.onclick = () => {
           console.log("Notification clicked");
         };
@@ -59,19 +65,26 @@ const Layout = () => {
 
   const currentSeeds = () => {
     const minutes = Math.ceil(time / 60);
-    console.log("minutes", minutes, minutes / 5);
-    console.log(Math.ceil(minutes / 5));
     return Math.ceil(minutes / 5);
+  };
+
+  const startStopTimer = () => {
+    if (!isPomoActive) {
+      setIsPomoActive(true);
+      setPomo(pomo + 1);
+    }
+    setIsTimerActive(!isTimerActive);
   };
 
   return (
     <Styled.Wrapper>
       <Styled.Container>
-        <h1>Pomodoro Timer</h1>
+        <h1>Neumodoro Timer</h1>
 
         <Styled.Tomato
           src={tomato}
           pomo={pomo}
+          isPomoActive={isPomoActive}
           seeds={currentSeeds()}
         ></Styled.Tomato>
 
@@ -84,10 +97,7 @@ const Layout = () => {
         </Styled.Raised>
         <Styled.NavWrapper>
           <Styled.Toggle>
-            <input
-              type="checkbox"
-              onClick={() => setIsTimerActive(!isTimerActive)}
-            />
+            <input type="checkbox" onClick={startStopTimer} />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>

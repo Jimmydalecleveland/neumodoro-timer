@@ -156,19 +156,19 @@ export const Tomato = styled(SVG)`
   #seeds_${props => props.pomo} {
     
     #seed_${props => props.pomo}-1 {
-      display: ${props => 1 > props.seeds ? 'none' : 'inherit'};
+      display: ${props => !props.isPomoActive || 1 > props.seeds ? 'none' : 'inherit'};
     }
     #seed_${props => props.pomo}-2 {
-      display: ${props => 2 > props.seeds ? 'none' : 'inherit'};
+      display: ${props => !props.isPomoActive || 2 > props.seeds ? 'none' : 'inherit'};
     }
     #seed_${props => props.pomo}-3 {
-      display: ${props => 3 > props.seeds ? 'none' : 'inherit'};
+      display: ${props => !props.isPomoActive || 3 > props.seeds ? 'none' : 'inherit'};
     }
     #seed_${props => props.pomo}-4 {
-      display: ${props => 4 > props.seeds ? 'none' : 'inherit'};
+      display: ${props => !props.isPomoActive || 4 > props.seeds ? 'none' : 'inherit'};
     }
     #seed_${props => props.pomo}-5 {
-      display: ${props => 5 > props.seeds ? 'none' : 'inherit'};
+      display: ${props => !props.isPomoActive || 5 > props.seeds ? 'none' : 'inherit'};
     }
   }
 `
