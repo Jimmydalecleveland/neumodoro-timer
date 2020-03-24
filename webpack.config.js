@@ -26,6 +26,20 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },  
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+          {
+            loader: 'svg-inline-loader',
+            options: {
+              jsx: true,
+            }
+          }
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
