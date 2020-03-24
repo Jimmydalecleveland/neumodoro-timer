@@ -31,6 +31,7 @@ const Layout = () => {
   const [isPomoActive, setIsPomoActive] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
   const [isBreakTime, setIsBreakTime] = useState(false);
+  const [areAlertsOn, setAreAlertsOn] = useState(true);
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString();
@@ -40,39 +41,36 @@ const Layout = () => {
     return `${minutes}:${seconds}`;
   };
 
+  const sendNotification = (title, body) => {
+    if (areAlertsOn) {
+      new Notification(title, { body });
+    }
+  };
+
   useInterval(
     intervalId => {
       if (time <= 0) {
         if (isPomoActive) {
           if (pomo === 4) {
-            new Notification("Time is up!", {
-              body: "You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break."
-            })
-            setTime(5)
+            sendNotification(
+              "Time is up!",
+              "You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break."
+            );
+            setTime(5);
           } else {
-            new Notification("Time is up!", {
-              body: "Will you take a 5?!?! (￣﹃￣)"
-            })
-            setTime(2)
+            sendNotification("Time is up!", "Will you take a 5?!?! (￣﹃￣)");
+            setTime(2);
           }
           setIsBreakTime(true);
           setIsPomoActive(false);
         } else {
           if (pomo === 4) setPomo(0);
-          new Notification("Back to work! (╯▔皿▔)╯Ganbatte!")
+          sendNotification("Back to work! (╯▔皿▔)╯", "Ganbatte!");
           clearInterval(intervalId);
           setIsBreakTime(false);
-          setTime(3)
+          setTime(3);
           setIsTimerActive(false);
         }
-        const myNotification = new Notification("Time is up!", {
-          body: "Have a relaxing break."
-        });
-
-        // TODO: Make sure we need this
-        myNotification.onclick = () => {
-          console.log("Notification clicked");
-        };
       } else {
         setTime(time - 1);
       }
@@ -132,7 +130,10 @@ const Layout = () => {
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() => setAreAlertsOn(!areAlertsOn)}
+            />
             <span />
           </Styled.Toggle>
         </Styled.NavWrapper>
