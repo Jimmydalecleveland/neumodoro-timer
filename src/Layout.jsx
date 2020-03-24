@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import * as Styled from "./Layout.styles";
 
 import tomato from "./assets/tomato.svg";
-import SVG from "react-inlinesvg";
 
 const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500;
 const FIVE_MINUTES_IN_SECONDS = 300;
