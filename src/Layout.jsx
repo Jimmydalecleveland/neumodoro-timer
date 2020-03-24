@@ -26,10 +26,11 @@ function useInterval(callback, delay) {
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS);
+  const [time, setTime] = useState(3);
   const [pomo, setPomo] = useState(0);
   const [isPomoActive, setIsPomoActive] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
+  const [isBreakTime, setIsBreakTime] = useState(false);
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString();
@@ -42,11 +43,28 @@ const Layout = () => {
   useInterval(
     intervalId => {
       if (time <= 0) {
-        clearInterval(intervalId);
-        setIsTimerActive(false);
-        setIsPomoActive(false);
-        setTime(TWENTY_FIVE_MINUTES_IN_SECONDS);
-        if (pomo === 4) setPomo(0);
+        if (isPomoActive) {
+          if (pomo === 4) {
+            new Notification("Time is up!", {
+              body: "You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break."
+            })
+            setTime(5)
+          } else {
+            new Notification("Time is up!", {
+              body: "Will you take a 5?!?! (￣﹃￣)"
+            })
+            setTime(2)
+          }
+          setIsBreakTime(true);
+          setIsPomoActive(false);
+        } else {
+          if (pomo === 4) setPomo(0);
+          new Notification("Back to work! (╯▔皿▔)╯Ganbatte!")
+          clearInterval(intervalId);
+          setIsBreakTime(false);
+          setTime(3)
+          setIsTimerActive(false);
+        }
         const myNotification = new Notification("Time is up!", {
           body: "Have a relaxing break."
         });
