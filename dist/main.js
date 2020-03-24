@@ -1069,6 +1069,54 @@ module.exports = function (url, options) {
 
 /***/ }),
 
+/***/ "./node_modules/exenv/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/exenv/index.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2015 Jed Watson.
+  Based on code that is Copyright 2013-2015, Facebook, Inc.
+  All rights reserved.
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var canUseDOM = !!(
+		typeof window !== 'undefined' &&
+		window.document &&
+		window.document.createElement
+	);
+
+	var ExecutionEnvironment = {
+
+		canUseDOM: canUseDOM,
+
+		canUseWorkers: typeof Worker !== 'undefined',
+
+		canUseEventListeners:
+			canUseDOM && !!(window.addEventListener || window.attachEvent),
+
+		canUseViewport: canUseDOM && !!window.screen
+
+	};
+
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return ExecutionEnvironment;
+		}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+
+}());
+
+
+/***/ }),
+
 /***/ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
@@ -26722,6 +26770,626 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-from-dom/esm/helpers.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-from-dom/esm/helpers.js ***!
+  \****************************************************/
+/*! exports provided: styleToObject, noTextChildNodes, possibleStandardNames */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styleToObject", function() { return styleToObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noTextChildNodes", function() { return noTextChildNodes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "possibleStandardNames", function() { return possibleStandardNames; });
+var __read = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var styleToObject = function (input) {
+    var attributes = input.split(/ ?; ?/);
+    return attributes.reduce(function (acc, d) {
+        var _a = __read(d.split(/ ?: ?/), 2), key = _a[0], value = _a[1];
+        if (key && value) {
+            acc[key.replace(/-(\w)/g, function (_$0, $1) { return $1.toUpperCase(); })] = Number.isNaN(Number(value))
+                ? value
+                : Number(value);
+        }
+        return acc;
+    }, {});
+};
+var noTextChildNodes = [
+    'br',
+    'col',
+    'colgroup',
+    'dl',
+    'hr',
+    'iframe',
+    'img',
+    'input',
+    'link',
+    'menuitem',
+    'meta',
+    'ol',
+    'param',
+    'select',
+    'table',
+    'tbody',
+    'tfoot',
+    'thead',
+    'tr',
+    'ul',
+    'wbr',
+];
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+// Taken from https://raw.githubusercontent.com/facebook/react/baff5cc2f69d30589a5dc65b089e47765437294b/packages/react-dom/src/shared/possibleStandardNames.js
+// tslint:disable:object-literal-sort-keys
+var possibleStandardNames = {
+    // HTML
+    'accept-charset': 'acceptCharset',
+    acceptcharset: 'acceptCharset',
+    accesskey: 'accessKey',
+    allowfullscreen: 'allowFullScreen',
+    autocapitalize: 'autoCapitalize',
+    autocomplete: 'autoComplete',
+    autocorrect: 'autoCorrect',
+    autofocus: 'autoFocus',
+    autoplay: 'autoPlay',
+    autosave: 'autoSave',
+    cellpadding: 'cellPadding',
+    cellspacing: 'cellSpacing',
+    charset: 'charSet',
+    class: 'className',
+    classid: 'classID',
+    classname: 'className',
+    colspan: 'colSpan',
+    contenteditable: 'contentEditable',
+    contextmenu: 'contextMenu',
+    controlslist: 'controlsList',
+    crossorigin: 'crossOrigin',
+    dangerouslysetinnerhtml: 'dangerouslySetInnerHTML',
+    datetime: 'dateTime',
+    defaultchecked: 'defaultChecked',
+    defaultvalue: 'defaultValue',
+    enctype: 'encType',
+    for: 'htmlFor',
+    formmethod: 'formMethod',
+    formaction: 'formAction',
+    formenctype: 'formEncType',
+    formnovalidate: 'formNoValidate',
+    formtarget: 'formTarget',
+    frameborder: 'frameBorder',
+    hreflang: 'hrefLang',
+    htmlfor: 'htmlFor',
+    httpequiv: 'httpEquiv',
+    'http-equiv': 'httpEquiv',
+    icon: 'icon',
+    innerhtml: 'innerHTML',
+    inputmode: 'inputMode',
+    itemid: 'itemID',
+    itemprop: 'itemProp',
+    itemref: 'itemRef',
+    itemscope: 'itemScope',
+    itemtype: 'itemType',
+    keyparams: 'keyParams',
+    keytype: 'keyType',
+    marginwidth: 'marginWidth',
+    marginheight: 'marginHeight',
+    maxlength: 'maxLength',
+    mediagroup: 'mediaGroup',
+    minlength: 'minLength',
+    nomodule: 'noModule',
+    novalidate: 'noValidate',
+    playsinline: 'playsInline',
+    radiogroup: 'radioGroup',
+    readonly: 'readOnly',
+    referrerpolicy: 'referrerPolicy',
+    rowspan: 'rowSpan',
+    spellcheck: 'spellCheck',
+    srcdoc: 'srcDoc',
+    srclang: 'srcLang',
+    srcset: 'srcSet',
+    tabindex: 'tabIndex',
+    usemap: 'useMap',
+    // SVG
+    accentheight: 'accentHeight',
+    'accent-height': 'accentHeight',
+    alignmentbaseline: 'alignmentBaseline',
+    'alignment-baseline': 'alignmentBaseline',
+    allowreorder: 'allowReorder',
+    arabicform: 'arabicForm',
+    'arabic-form': 'arabicForm',
+    attributename: 'attributeName',
+    attributetype: 'attributeType',
+    autoreverse: 'autoReverse',
+    basefrequency: 'baseFrequency',
+    baselineshift: 'baselineShift',
+    'baseline-shift': 'baselineShift',
+    baseprofile: 'baseProfile',
+    calcmode: 'calcMode',
+    capheight: 'capHeight',
+    'cap-height': 'capHeight',
+    clippath: 'clipPath',
+    'clip-path': 'clipPath',
+    clippathunits: 'clipPathUnits',
+    cliprule: 'clipRule',
+    'clip-rule': 'clipRule',
+    colorinterpolation: 'colorInterpolation',
+    'color-interpolation': 'colorInterpolation',
+    colorinterpolationfilters: 'colorInterpolationFilters',
+    'color-interpolation-filters': 'colorInterpolationFilters',
+    colorprofile: 'colorProfile',
+    'color-profile': 'colorProfile',
+    colorrendering: 'colorRendering',
+    'color-rendering': 'colorRendering',
+    contentscripttype: 'contentScriptType',
+    contentstyletype: 'contentStyleType',
+    diffuseconstant: 'diffuseConstant',
+    dominantbaseline: 'dominantBaseline',
+    'dominant-baseline': 'dominantBaseline',
+    edgemode: 'edgeMode',
+    enablebackground: 'enableBackground',
+    'enable-background': 'enableBackground',
+    externalresourcesrequired: 'externalResourcesRequired',
+    fillopacity: 'fillOpacity',
+    'fill-opacity': 'fillOpacity',
+    fillrule: 'fillRule',
+    'fill-rule': 'fillRule',
+    filterres: 'filterRes',
+    filterunits: 'filterUnits',
+    floodopacity: 'floodOpacity',
+    'flood-opacity': 'floodOpacity',
+    floodcolor: 'floodColor',
+    'flood-color': 'floodColor',
+    fontfamily: 'fontFamily',
+    'font-family': 'fontFamily',
+    fontsize: 'fontSize',
+    'font-size': 'fontSize',
+    fontsizeadjust: 'fontSizeAdjust',
+    'font-size-adjust': 'fontSizeAdjust',
+    fontstretch: 'fontStretch',
+    'font-stretch': 'fontStretch',
+    fontstyle: 'fontStyle',
+    'font-style': 'fontStyle',
+    fontvariant: 'fontVariant',
+    'font-variant': 'fontVariant',
+    fontweight: 'fontWeight',
+    'font-weight': 'fontWeight',
+    glyphname: 'glyphName',
+    'glyph-name': 'glyphName',
+    glyphorientationhorizontal: 'glyphOrientationHorizontal',
+    'glyph-orientation-horizontal': 'glyphOrientationHorizontal',
+    glyphorientationvertical: 'glyphOrientationVertical',
+    'glyph-orientation-vertical': 'glyphOrientationVertical',
+    glyphref: 'glyphRef',
+    gradienttransform: 'gradientTransform',
+    gradientunits: 'gradientUnits',
+    horizadvx: 'horizAdvX',
+    'horiz-adv-x': 'horizAdvX',
+    horizoriginx: 'horizOriginX',
+    'horiz-origin-x': 'horizOriginX',
+    imagerendering: 'imageRendering',
+    'image-rendering': 'imageRendering',
+    kernelmatrix: 'kernelMatrix',
+    kernelunitlength: 'kernelUnitLength',
+    keypoints: 'keyPoints',
+    keysplines: 'keySplines',
+    keytimes: 'keyTimes',
+    lengthadjust: 'lengthAdjust',
+    letterspacing: 'letterSpacing',
+    'letter-spacing': 'letterSpacing',
+    lightingcolor: 'lightingColor',
+    'lighting-color': 'lightingColor',
+    limitingconeangle: 'limitingConeAngle',
+    markerend: 'markerEnd',
+    'marker-end': 'markerEnd',
+    markerheight: 'markerHeight',
+    markermid: 'markerMid',
+    'marker-mid': 'markerMid',
+    markerstart: 'markerStart',
+    'marker-start': 'markerStart',
+    markerunits: 'markerUnits',
+    markerwidth: 'markerWidth',
+    maskcontentunits: 'maskContentUnits',
+    maskunits: 'maskUnits',
+    numoctaves: 'numOctaves',
+    overlineposition: 'overlinePosition',
+    'overline-position': 'overlinePosition',
+    overlinethickness: 'overlineThickness',
+    'overline-thickness': 'overlineThickness',
+    paintorder: 'paintOrder',
+    'paint-order': 'paintOrder',
+    'panose-1': 'panose1',
+    pathlength: 'pathLength',
+    patterncontentunits: 'patternContentUnits',
+    patterntransform: 'patternTransform',
+    patternunits: 'patternUnits',
+    pointerevents: 'pointerEvents',
+    'pointer-events': 'pointerEvents',
+    pointsatx: 'pointsAtX',
+    pointsaty: 'pointsAtY',
+    pointsatz: 'pointsAtZ',
+    preservealpha: 'preserveAlpha',
+    preserveaspectratio: 'preserveAspectRatio',
+    primitiveunits: 'primitiveUnits',
+    refx: 'refX',
+    refy: 'refY',
+    renderingintent: 'renderingIntent',
+    'rendering-intent': 'renderingIntent',
+    repeatcount: 'repeatCount',
+    repeatdur: 'repeatDur',
+    requiredextensions: 'requiredExtensions',
+    requiredfeatures: 'requiredFeatures',
+    shaperendering: 'shapeRendering',
+    'shape-rendering': 'shapeRendering',
+    specularconstant: 'specularConstant',
+    specularexponent: 'specularExponent',
+    spreadmethod: 'spreadMethod',
+    startoffset: 'startOffset',
+    stddeviation: 'stdDeviation',
+    stitchtiles: 'stitchTiles',
+    stopcolor: 'stopColor',
+    'stop-color': 'stopColor',
+    stopopacity: 'stopOpacity',
+    'stop-opacity': 'stopOpacity',
+    strikethroughposition: 'strikethroughPosition',
+    'strikethrough-position': 'strikethroughPosition',
+    strikethroughthickness: 'strikethroughThickness',
+    'strikethrough-thickness': 'strikethroughThickness',
+    strokedasharray: 'strokeDasharray',
+    'stroke-dasharray': 'strokeDasharray',
+    strokedashoffset: 'strokeDashoffset',
+    'stroke-dashoffset': 'strokeDashoffset',
+    strokelinecap: 'strokeLinecap',
+    'stroke-linecap': 'strokeLinecap',
+    strokelinejoin: 'strokeLinejoin',
+    'stroke-linejoin': 'strokeLinejoin',
+    strokemiterlimit: 'strokeMiterlimit',
+    'stroke-miterlimit': 'strokeMiterlimit',
+    strokewidth: 'strokeWidth',
+    'stroke-width': 'strokeWidth',
+    strokeopacity: 'strokeOpacity',
+    'stroke-opacity': 'strokeOpacity',
+    suppresscontenteditablewarning: 'suppressContentEditableWarning',
+    suppresshydrationwarning: 'suppressHydrationWarning',
+    surfacescale: 'surfaceScale',
+    systemlanguage: 'systemLanguage',
+    tablevalues: 'tableValues',
+    targetx: 'targetX',
+    targety: 'targetY',
+    textanchor: 'textAnchor',
+    'text-anchor': 'textAnchor',
+    textdecoration: 'textDecoration',
+    'text-decoration': 'textDecoration',
+    textlength: 'textLength',
+    textrendering: 'textRendering',
+    'text-rendering': 'textRendering',
+    underlineposition: 'underlinePosition',
+    'underline-position': 'underlinePosition',
+    underlinethickness: 'underlineThickness',
+    'underline-thickness': 'underlineThickness',
+    unicodebidi: 'unicodeBidi',
+    'unicode-bidi': 'unicodeBidi',
+    unicoderange: 'unicodeRange',
+    'unicode-range': 'unicodeRange',
+    unitsperem: 'unitsPerEm',
+    'units-per-em': 'unitsPerEm',
+    unselectable: 'unselectable',
+    valphabetic: 'vAlphabetic',
+    'v-alphabetic': 'vAlphabetic',
+    vectoreffect: 'vectorEffect',
+    'vector-effect': 'vectorEffect',
+    vertadvy: 'vertAdvY',
+    'vert-adv-y': 'vertAdvY',
+    vertoriginx: 'vertOriginX',
+    'vert-origin-x': 'vertOriginX',
+    vertoriginy: 'vertOriginY',
+    'vert-origin-y': 'vertOriginY',
+    vhanging: 'vHanging',
+    'v-hanging': 'vHanging',
+    videographic: 'vIdeographic',
+    'v-ideographic': 'vIdeographic',
+    viewbox: 'viewBox',
+    viewtarget: 'viewTarget',
+    vmathematical: 'vMathematical',
+    'v-mathematical': 'vMathematical',
+    wordspacing: 'wordSpacing',
+    'word-spacing': 'wordSpacing',
+    writingmode: 'writingMode',
+    'writing-mode': 'writingMode',
+    xchannelselector: 'xChannelSelector',
+    xheight: 'xHeight',
+    'x-height': 'xHeight',
+    xlinkactuate: 'xlinkActuate',
+    'xlink:actuate': 'xlinkActuate',
+    xlinkarcrole: 'xlinkArcrole',
+    'xlink:arcrole': 'xlinkArcrole',
+    xlinkhref: 'xlinkHref',
+    'xlink:href': 'xlinkHref',
+    xlinkrole: 'xlinkRole',
+    'xlink:role': 'xlinkRole',
+    xlinkshow: 'xlinkShow',
+    'xlink:show': 'xlinkShow',
+    xlinktitle: 'xlinkTitle',
+    'xlink:title': 'xlinkTitle',
+    xlinktype: 'xlinkType',
+    'xlink:type': 'xlinkType',
+    xmlbase: 'xmlBase',
+    'xml:base': 'xmlBase',
+    xmllang: 'xmlLang',
+    'xml:lang': 'xmlLang',
+    'xml:space': 'xmlSpace',
+    xmlnsxlink: 'xmlnsXlink',
+    'xmlns:xlink': 'xmlnsXlink',
+    xmlspace: 'xmlSpace',
+    ychannelselector: 'yChannelSelector',
+    zoomandpan: 'zoomAndPan',
+    // event handlers
+    onblur: 'onBlur',
+    onchange: 'onChange',
+    onclick: 'onClick',
+    oncontextmenu: 'onContextMenu',
+    ondoubleclick: 'onDoubleClick',
+    ondrag: 'onDrag',
+    ondragend: 'onDragEnd',
+    ondragenter: 'onDragEnter',
+    ondragexit: 'onDragExit',
+    ondragleave: 'onDragLeave',
+    ondragover: 'onDragOver',
+    ondragstart: 'onDragStart',
+    ondrop: 'onDrop',
+    onerror: 'onError',
+    onfocus: 'onFocus',
+    oninput: 'onInput',
+    oninvalid: 'onInvalid',
+    onkeydown: 'onKeyDown',
+    onkeypress: 'onKeyPress',
+    onkeyup: 'onKeyUp',
+    onload: 'onLoad',
+    onmousedown: 'onMouseDown',
+    onmouseenter: 'onMouseEnter',
+    onmouseleave: 'onMouseLeave',
+    onmousemove: 'onMouseMove',
+    onmouseout: 'onMouseOut',
+    onmouseover: 'onMouseOver',
+    onmouseup: 'onMouseUp',
+    onscroll: 'onScroll',
+    onsubmit: 'onSubmit',
+    ontouchcancel: 'onTouchCancel',
+    ontouchend: 'onTouchEnd',
+    ontouchmove: 'onTouchMove',
+    ontouchstart: 'onTouchStart',
+    onwheel: 'onWheel',
+};
+//# sourceMappingURL=helpers.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-from-dom/esm/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-from-dom/esm/index.js ***!
+  \**************************************************/
+/*! exports provided: convertFromNode, convertFromString, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertFromNode", function() { return convertFromNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertFromString", function() { return convertFromString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return convert; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ "./node_modules/react-from-dom/esm/helpers.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __read = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (undefined && undefined.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+/* eslint-disable @typescript-eslint/no-use-before-define */
+
+
+function parseAttributes(node, reactKey) {
+    var attributes = {
+        key: reactKey,
+    };
+    /* istanbul ignore else */
+    if (node instanceof Element) {
+        var nodeClassNames = node.getAttribute('class');
+        if (nodeClassNames) {
+            attributes.className = nodeClassNames;
+        }
+        __spread(node.attributes).forEach(function (d) {
+            switch (d.name) {
+                // these are manually handled above, so break;
+                case 'class':
+                    break;
+                case 'style':
+                    attributes[d.name] = Object(_helpers__WEBPACK_IMPORTED_MODULE_1__["styleToObject"])(d.value);
+                    break;
+                case 'checked':
+                case 'disabled':
+                case 'selected':
+                case 'autoplay':
+                case 'controls':
+                    attributes[d.name] = d.name;
+                    break;
+                default:
+                    attributes[_helpers__WEBPACK_IMPORTED_MODULE_1__["possibleStandardNames"][d.name] || d.name] = d.value;
+            }
+        });
+    }
+    return attributes;
+}
+function parseChildren(childNodeList, level, options) {
+    var children = __spread(childNodeList).map(function (node, index) {
+        return convertFromNode(node, __assign(__assign({}, options), { index: index, level: level + 1 }));
+    })
+        .filter(Boolean);
+    if (!children.length) {
+        return null;
+    }
+    return children;
+}
+function parseName(nodeName) {
+    if (/[a-z]+[A-Z]+[a-z]+/.test(nodeName)) {
+        return nodeName;
+    }
+    return nodeName.toLowerCase();
+}
+function convertFromNode(input, options) {
+    if (options === void 0) { options = {}; }
+    if (!input || !(input instanceof Node)) {
+        return null;
+    }
+    var _a = options.actions, actions = _a === void 0 ? [] : _a, _b = options.index, index = _b === void 0 ? 0 : _b, _c = options.level, level = _c === void 0 ? 0 : _c;
+    var node = input;
+    var key = level + "-" + index;
+    var result = [];
+    /* istanbul ignore else */
+    if (Array.isArray(actions)) {
+        actions.forEach(function (action) {
+            if (action.condition(node, key, level)) {
+                if (typeof action.pre === 'function') {
+                    node = action.pre(node, key, level);
+                    if (!(node instanceof Node)) {
+                        node = input;
+                        /* istanbul ignore else */
+                        if (true) {
+                            // eslint-disable-next-line no-console
+                            console.warn('The `pre`-method always must return a valid DomNode (instanceof Node) - your modification will be ignored (Hint: if you want to render a React-component, use the `action`-method instead)');
+                        }
+                    }
+                }
+                if (typeof action.post === 'function') {
+                    result.push(action.post(node, key, level));
+                }
+            }
+        });
+    }
+    if (result.length) {
+        return result;
+    }
+    switch (node.nodeType) {
+        case 1: {
+            // regular dom-node
+            return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](parseName(node.nodeName), parseAttributes(node, key), parseChildren(node.childNodes, level, options));
+        }
+        case 3: {
+            // textnode
+            var nodeText = node.nodeValue.toString();
+            /* istanbul ignore else */
+            if (/^\s+$/.test(nodeText)) {
+                return null;
+            }
+            /* istanbul ignore next */
+            if (!node.parentNode) {
+                return nodeText;
+            }
+            var parentNodeName = node.parentNode.nodeName.toLowerCase();
+            if (_helpers__WEBPACK_IMPORTED_MODULE_1__["noTextChildNodes"].indexOf(parentNodeName) !== -1) {
+                /* istanbul ignore else */
+                if (/\S/.test(nodeText)) {
+                    // eslint-disable-next-line no-console
+                    console.warn("A textNode is not allowed inside '" + parentNodeName + "'. Your text \"" + nodeText + "\" will be ignored");
+                }
+                return null;
+            }
+            return nodeText;
+        }
+        case 8: {
+            // html-comment
+            return null;
+        }
+        /* istanbul ignore next */
+        default: {
+            return null;
+        }
+    }
+}
+function convertFromString(input, options) {
+    if (options === void 0) { options = {}; }
+    if (!input || typeof input !== 'string') {
+        return null;
+    }
+    var _a = options.nodeOnly, nodeOnly = _a === void 0 ? false : _a, _b = options.selector, selector = _b === void 0 ? 'body > *' : _b, _c = options.type, type = _c === void 0 ? 'text/html' : _c;
+    try {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(input, type);
+        var node = doc.querySelector(selector);
+        if (!(node instanceof Node)) {
+            throw new Error('Error parsing input');
+        }
+        if (nodeOnly) {
+            return node;
+        }
+        return convertFromNode(node, options);
+    }
+    catch (error) {
+        /* istanbul ignore else */
+        if (true) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+        }
+    }
+    return null;
+}
+function convert(input, options) {
+    if (options === void 0) { options = {}; }
+    if (typeof input === 'string') {
+        return convertFromString(input, options);
+    }
+    if (input instanceof Node) {
+        return convertFromNode(input, options);
+    }
+    return null;
+}
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
@@ -26754,6 +27422,440 @@ if (false) {} else if (false) {} else if (typeof window === 'undefined') {
   module.exports.hot.shouldWrapWithAppContainer = true;
 } else { var jsFeaturesPresent, evalError, evalAllowed; }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-inlinesvg/lib/helpers.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-inlinesvg/lib/helpers.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var exenv_1 = __webpack_require__(/*! exenv */ "./node_modules/exenv/index.js");
+exports.canUseDOM = function () { return exenv_1.canUseDOM; };
+exports.supportsInlineSVG = function () {
+    /* istanbul ignore next */
+    if (!document) {
+        return false;
+    }
+    var div = document.createElement('div');
+    div.innerHTML = '<svg />';
+    return div.firstChild && div.firstChild.namespaceURI === 'http://www.w3.org/2000/svg';
+};
+// tslint:disable-next-line:no-shadowed-variable
+var InlineSVGError = /** @class */ (function (_super) {
+    __extends(InlineSVGError, _super);
+    function InlineSVGError(message, data) {
+        var _this = _super.call(this) || this;
+        _this.name = 'InlineSVGError';
+        _this.message = message;
+        _this.data = data;
+        return _this;
+    }
+    return InlineSVGError;
+}(Error));
+exports.InlineSVGError = InlineSVGError;
+exports.isSupportedEnvironment = function () {
+    return exports.supportsInlineSVG() && typeof window !== 'undefined' && window !== null;
+};
+exports.randomString = function (length) {
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var numbers = '1234567890';
+    var charset = "" + letters + letters.toUpperCase() + numbers;
+    var randomCharacter = function (character) {
+        return character[Math.floor(Math.random() * character.length)];
+    };
+    var R = '';
+    for (var i = 0; i < length; i++) {
+        R += randomCharacter(charset);
+    }
+    return R;
+};
+//# sourceMappingURL=helpers.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-inlinesvg/lib/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-inlinesvg/lib/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_from_dom_1 = __webpack_require__(/*! react-from-dom */ "./node_modules/react-from-dom/esm/index.js");
+var helpers_1 = __webpack_require__(/*! ./helpers */ "./node_modules/react-inlinesvg/lib/helpers.js");
+exports.STATUS = {
+    FAILED: 'failed',
+    LOADED: 'loaded',
+    LOADING: 'loading',
+    PENDING: 'pending',
+    READY: 'ready',
+    UNSUPPORTED: 'unsupported',
+};
+var cacheStore = Object.create(null);
+var InlineSVG = /** @class */ (function (_super) {
+    __extends(InlineSVG, _super);
+    function InlineSVG(props) {
+        var _this = _super.call(this, props) || this;
+        // tslint:disable-next-line:variable-name
+        _this._isMounted = false;
+        _this.handleLoad = function (content) {
+            /* istanbul ignore else */
+            if (_this._isMounted) {
+                _this.setState({
+                    content: content,
+                    status: exports.STATUS.LOADED,
+                }, _this.getElement);
+            }
+        };
+        _this.handleError = function (error) {
+            var onError = _this.props.onError;
+            var status = error.message === 'Browser does not support SVG' ? exports.STATUS.UNSUPPORTED : exports.STATUS.FAILED;
+            /* istanbul ignore else */
+            if (true) {
+                // tslint:disable-next-line:no-console
+                console.error(error);
+            }
+            /* istanbul ignore else */
+            if (_this._isMounted) {
+                _this.setState({ status: status }, function () {
+                    /* istanbul ignore else */
+                    if (typeof onError === 'function') {
+                        onError(error);
+                    }
+                });
+            }
+        };
+        _this.request = function () {
+            var _a = _this.props, cacheRequests = _a.cacheRequests, src = _a.src;
+            try {
+                if (cacheRequests) {
+                    cacheStore[src] = { content: '', status: exports.STATUS.LOADING, queue: [] };
+                }
+                return fetch(src)
+                    .then(function (response) {
+                    var contentType = response.headers.get('content-type');
+                    var _a = __read((contentType || '').split(/ ?; ?/), 1), fileType = _a[0];
+                    if (response.status > 299) {
+                        throw new helpers_1.InlineSVGError('Not Found');
+                    }
+                    if (!['image/svg+xml', 'text/plain'].some(function (d) { return fileType.indexOf(d) >= 0; })) {
+                        throw new helpers_1.InlineSVGError("Content type isn't valid: " + fileType);
+                    }
+                    return response.text();
+                })
+                    .then(function (content) {
+                    _this.handleLoad(content);
+                    /* istanbul ignore else */
+                    if (cacheRequests) {
+                        var cache = cacheStore[src];
+                        /* istanbul ignore else */
+                        if (cache) {
+                            cache.content = content;
+                            cache.status = exports.STATUS.LOADED;
+                            cache.queue = cache.queue.filter(function (cb) {
+                                cb(content);
+                                return false;
+                            });
+                        }
+                    }
+                })
+                    .catch(function (error) {
+                    /* istanbul ignore else */
+                    if (cacheRequests) {
+                        delete cacheStore[src];
+                    }
+                    _this.handleError(error);
+                });
+            }
+            catch (error) {
+                _this.handleError(new helpers_1.InlineSVGError(error.message));
+            }
+        };
+        _this.state = {
+            content: '',
+            element: null,
+            hasCache: !!props.cacheRequests && !!cacheStore[props.src],
+            status: exports.STATUS.PENDING,
+        };
+        _this.hash = props.uniqueHash || helpers_1.randomString(8);
+        return _this;
+    }
+    InlineSVG.prototype.componentDidMount = function () {
+        this._isMounted = true;
+        if (!helpers_1.canUseDOM()) {
+            this.handleError(new helpers_1.InlineSVGError('No DOM'));
+            return;
+        }
+        var status = this.state.status;
+        var src = this.props.src;
+        try {
+            /* istanbul ignore else */
+            if (status === exports.STATUS.PENDING) {
+                /* istanbul ignore else */
+                if (!helpers_1.isSupportedEnvironment()) {
+                    throw new helpers_1.InlineSVGError('Browser does not support SVG');
+                }
+                /* istanbul ignore else */
+                if (!src) {
+                    throw new helpers_1.InlineSVGError('Missing src');
+                }
+                this.load();
+            }
+        }
+        catch (error) {
+            this.handleError(error);
+        }
+    };
+    InlineSVG.prototype.componentDidUpdate = function (prevProps, prevState) {
+        if (!helpers_1.canUseDOM()) {
+            return;
+        }
+        var _a = this.state, hasCache = _a.hasCache, status = _a.status;
+        var _b = this.props, onLoad = _b.onLoad, src = _b.src;
+        if (prevState.status !== exports.STATUS.READY && status === exports.STATUS.READY) {
+            /* istanbul ignore else */
+            if (onLoad) {
+                onLoad(src, hasCache);
+            }
+        }
+        if (prevProps.src !== src) {
+            if (!src) {
+                this.handleError(new helpers_1.InlineSVGError('Missing src'));
+                return;
+            }
+            this.load();
+        }
+    };
+    InlineSVG.prototype.componentWillUnmount = function () {
+        this._isMounted = false;
+    };
+    InlineSVG.prototype.processSVG = function () {
+        var content = this.state.content;
+        var preProcessor = this.props.preProcessor;
+        if (preProcessor) {
+            return preProcessor(content);
+        }
+        return content;
+    };
+    InlineSVG.prototype.updateSVGAttributes = function (node) {
+        var _this = this;
+        var _a = this.props, _b = _a.baseURL, baseURL = _b === void 0 ? '' : _b, uniquifyIDs = _a.uniquifyIDs;
+        var replaceableAttributes = ['id', 'href', 'xlink:href', 'xlink:role', 'xlink:arcrole'];
+        var linkAttributes = ['href', 'xlink:href'];
+        var isDataValue = function (name, value) {
+            return linkAttributes.indexOf(name) >= 0 && (value ? value.indexOf('#') < 0 : false);
+        };
+        if (!uniquifyIDs) {
+            return node;
+        }
+        __spread(node.children).map(function (d) {
+            if (d.attributes && d.attributes.length) {
+                var attributes_1 = Object.values(d.attributes);
+                attributes_1.forEach(function (a) {
+                    var match = a.value.match(/url\((.*?)\)/);
+                    if (match && match[1]) {
+                        a.value = a.value.replace(match[0], "url(" + baseURL + match[1] + "__" + _this.hash + ")");
+                    }
+                });
+                replaceableAttributes.forEach(function (r) {
+                    var attribute = attributes_1.find(function (a) { return a.name === r; });
+                    if (attribute && !isDataValue(r, attribute.value)) {
+                        attribute.value = attribute.value + "__" + _this.hash;
+                    }
+                });
+            }
+            if (d.children.length) {
+                d = _this.updateSVGAttributes(d);
+            }
+            return d;
+        });
+        return node;
+    };
+    InlineSVG.prototype.getNode = function () {
+        var _a = this.props, description = _a.description, title = _a.title;
+        try {
+            var svgText = this.processSVG();
+            var node = react_from_dom_1.default(svgText, { nodeOnly: true });
+            if (!node || !(node instanceof SVGSVGElement)) {
+                throw new helpers_1.InlineSVGError('Could not convert the src to a DOM Node');
+            }
+            var svg = this.updateSVGAttributes(node);
+            if (description) {
+                var originalDesc = svg.querySelector('desc');
+                if (originalDesc && originalDesc.parentNode) {
+                    originalDesc.parentNode.removeChild(originalDesc);
+                }
+                var descElement = document.createElement('desc');
+                descElement.innerHTML = description;
+                svg.prepend(descElement);
+            }
+            if (title) {
+                var originalTitle = svg.querySelector('title');
+                if (originalTitle && originalTitle.parentNode) {
+                    originalTitle.parentNode.removeChild(originalTitle);
+                }
+                var titleElement = document.createElement('title');
+                titleElement.innerHTML = title;
+                svg.prepend(titleElement);
+            }
+            return svg;
+        }
+        catch (error) {
+            this.handleError(error);
+        }
+    };
+    InlineSVG.prototype.getElement = function () {
+        try {
+            var node = this.getNode();
+            var element = react_from_dom_1.default(node);
+            if (!element || !React.isValidElement(element)) {
+                throw new helpers_1.InlineSVGError('Could not convert the src to a React element');
+            }
+            this.setState({
+                element: element,
+                status: exports.STATUS.READY,
+            });
+        }
+        catch (error) {
+            this.handleError(new helpers_1.InlineSVGError(error.message));
+        }
+    };
+    InlineSVG.prototype.load = function () {
+        var _this = this;
+        /* istanbul ignore else */
+        if (this._isMounted) {
+            this.setState({
+                content: '',
+                element: null,
+                status: exports.STATUS.LOADING,
+            }, function () {
+                var _a = _this.props, cacheRequests = _a.cacheRequests, src = _a.src;
+                var cache = cacheRequests && cacheStore[src];
+                if (cache) {
+                    /* istanbul ignore else */
+                    if (cache.status === exports.STATUS.LOADING) {
+                        cache.queue.push(_this.handleLoad);
+                    }
+                    else if (cache.status === exports.STATUS.LOADED) {
+                        _this.handleLoad(cache.content);
+                    }
+                    return;
+                }
+                var dataURI = src.match(/data:image\/svg[^,]*?(;base64)?,(.*)/);
+                var inlineSrc;
+                if (dataURI) {
+                    inlineSrc = dataURI[1] ? atob(dataURI[2]) : decodeURIComponent(dataURI[2]);
+                }
+                else if (src.indexOf('<svg') >= 0) {
+                    inlineSrc = src;
+                }
+                if (inlineSrc) {
+                    _this.handleLoad(inlineSrc);
+                    return;
+                }
+                _this.request();
+            });
+        }
+    };
+    InlineSVG.prototype.render = function () {
+        if (!helpers_1.canUseDOM()) {
+            return null;
+        }
+        var _a = this.state, element = _a.element, status = _a.status;
+        var _b = this.props, baseURL = _b.baseURL, cacheRequests = _b.cacheRequests, _c = _b.children, children = _c === void 0 ? null : _c, description = _b.description, innerRef = _b.innerRef, _d = _b.loader, loader = _d === void 0 ? null : _d, onError = _b.onError, onLoad = _b.onLoad, preProcessor = _b.preProcessor, src = _b.src, title = _b.title, uniqueHash = _b.uniqueHash, uniquifyIDs = _b.uniquifyIDs, rest = __rest(_b, ["baseURL", "cacheRequests", "children", "description", "innerRef", "loader", "onError", "onLoad", "preProcessor", "src", "title", "uniqueHash", "uniquifyIDs"]);
+        if (element) {
+            return React.cloneElement(element, __assign({ ref: innerRef }, rest));
+        }
+        if ([exports.STATUS.UNSUPPORTED, exports.STATUS.FAILED].indexOf(status) > -1) {
+            return children;
+        }
+        return loader;
+    };
+    InlineSVG.defaultProps = {
+        cacheRequests: true,
+        uniquifyIDs: false,
+    };
+    return InlineSVG;
+}(React.PureComponent));
+exports.default = InlineSVG;
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -33066,9 +34168,9 @@ var _default = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__["hot"])(modu
     return;
   }
 
-  reactHotLoader.register(GlobalStyle, "GlobalStyle", "/home/jimmy/Code/neumodoro-timer/src/App.jsx");
-  reactHotLoader.register(App, "App", "/home/jimmy/Code/neumodoro-timer/src/App.jsx");
-  reactHotLoader.register(_default, "default", "/home/jimmy/Code/neumodoro-timer/src/App.jsx");
+  reactHotLoader.register(GlobalStyle, "GlobalStyle", "M:\\Programming\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(App, "App", "M:\\Programming\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(_default, "default", "M:\\Programming\\neumodoro-timer\\src\\App.jsx");
 })();
 
 ;
@@ -33093,6 +34195,8 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Layout_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Layout.styles */ "./src/Layout.styles.js");
+/* harmony import */ var _assets_tomato_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/tomato.svg */ "./src/assets/tomato.svg");
+/* harmony import */ var _assets_tomato_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_tomato_svg__WEBPACK_IMPORTED_MODULE_2__);
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
@@ -33112,6 +34216,9 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
+
+var TWENTY_FIVE_MINUTES_IN_SECONDS = 1500;
+var FIVE_MINUTES_IN_SECONDS = 300;
 
 function useInterval(callback, delay) {
   var savedCallback = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
@@ -33137,38 +34244,119 @@ function useInterval(callback, delay) {
 __signature__(useInterval, "useRef{savedCallback}\nuseEffect{}\nuseEffect{}");
 
 var Layout = function Layout() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(5),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(3),
       _useState2 = _slicedToArray(_useState, 2),
       time = _useState2[0],
       setTime = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      pomo = _useState4[0],
+      setPomo = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isPomoActive = _useState6[0],
+      setIsPomoActive = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      isTimerActive = _useState8[0],
+      setIsTimerActive = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      isBreakTime = _useState10[0],
+      setIsBreakTime = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState12 = _slicedToArray(_useState11, 2),
+      areAlertsOn = _useState12[0],
+      setAreAlertsOn = _useState12[1];
+
+  var displayTime = function displayTime() {
+    var minutes = Math.floor(time / 60).toString();
+    var seconds = Math.floor(time % 60).toString();
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    return "".concat(minutes, ":").concat(seconds);
+  };
+
+  var sendNotification = function sendNotification(title, body) {
+    if (areAlertsOn) {
+      new Notification(title, {
+        body: body
+      });
+    }
+  };
+
   useInterval(function (intervalId) {
     if (time <= 0) {
-      clearInterval(intervalId);
-      var myNotification = new Notification('Time is up!', {
-        body: 'Have a relaxing break, and try not to think about what you have been working on.'
-      });
+      if (isPomoActive) {
+        if (pomo === 4) {
+          sendNotification("Time is up!", "You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.");
+          setTime(5);
+        } else {
+          sendNotification("Time is up!", "Will you take a 5?!?! (￣﹃￣)");
+          setTime(2);
+        }
 
-      myNotification.onclick = function () {
-        console.log('Notification clicked');
-      };
+        setIsBreakTime(true);
+        setIsPomoActive(false);
+      } else {
+        if (pomo === 4) setPomo(0);
+        sendNotification("Back to work! (╯▔皿▔)╯", "Ganbatte!");
+        clearInterval(intervalId);
+        setIsBreakTime(false);
+        setTime(3);
+        setIsTimerActive(false);
+      }
     } else {
       setTime(time - 1);
     }
-  }, 1000);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Wrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Pomodoro Timer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Raised"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Time Left: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["CircleButton"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u203A"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["NavWrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Toggle"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, isTimerActive ? 1000 : null);
+
+  var currentSeeds = function currentSeeds() {
+    var minutes = Math.ceil(time / 60);
+    return Math.ceil(minutes / 5);
+  };
+
+  var startStopTimer = function startStopTimer() {
+    if (!isPomoActive) {
+      setIsPomoActive(true);
+      setPomo(pomo + 1);
+    }
+
+    setIsTimerActive(!isTimerActive);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Wrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neumodoro Timer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Tomato"], {
+    src: _assets_tomato_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
+    pomo: pomo,
+    isPomoActive: isPomoActive,
+    seeds: currentSeeds()
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Raised"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Time Left: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, displayTime()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["CircleButton"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u203A"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["NavWrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Toggle"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
-    checked: true
+    onClick: startStopTimer
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Toggle"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "checkbox"
+    type: "checkbox",
+    onClick: function onClick() {
+      return setTime(TWENTY_FIVE_MINUTES_IN_SECONDS);
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Toggle"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "checkbox"
+    type: "checkbox",
+    onClick: function onClick() {
+      return setTime(FIVE_MINUTES_IN_SECONDS);
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Toggle"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "checkbox"
+    type: "checkbox",
+    onClick: function onClick() {
+      return setAreAlertsOn(!areAlertsOn);
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)))));
 };
 
-__signature__(Layout, "useState{[time, setTime](5)}\nuseInterval{}", function () {
+__signature__(Layout, "useState{[time, setTime](3)}\nuseState{[pomo, setPomo](0)}\nuseState{[isPomoActive, setIsPomoActive](false)}\nuseState{[isTimerActive, setIsTimerActive](false)}\nuseState{[isBreakTime, setIsBreakTime](false)}\nuseState{[areAlertsOn, setAreAlertsOn](true)}\nuseInterval{}", function () {
   return [useInterval];
 });
 
@@ -33183,9 +34371,11 @@ var _default = Layout;
     return;
   }
 
-  reactHotLoader.register(useInterval, "useInterval", "/home/jimmy/Code/neumodoro-timer/src/Layout.jsx");
-  reactHotLoader.register(Layout, "Layout", "/home/jimmy/Code/neumodoro-timer/src/Layout.jsx");
-  reactHotLoader.register(_default, "default", "/home/jimmy/Code/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "M:\\Programming\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "M:\\Programming\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(useInterval, "useInterval", "M:\\Programming\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(Layout, "Layout", "M:\\Programming\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(_default, "default", "M:\\Programming\\neumodoro-timer\\src\\Layout.jsx");
 })();
 
 ;
@@ -33202,7 +34392,7 @@ var _default = Layout;
 /*!******************************!*\
   !*** ./src/Layout.styles.js ***!
   \******************************/
-/*! exports provided: Wrapper, Container, Raised, NavWrapper, Toggle, CircleButton */
+/*! exports provided: Wrapper, Container, Raised, NavWrapper, Toggle, CircleButton, Tomato */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33213,13 +34403,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavWrapper", function() { return NavWrapper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Toggle", function() { return Toggle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CircleButton", function() { return CircleButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tomato", function() { return Tomato; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeface-poppins */ "./node_modules/typeface-poppins/index.css");
-/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeface_poppins__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/lib/index.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! typeface-poppins */ "./node_modules/typeface-poppins/index.css");
+/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(typeface_poppins__WEBPACK_IMPORTED_MODULE_2__);
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
 })();
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  #quarter_1 {\n    display: ", ";\n  }\n  #quarter_2 {\n    display: ", ";\n  }\n  #quarter_3 {\n    display: ", ";\n  }\n  #quarter_4 {\n    display: ", ";\n  }\n\n  #seeds_1 {\n    ", ";\n  }\n\n  #seeds_2 {\n    ", ";\n  }\n\n  #seeds_3 {\n    ", ";\n  }\n\n  #seeds_4 {\n    ", ";\n  }\n\n  #seeds_5 {\n    ", ";\n  }\n\n  #seeds_", " {\n    \n    #seed_", "-1 {\n      display: ", ";\n    }\n    #seed_", "-2 {\n      display: ", ";\n    }\n    #seed_", "-3 {\n      display: ", ";\n    }\n    #seed_", "-4 {\n      display: ", ";\n    }\n    #seed_", "-5 {\n      display: ", ";\n    }\n  }\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject6() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 20px;\n  background: #e6eef7;\n  box-shadow: 5px 5px 10px #d1d7de, -5px -5px 10px #ffffff;\n  border-radius: 50%;\n  font-size: 36px;\n  font-weight: 300;\n\n  span {\n    position: absolute;\n  }\n"]);
@@ -33289,12 +34492,54 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
+
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject());
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2());
 var Raised = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3());
 var NavWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav(_templateObject4());
 var Toggle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].label(_templateObject5());
 var CircleButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject6());
+var Tomato = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_inlinesvg__WEBPACK_IMPORTED_MODULE_1___default.a)(_templateObject7(), function (props) {
+  return props.pomo >= 1 ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo >= 2 ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo >= 3 ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo >= 4 ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo > 1 && 'display: none';
+}, function (props) {
+  return props.pomo > 2 && 'display: none';
+}, function (props) {
+  return props.pomo > 3 && 'display: none';
+}, function (props) {
+  return props.pomo > 4 && 'display: none';
+}, function (props) {
+  return props.pomo > 5 && 'display: none';
+}, function (props) {
+  return props.pomo;
+}, function (props) {
+  return props.pomo;
+}, function (props) {
+  return !props.isPomoActive || 1 > props.seeds ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo;
+}, function (props) {
+  return !props.isPomoActive || 2 > props.seeds ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo;
+}, function (props) {
+  return !props.isPomoActive || 3 > props.seeds ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo;
+}, function (props) {
+  return !props.isPomoActive || 4 > props.seeds ? 'none' : 'inherit';
+}, function (props) {
+  return props.pomo;
+}, function (props) {
+  return !props.isPomoActive || 5 > props.seeds ? 'none' : 'inherit';
+});
 ;
 
 (function () {
@@ -33304,12 +34549,13 @@ var CircleButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div
     return;
   }
 
-  reactHotLoader.register(Wrapper, "Wrapper", "/home/jimmy/Code/neumodoro-timer/src/Layout.styles.js");
-  reactHotLoader.register(Container, "Container", "/home/jimmy/Code/neumodoro-timer/src/Layout.styles.js");
-  reactHotLoader.register(Raised, "Raised", "/home/jimmy/Code/neumodoro-timer/src/Layout.styles.js");
-  reactHotLoader.register(NavWrapper, "NavWrapper", "/home/jimmy/Code/neumodoro-timer/src/Layout.styles.js");
-  reactHotLoader.register(Toggle, "Toggle", "/home/jimmy/Code/neumodoro-timer/src/Layout.styles.js");
-  reactHotLoader.register(CircleButton, "CircleButton", "/home/jimmy/Code/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Wrapper, "Wrapper", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Container, "Container", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Raised, "Raised", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(NavWrapper, "NavWrapper", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Toggle, "Toggle", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(CircleButton, "CircleButton", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Tomato, "Tomato", "M:\\Programming\\neumodoro-timer\\src\\Layout.styles.js");
 })();
 
 ;
@@ -33319,6 +34565,21 @@ var CircleButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div
   leaveModule && leaveModule(module);
 })();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/assets/tomato.svg":
+/*!*******************************!*\
+  !*** ./src/assets/tomato.svg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
+
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 362 362\"><defs><style>.cls-1{fill:none;}.cls-2{fill:url(#radial-gradient);}.cls-3{fill:#d8d8d8;}.cls-4{fill:url(#radial-gradient-2);}.cls-5{fill:url(#radial-gradient-3);}.cls-6{fill:#d84b35;}.cls-7{fill:#aa2f1f;}.cls-8{fill:#f4e39a;}.cls-9{clip-path:url(#clip-path);}.cls-10{fill:url(#radial-gradient-4);}.cls-11{fill:url(#radial-gradient-5);}.cls-12{fill:url(#radial-gradient-6);}.cls-13{clip-path:url(#clip-path-2);}.cls-14{clip-path:url(#clip-path-3);}.cls-15{clip-path:url(#clip-path-4);}</style><radialGradient id=\"radial-gradient\" cx=\"181\" cy=\"181\" r=\"182.66\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.65\" stop-opacity=\"0.2\"></stop><stop offset=\"0.98\" stop-color=\"#fff\" stop-opacity=\"0\"></stop></radialGradient><radialGradient id=\"radial-gradient-2\" cx=\"198.49\" cy=\"197.34\" r=\"189.19\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.75\" stop-opacity=\"0\"></stop><stop offset=\"1\"></stop></radialGradient><radialGradient id=\"radial-gradient-3\" cx=\"168.04\" cy=\"164.05\" r=\"161.29\" gradientTransform=\"translate(167.82 -61.28) rotate(48.17) scale(1 0.92)\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.94\" stop-color=\"#fff\" stop-opacity=\"0\"></stop><stop offset=\"1\" stop-color=\"#fff\"></stop></radialGradient><clipPath id=\"clip-path\"><rect class=\"cls-1\" x=\"53.17\" y=\"52.97\" width=\"128\" height=\"128\"></rect></clipPath><radialGradient id=\"radial-gradient-4\" cx=\"174.42\" cy=\"167.58\" fx=\"152.77870119473948\" r=\"130.23\" gradientTransform=\"matrix(0.65, 0.76, -0.73, 0.63, 182.89, -70.47)\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.86\" stop-color=\"#ff6138\"></stop><stop offset=\"0.86\" stop-color=\"#ff6138\"></stop><stop offset=\"1\" stop-color=\"#e54225\"></stop></radialGradient><radialGradient id=\"radial-gradient-5\" cx=\"150.04\" cy=\"147.92\" r=\"140.38\" gradientTransform=\"translate(180.96 -73.33) rotate(50.15) scale(1 1.12)\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0.63\" stop-color=\"#e54225\" stop-opacity=\"0\"></stop><stop offset=\"1\" stop-color=\"#e54225\"></stop></radialGradient><radialGradient id=\"radial-gradient-6\" cx=\"131.95\" cy=\"107.02\" r=\"82.03\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#ff8b61\"></stop><stop offset=\"1\" stop-color=\"#ff8b61\" stop-opacity=\"0\"></stop></radialGradient><clipPath id=\"clip-path-2\"><rect class=\"cls-1\" x=\"53.17\" y=\"180.97\" width=\"128\" height=\"128\"></rect></clipPath><clipPath id=\"clip-path-3\"><rect class=\"cls-1\" x=\"181.17\" y=\"180.97\" width=\"128\" height=\"128\"></rect></clipPath><clipPath id=\"clip-path-4\"><rect class=\"cls-1\" x=\"181.17\" y=\"52.97\" width=\"128\" height=\"128\"></rect></clipPath></defs><title>tomato5</title><g id=\"Layer_2\" data-name=\"Layer 2\"><g id=\"outside_shadow\" data-name=\"outside shadow\"><circle class=\"cls-2\" cx=\"181\" cy=\"181\" r=\"181\"></circle></g><g id=\"inset_background\" data-name=\"inset background\"><circle class=\"cls-3\" cx=\"181\" cy=\"181\" r=\"140\"></circle></g><g id=\"inset_shadow\" data-name=\"inset shadow\"><circle class=\"cls-4\" cx=\"181\" cy=\"181\" r=\"140.03\"></circle></g><g id=\"inset_highlight\" data-name=\"inset highlight\"><circle class=\"cls-5\" cx=\"181\" cy=\"181\" r=\"140\"></circle></g><g id=\"tomato_inside\" data-name=\"tomato inside\"><circle class=\"cls-6\" cx=\"181.17\" cy=\"180.97\" r=\"128\"></circle></g><g id=\"seed_quarter_4\" data-name=\"seed quarter 4\"><path class=\"cls-7\" d=\"M233.83,202.57c-7.1,26.06-10.78,24.57-34.83,38-17.63,9.85-11.68,50.74,27,37C250.55,268.85,270,250,278.67,217.1,288.51,180,242,172.56,233.83,202.57Z\"></path></g><g id=\"seed_quarter_3\" data-name=\"seed quarter 3\"><path class=\"cls-7\" d=\"M160.47,230.15c-26.06-7.09-24.57-10.78-38-34.82-9.84-17.64-50.73-11.69-37,27,8.71,24.54,27.61,43.94,60.46,52.66C183,284.84,190.48,238.33,160.47,230.15Z\"></path></g><g id=\"seed_quarter_2\" data-name=\"seed quarter 2\"><path class=\"cls-7\" d=\"M133.82,159.72c7.1-26.06,10.78-24.57,34.83-38,17.63-9.84,11.68-50.73-27-37C117.1,93.45,97.7,112.35,89,145.19,79.14,182.26,125.65,189.73,133.82,159.72Z\"></path></g><g id=\"seed_quarter_1\" data-name=\"seed quarter 1\"><path class=\"cls-7\" d=\"M204.18,131.14c26.06,7.1,24.57,10.79,38,34.83,9.84,17.63,50.73,11.68,37-27C270.46,114.42,251.56,95,218.71,86.3,181.64,76.46,174.17,123,204.18,131.14Z\"></path></g><g id=\"seeds_4\" data-name=\"seeds 4\"><path id=\"seed_4-5\" data-name=\"seed 4-5\" class=\"cls-8\" d=\"M168.88,97.53c.53,2.54-.93,8.65-2.29,13.45a3.71,3.71,0,0,1-6.46,1.34c-3.16-3.86-6.93-8.88-7.45-11.42a8.27,8.27,0,1,1,16.2-3.37Z\"></path><path id=\"seed_4-4\" data-name=\"seed 4-4\" class=\"cls-8\" d=\"M148.78,104.88c1.12,2.34,1.16,8.61,1,13.6a3.73,3.73,0,0,1-6,2.85c-4-3-8.85-7-10-9.32a8.28,8.28,0,0,1,14.94-7.13Z\"></path><path id=\"seed_4-3\" data-name=\"seed 4-3\" class=\"cls-8\" d=\"M128.18,117.6c1.83,1.84,4,7.74,5.46,12.5a3.73,3.73,0,0,1-4.67,4.67c-4.76-1.5-10.66-3.63-12.5-5.47a8.28,8.28,0,1,1,11.71-11.7Z\"></path><path id=\"seed_4-2\" data-name=\"seed 4-2\" class=\"cls-8\" d=\"M114.08,133.78c2.43.91,6.82,5.4,10.15,9.11a3.72,3.72,0,0,1-2.31,6.19c-5,.61-11.21,1.11-13.64.2a8.27,8.27,0,0,1,5.8-15.5Z\"></path><path id=\"seed_4-1\" data-name=\"seed 4-1\" class=\"cls-8\" d=\"M104.27,153.45c2.59,0,8.28,2.67,12.7,5a3.73,3.73,0,0,1,0,6.61c-4.42,2.3-10.11,5-12.7,5a8.28,8.28,0,1,1,0-16.55Z\"></path></g><g id=\"seeds_3\" data-name=\"seeds 3\"><path id=\"seed_3-5\" data-name=\"seed 3-5\" class=\"cls-8\" d=\"M96.56,195.08c2.54-.53,8.64.93,13.45,2.29a3.72,3.72,0,0,1,1.34,6.46c-3.87,3.16-8.89,6.93-11.43,7.45a8.27,8.27,0,0,1-3.36-16.2Z\"></path><path id=\"seed_3-4\" data-name=\"seed 3-4\" class=\"cls-8\" d=\"M103.9,215.19c2.34-1.12,8.62-1.17,13.61-1a3.71,3.71,0,0,1,2.84,6c-3,4-7,8.85-9.31,10a8.27,8.27,0,1,1-7.14-14.93Z\"></path><path id=\"seed_3-3\" data-name=\"seed 3-3\" class=\"cls-8\" d=\"M116.63,235.79c1.83-1.84,7.73-4,12.49-5.47a3.72,3.72,0,0,1,4.67,4.67c-1.5,4.76-3.63,10.67-5.46,12.5a8.27,8.27,0,0,1-11.7-11.7Z\"></path><path id=\"seed_3-2\" data-name=\"seed 3-2\" class=\"cls-8\" d=\"M132.81,249.88c.91-2.43,5.4-6.82,9.11-10.15A3.71,3.71,0,0,1,148.1,242c.61,5,1.12,11.21.21,13.64a8.27,8.27,0,0,1-15.5-5.8Z\"></path><path id=\"seed_3-1\" data-name=\"seed 3-1\" class=\"cls-8\" d=\"M152.47,259.69c0-2.59,2.67-8.27,5-12.7a3.72,3.72,0,0,1,6.6,0c2.31,4.43,5,10.11,5,12.7a8.28,8.28,0,1,1-16.55,0Z\"></path></g><g id=\"seeds_2\" data-name=\"seeds 2\"><path id=\"seed_2-5\" data-name=\"seed 2-5\" class=\"cls-8\" d=\"M198.1,265.41c-.52-2.55.93-8.65,2.29-13.45a3.73,3.73,0,0,1,6.47-1.35c3.15,3.87,6.92,8.89,7.45,11.43a8.28,8.28,0,0,1-16.21,3.37Z\"></path><path id=\"seed_2-4\" data-name=\"seed 2-4\" class=\"cls-8\" d=\"M218.21,258.06c-1.12-2.34-1.16-8.62-1-13.61a3.72,3.72,0,0,1,6-2.84c4,3,8.84,7,10,9.31a8.27,8.27,0,1,1-14.93,7.14Z\"></path><path id=\"seed_2-3\" data-name=\"seed 2-3\" class=\"cls-8\" d=\"M238.81,245.34c-1.83-1.84-4-7.74-5.46-12.5a3.72,3.72,0,0,1,4.67-4.67c4.76,1.5,10.66,3.63,12.49,5.46a8.28,8.28,0,1,1-11.7,11.71Z\"></path><path id=\"seed_2-2\" data-name=\"seed 2-2\" class=\"cls-8\" d=\"M252.9,229.15c-2.43-.91-6.81-5.4-10.15-9.11a3.72,3.72,0,0,1,2.32-6.18c5-.61,11.21-1.12,13.64-.21a8.28,8.28,0,1,1-5.81,15.5Z\"></path><path id=\"seed_2-1\" data-name=\"seed 2-1\" class=\"cls-8\" d=\"M262.72,209.49c-2.6,0-8.28-2.67-12.71-5a3.72,3.72,0,0,1,0-6.6c4.43-2.3,10.11-5,12.71-5a8.28,8.28,0,0,1,0,16.55Z\"></path></g><g id=\"seeds_1\" data-name=\"seeds 1\"><path id=\"seed_1-5\" data-name=\"seed 1-5\" class=\"cls-8\" d=\"M267.43,165.86c-2.54.53-8.65-.93-13.45-2.29a3.73,3.73,0,0,1-1.34-6.47c3.86-3.15,8.88-6.92,11.43-7.45a8.28,8.28,0,0,1,3.36,16.21Z\"></path><path id=\"seed_1-4\" data-name=\"seed 1-4\" class=\"cls-8\" d=\"M260.09,145.75c-2.35,1.12-8.62,1.16-13.61,1a3.72,3.72,0,0,1-2.85-6c3-4,7-8.84,9.32-10a8.27,8.27,0,0,1,7.14,14.93Z\"></path><path id=\"seed_1-3\" data-name=\"seed 1-3\" class=\"cls-8\" d=\"M247.36,125.15c-1.83,1.84-7.74,4-12.5,5.47a3.73,3.73,0,0,1-4.67-4.67c1.5-4.76,3.63-10.67,5.47-12.5a8.27,8.27,0,0,1,11.7,11.7Z\"></path><path id=\"seed_1-2\" data-name=\"seed 1-2\" class=\"cls-8\" d=\"M231.18,111.06c-.91,2.43-5.4,6.81-9.11,10.15a3.73,3.73,0,0,1-6.19-2.32c-.6-5-1.11-11.21-.2-13.64a8.28,8.28,0,0,1,15.5,5.81Z\"></path><path id=\"seed_1-1\" data-name=\"seed 1-1\" class=\"cls-8\" d=\"M211.51,101.24c0,2.6-2.67,8.28-5,12.71a3.72,3.72,0,0,1-6.6,0c-2.31-4.43-5-10.11-5-12.71a8.28,8.28,0,0,1,16.55,0Z\"></path></g><g id=\"quarter_4\" data-name=\"quarter 4\"><g class=\"cls-9\"><circle class=\"cls-10\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-11\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-12\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle></g></g><g id=\"quarter_3\" data-name=\"quarter 3\"><g class=\"cls-13\"><circle class=\"cls-10\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-11\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-12\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle></g></g><g id=\"quarter_2\" data-name=\"quarter 2\"><g class=\"cls-14\"><circle class=\"cls-10\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-11\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-12\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle></g></g><g id=\"quarter_1\" data-name=\"quarter 1\"><g class=\"cls-15\"><circle class=\"cls-10\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-11\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle><circle class=\"cls-12\" cx=\"180.83\" cy=\"181.03\" r=\"127.83\"></circle></g></g></g></svg>";
 
 /***/ }),
 
@@ -33389,8 +34650,8 @@ var darkTheme = {
     return;
   }
 
-  reactHotLoader.register(lightTheme, "lightTheme", "/home/jimmy/Code/neumodoro-timer/src/themes.js");
-  reactHotLoader.register(darkTheme, "darkTheme", "/home/jimmy/Code/neumodoro-timer/src/themes.js");
+  reactHotLoader.register(lightTheme, "lightTheme", "M:\\Programming\\neumodoro-timer\\src\\themes.js");
+  reactHotLoader.register(darkTheme, "darkTheme", "M:\\Programming\\neumodoro-timer\\src\\themes.js");
 })();
 
 ;
