@@ -26,7 +26,7 @@ function useInterval(callback, delay) {
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(3);
+  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS);
   const [pomo, setPomo] = useState(0);
   const [isPomoActive, setIsPomoActive] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
@@ -56,10 +56,10 @@ const Layout = () => {
               "Time is up!",
               "You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break."
             );
-            setTime(5);
+            setTime(TWENTY_FIVE_MINUTES_IN_SECONDS);
           } else {
             sendNotification("Time is up!", "Will you take a 5?!?! (￣﹃￣)");
-            setTime(2);
+            setTime(FIVE_MINUTES_IN_SECONDS);
           }
           setIsBreakTime(true);
           setIsPomoActive(false);
@@ -68,7 +68,7 @@ const Layout = () => {
           sendNotification("Back to work! (╯▔皿▔)╯", "Ganbatte!");
           clearInterval(intervalId);
           setIsBreakTime(false);
-          setTime(3);
+          setTime(TWENTY_FIVE_MINUTES_IN_SECONDS);
           setIsTimerActive(false);
         }
       } else {
