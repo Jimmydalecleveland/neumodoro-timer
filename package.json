@@ -39,6 +39,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
+    "framer-motion": "^1.10.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

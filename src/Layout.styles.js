@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import SVG from "react-inlinesvg";
 import 'typeface-poppins';
 
+import TomatoSVG from './Tomato'
+
 export const Wrapper = styled.div`
   height: 100vh;
   padding: 30px;
@@ -119,8 +121,8 @@ export const CircleButton = styled.div`
   }
 `;
 
-export const Tomato = styled(SVG)`
-  #quarter_1 {
+export const Tomato = styled(TomatoSVG)`
+  /* #quarter_1 {
     display: ${props => props.pomo >= 1 ? 'none' : 'inherit' };
   }
   #quarter_2 {
@@ -131,7 +133,7 @@ export const Tomato = styled(SVG)`
   }
   #quarter_4 {
     display: ${props => props.pomo >= 4 ? 'none' : 'inherit' };
-  }
+  } */
 
   #seeds_1 {
     ${props => props.pomo > 1 && 'display: none' };

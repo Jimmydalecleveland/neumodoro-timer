@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as Styled from "./Layout.styles";
 
-import tomato from "./assets/tomato.svg";
+// import tomato from "./assets/tomato.svg";
+import Tomato from "./Tomato";
 
 const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500;
 const FIVE_MINUTES_IN_SECONDS = 300;
@@ -75,7 +76,7 @@ const Layout = () => {
         setTime(time - 1);
       }
     },
-    isTimerActive ? 1000 : null
+    isTimerActive ? 10 : null
   );
 
   const currentSeeds = () => {
@@ -97,7 +98,6 @@ const Layout = () => {
         <h1>Neumodoro Timer</h1>
 
         <Styled.Tomato
-          src={tomato}
           pomo={pomo}
           isPomoActive={isPomoActive}
           seeds={currentSeeds()}
