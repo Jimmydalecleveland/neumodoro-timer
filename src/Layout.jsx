@@ -76,7 +76,7 @@ const Layout = () => {
         setTime(time - 1);
       }
     },
-    isTimerActive ? 10 : null
+    isTimerActive ? 2 : null
   );
 
   const currentSeeds = () => {

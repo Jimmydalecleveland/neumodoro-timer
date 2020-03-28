@@ -1,5 +1,6 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import AnimateSeed from './Seed'
 
 const Tomato = props => {
   return (
@@ -165,10 +166,10 @@ const Tomato = props => {
           <path className="cls-1" d="M158.34 31.14h128v128h-128z" />
         </clipPath>
         <style>
-          {".cls-1{fill:none}.cls-7{fill:#aa2f1f}.cls-8{fill:#f4e39a}"}
+          {'.cls-1{fill:none}.cls-7{fill:#aa2f1f}.cls-8{fill:#f4e39a}'}
         </style>
       </defs>
-      <title>{"tomato9"}</title>
+      <title>{'tomato9'}</title>
       <g id="Layer_2" data-name="Layer 2">
         <circle
           cx={159.17}
@@ -235,32 +236,43 @@ const Tomato = props => {
           id="seed_quarter_4"
           data-name="seed quarter 4"
         />
+
         <g id="seeds_1" data-name="seeds 1">
-          <path
+          <AnimateSeed
+            isAnimate={props.seeds >= 5}
+            coords={{ x: -30, y: -70 }}
             id="seed_1-5"
             data-name="seed 1-5"
             className="cls-8"
             d="M147.05 75.7c.53 2.54-.93 8.65-2.29 13.45a3.71 3.71 0 01-6.46 1.34c-3.16-3.86-6.93-8.88-7.45-11.42a8.27 8.27 0 1116.2-3.37z"
           />
-          <path
+          <AnimateSeed
+            isAnimate={props.seeds >= 4}
+            coords={{ x: -50, y: -60 }}
             id="seed_1-4"
             data-name="seed 1-4"
             className="cls-8"
             d="M126 82.05c1.12 2.34 1.16 8.61 1 13.6a3.73 3.73 0 01-6 2.85c-4-3-8.85-7-10-9.32a8.28 8.28 0 0115-7.13z"
           />
-          <path
+          <AnimateSeed
+            isAnimate={props.seeds >= 3}
+            coords={{ x: -60, y: -60 }}
             id="seed_1-3"
             data-name="seed 1-3"
             className="cls-8"
             d="M106.35 93.77c1.83 1.84 4 7.74 5.46 12.5a3.72 3.72 0 01-4.67 4.67c-4.76-1.5-10.66-3.63-12.5-5.47a8.28 8.28 0 0111.71-11.7z"
           />
-          <path
+          <AnimateSeed
+            isAnimate={props.seeds >= 2}
+            coords={{ x: -60, y: -20 }}
             id="seed_1-2"
             data-name="seed 1-2"
             className="cls-8"
             d="M92.25 112c2.43.91 6.82 5.4 10.15 9.12a3.72 3.72 0 01-2.31 6.18c-5 .61-11.21 1.11-13.64.2a8.27 8.27 0 115.8-15.5z"
           />
-          <path
+          <AnimateSeed
+            isAnimate={props.seeds >= 1}
+            coords={{ x: 70, y: 0 }}
             id="seed_1-1"
             data-name="seed 1-1"
             className="cls-8"
@@ -364,36 +376,41 @@ const Tomato = props => {
           />
         </g>
 
-        <AnimatePresence>
-          {props.pomo < 1 && (
-            <motion.g
-              clipPath="url(#clip-path)"
-              id="quarter_1"
-              data-name="quarter 1"
-              initial={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0.6, scale: 0.8, x: -40, y: -40 }}
-            >
-              <circle
-                cx={159}
-                cy={159.2}
-                r={127.83}
-                fill="url(#radial-gradient-4)"
-              />
-              <circle
-                cx={159}
-                cy={159.2}
-                r={127.83}
-                fill="url(#radial-gradient-5)"
-              />
-              <circle
-                cx={159}
-                cy={159.2}
-                r={127.83}
-                fill="url(#radial-gradient-6)"
-              />
-            </motion.g>
-          )}
-        </AnimatePresence>
+        <motion.g
+          clipPath="url(#clip-path)"
+          id="quarter_1"
+          data-name="quarter 1"
+          initial={{ opacity: 1, scale: 1 }}
+          animate={props.pomo < 1 ? 'start' : 'finish'}
+          variants={{
+            start: { opacity: 1, scale: 1, rotate: 0 },
+            finish: { opacity: 0, scale: 0.8, x: -60, y: -60, rotate: -20 },
+          }}
+          transition={{
+            type: 'tween',
+            duration: 0.3,
+            ease: [0.9, 0.2, 0.1, 0.1],
+          }}
+        >
+          <circle
+            cx={159}
+            cy={159.2}
+            r={127.83}
+            fill="url(#radial-gradient-4)"
+          />
+          <circle
+            cx={159}
+            cy={159.2}
+            r={127.83}
+            fill="url(#radial-gradient-5)"
+          />
+          <circle
+            cx={159}
+            cy={159.2}
+            r={127.83}
+            fill="url(#radial-gradient-6)"
+          />
+        </motion.g>
         <g clipPath="url(#clip-path-2)" id="quarter_2" data-name="quarter 2">
           <circle
             cx={159}
@@ -434,31 +451,29 @@ const Tomato = props => {
             fill="url(#radial-gradient-12)"
           />
         </g>
-        {props.pomo <= 4 && (
-          <g clipPath="url(#clip-path-4)" id="quarter_4" data-name="quarter 4">
-            <circle
-              cx={158}
-              cy={159.2}
-              r={127.83}
-              fill="url(#radial-gradient-13)"
-            />
-            <circle
-              cx={158}
-              cy={159.2}
-              r={127.83}
-              fill="url(#radial-gradient-14)"
-            />
-            <circle
-              cx={158}
-              cy={159.2}
-              r={127.83}
-              fill="url(#radial-gradient-15)"
-            />
-          </g>
-        )}
+        <g clipPath="url(#clip-path-4)" id="quarter_4" data-name="quarter 4">
+          <circle
+            cx={158}
+            cy={159.2}
+            r={127.83}
+            fill="url(#radial-gradient-13)"
+          />
+          <circle
+            cx={158}
+            cy={159.2}
+            r={127.83}
+            fill="url(#radial-gradient-14)"
+          />
+          <circle
+            cx={158}
+            cy={159.2}
+            r={127.83}
+            fill="url(#radial-gradient-15)"
+          />
+        </g>
       </g>
     </motion.svg>
-  );
-};
+  )
+}
 
-export default Tomato;
+export default Tomato

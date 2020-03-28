@@ -122,55 +122,5 @@ export const CircleButton = styled.div`
 `;
 
 export const Tomato = styled(TomatoSVG)`
-  /* #quarter_1 {
-    display: ${props => props.pomo >= 1 ? 'none' : 'inherit' };
-  }
-  #quarter_2 {
-    display: ${props => props.pomo >= 2 ? 'none' : 'inherit' };
-  }
-  #quarter_3 {
-    display: ${props => props.pomo >= 3 ? 'none' : 'inherit' };
-  }
-  #quarter_4 {
-    display: ${props => props.pomo >= 4 ? 'none' : 'inherit' };
-  } */
 
-  #seeds_1 {
-    ${props => props.pomo > 1 && 'display: none' };
-  }
-
-  #seeds_2 {
-    ${props => props.pomo > 2 && 'display: none' };
-  }
-
-  #seeds_3 {
-    ${props => props.pomo > 3 && 'display: none' };
-  }
-
-  #seeds_4 {
-    ${props => props.pomo > 4 && 'display: none' };
-  }
-
-  #seeds_5 {
-    ${props => props.pomo > 5 && 'display: none' };
-  }
-
-  #seeds_${props => props.pomo} {
-    
-    #seed_${props => props.pomo}-1 {
-      display: ${props => !props.isPomoActive || 1 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-2 {
-      display: ${props => !props.isPomoActive || 2 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-3 {
-      display: ${props => !props.isPomoActive || 3 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-4 {
-      display: ${props => !props.isPomoActive || 4 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-5 {
-      display: ${props => !props.isPomoActive || 5 > props.seeds ? 'none' : 'inherit'};
-    }
-  }
 `
