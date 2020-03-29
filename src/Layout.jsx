@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useReducer } from 'react'
+import React, { useEffect, useRef, useReducer } from 'react'
 import * as Styled from './Layout.styles'
 
 // import tomato from "./assets/tomato.svg";
@@ -7,12 +7,40 @@ import Tomato from './Tomato'
 const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500
 const FIVE_MINUTES_IN_SECONDS = 300
 
+/**
+ * Reducer function to be used with useReducer for all pomodoro state
+ * @param {Object} state - State object
+ * @param {Object} action
+ * @property {string} type - Action to run switch against
+ * @property {any} [payload] - Any additional information needed to update state
+ */
+
 function reducer(state, action) {
   const { time, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
 
   switch (action.type) {
     case 'START_NEW_POMO': {
-      return { ...state, isPomoActive: true, pomo: pomo + 1 }
+      const nextPomo = pomo === 4 ? 0 : pomo + 1
+      return { ...state, isPomoActive: true, pomo: nextPomo }
+    }
+    case 'TOGGLE_TIMER_ACTIVE': {
+      return { ...state, isTimerActive: !isTimerActive }
+    }
+    case 'UPDATE_TIME': {
+      return { ...state, time: action.payload }
+    }
+    case 'START_SHORT_BREAK': {
+      return { ...state, time: FIVE_MINUTES_IN_SECONDS, isPomoActive: false }
+    }
+    case 'END_BREAK': {
+      return {
+        ...state,
+        time: TWENTY_FIVE_MINUTES_IN_SECONDS,
+        isTimerActive: false,
+      }
+    }
+    default: {
+      return state
     }
   }
 }
@@ -33,6 +61,8 @@ function useInterval(callback, delay) {
       const id = setInterval(() => tick(id), delay)
       return () => clearInterval(id)
     }
+
+    return null
   }, [delay])
 }
 
@@ -71,20 +101,25 @@ const Layout = () => {
               'Time is up!',
               'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
             )
-            setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)
+            dispatch({
+              type: 'UPDATE_TIME',
+              payload: TWENTY_FIVE_MINUTES_IN_SECONDS,
+            })
           } else {
             sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
-            setTime(FIVE_MINUTES_IN_SECONDS)
+            dispatch({
+              type: 'START_SHORT_BREAK',
+            })
           }
-          setIsBreakTime(true)
-          setIsPomoActive(false)
         } else {
-          if (pomo === 4) setPomo(0)
-          sendNotification('Back to work! (╯▔皿▔)╯', 'Ganbatte!')
+          // Break is over
+          if (pomo === 4) {
+            sendNotification('Start a new tomato?')
+          } else {
+            sendNotification('Back to work! (╯▔皿▔)╯', 'Ganbatte!')
+          }
+          dispatch({ type: 'END_BREAK' })
           clearInterval(intervalId)
-          setIsBreakTime(false)
-          setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)
-          setIsTimerActive(false)
         }
       } else {
         setTime(time - 1)
@@ -109,7 +144,7 @@ const Layout = () => {
     if (!isPomoActive) {
       dispatch({ type: 'START_NEW_POMO' })
     }
-    setIsTimerActive(!isTimerActive)
+    dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })
   }
 
   return (
