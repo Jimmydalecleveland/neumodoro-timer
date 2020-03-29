@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useReducer } from 'react'
 import * as Styled from './Layout.styles'
 
 // import tomato from "./assets/tomato.svg";
@@ -6,6 +6,16 @@ import Tomato from './Tomato'
 
 const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500
 const FIVE_MINUTES_IN_SECONDS = 300
+
+function reducer(state, action) {
+  const { time, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+
+  switch (action.type) {
+    case 'START_NEW_POMO': {
+      return { ...state, isPomoActive: true, pomo: pomo + 1 }
+    }
+  }
+}
 
 function useInterval(callback, delay) {
   const savedCallback = useRef()
@@ -20,36 +30,40 @@ function useInterval(callback, delay) {
     }
 
     if (delay !== null) {
-      let id = setInterval(() => tick(id), delay)
+      const id = setInterval(() => tick(id), delay)
       return () => clearInterval(id)
     }
   }, [delay])
 }
 
+const initialState = {
+  time: TWENTY_FIVE_MINUTES_IN_SECONDS,
+  pomo: 0,
+  isPomoActive: false,
+  isTimerActive: false,
+  areAlertsOn: true,
+}
+
 const Layout = () => {
-  const [time, setTime] = useState(TWENTY_FIVE_MINUTES_IN_SECONDS)
-  const [pomo, setPomo] = useState(0)
-  const [isPomoActive, setIsPomoActive] = useState(false)
-  const [isTimerActive, setIsTimerActive] = useState(false)
-  const [isBreakTime, setIsBreakTime] = useState(false)
-  const [areAlertsOn, setAreAlertsOn] = useState(true)
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { time, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
-    if (minutes < 10) minutes = '0' + minutes
-    if (seconds < 10) seconds = '0' + seconds
+    if (minutes < 10) minutes = `0${minutes}`
+    if (seconds < 10) seconds = `0${seconds}`
     return `${minutes}:${seconds}`
   }
 
   const sendNotification = (title, body) => {
     if (areAlertsOn) {
-      new Notification(title, { body })
+      Notification(title, { body })
     }
   }
 
   useInterval(
-    intervalId => {
+    (intervalId) => {
       if (time <= 0) {
         if (isPomoActive) {
           if (pomo === 4) {
@@ -87,15 +101,13 @@ const Layout = () => {
       const minutes = Math.ceil(time / 60)
       console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
       return seedsBehindQuarters + Math.ceil(minutes / 5)
-    } else {
-      return seedsBehindQuarters
     }
+    return seedsBehindQuarters
   }
 
   const startStopTimer = () => {
     if (!isPomoActive) {
-      setIsPomoActive(true)
-      setPomo(pomo + 1)
+      dispatch({ type: 'START_NEW_POMO' })
     }
     setIsTimerActive(!isTimerActive)
   }
@@ -128,7 +140,7 @@ const Layout = () => {
               type="checkbox"
               onClick={() => setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)}
             />
-            <span></span>
+            <span />
           </Styled.Toggle>
           <Styled.Toggle>
             <input

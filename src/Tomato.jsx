@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import AnimateSeed from './Seed'
 
 const tweenTransition = {
@@ -8,12 +8,7 @@ const tweenTransition = {
   ease: [0.9, 0.2, 0.1, 0.1],
 }
 
-const tomatoSliceVariants = {
-  start: { opacity: 1, scale: 1, rotate: 0 },
-  finish: { opacity: 0, scale: 0.8, x: -60, y: -60, rotate: -20 },
-}
-
-const Tomato = props => {
+const Tomato = ({ seeds, pomo }) => {
   return (
     <motion.svg viewBox="0 0 318.34 318.34">
       <defs>
@@ -169,7 +164,7 @@ const Tomato = props => {
           {'.cls-1{fill:none}.cls-7{fill:#aa2f1f}.cls-8{fill:#f4e39a}'}
         </style>
       </defs>
-      <title>{'tomato9'}</title>
+      <title>tomato9</title>
       <g id="Layer_2" data-name="Layer 2">
         <circle
           cx={159.17}
@@ -239,35 +234,35 @@ const Tomato = props => {
 
         <g id="seeds_1" data-name="seeds 1">
           <AnimateSeed
-            isShown={props.seeds >= 20}
+            isShown={seeds >= 20}
             id="seed20"
             coords={{ x: -30, y: -70 }}
             className="cls-8"
             d="M147.05 75.7c.53 2.54-.93 8.65-2.29 13.45a3.71 3.71 0 01-6.46 1.34c-3.16-3.86-6.93-8.88-7.45-11.42a8.27 8.27 0 1116.2-3.37z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 19}
+            isShown={seeds >= 19}
             id="seed19"
             coords={{ x: -40, y: -60 }}
             className="cls-8"
             d="M126 82.05c1.12 2.34 1.16 8.61 1 13.6a3.73 3.73 0 01-6 2.85c-4-3-8.85-7-10-9.32a8.28 8.28 0 0115-7.13z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 18}
+            isShown={seeds >= 18}
             id="seed18"
             coords={{ x: -60, y: -60 }}
             className="cls-8"
             d="M106.35 93.77c1.83 1.84 4 7.74 5.46 12.5a3.72 3.72 0 01-4.67 4.67c-4.76-1.5-10.66-3.63-12.5-5.47a8.28 8.28 0 0111.71-11.7z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 17}
+            isShown={seeds >= 17}
             id="seed17"
             coords={{ x: -60, y: -20 }}
             className="cls-8"
             d="M92.25 112c2.43.91 6.82 5.4 10.15 9.12a3.72 3.72 0 01-2.31 6.18c-5 .61-11.21 1.11-13.64.2a8.27 8.27 0 115.8-15.5z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 16}
+            isShown={seeds >= 16}
             id="seed16"
             coords={{ x: -70, y: 0 }}
             className="cls-8"
@@ -276,35 +271,35 @@ const Tomato = props => {
         </g>
         <g id="seeds_2" data-name="seeds 2">
           <AnimateSeed
-            isShown={props.seeds >= 15}
+            isShown={seeds >= 15}
             id="seed15"
             coords={{ x: -70, y: 10 }}
             className="cls-8"
             d="M74.73 173.25c2.54-.53 8.64.93 13.45 2.29a3.72 3.72 0 011.34 6.46c-3.87 3.16-8.89 6.93-11.43 7.46a8.28 8.28 0 01-3.36-16.21z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 14}
+            isShown={seeds >= 14}
             id="seed14"
             coords={{ x: -60, y: 20 }}
             className="cls-8"
             d="M81.07 194.36c2.34-1.12 8.62-1.17 13.61-1a3.71 3.71 0 012.84 5.95c-3 4-7 8.85-9.31 10a8.27 8.27 0 11-7.14-14.93z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 13}
+            isShown={seeds >= 13}
             id="seed13"
             coords={{ x: -60, y: 60 }}
             className="cls-8"
             d="M93.8 215c1.83-1.84 7.73-4 12.49-5.47a3.72 3.72 0 014.67 4.67c-1.5 4.76-3.63 10.67-5.46 12.5A8.27 8.27 0 0193.8 215z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 12}
+            isShown={seeds >= 12}
             id="seed12"
             coords={{ x: -40, y: 60 }}
             className="cls-8"
             d="M110 230.05c.91-2.43 5.4-6.82 9.11-10.15a3.71 3.71 0 016.18 2.31c.61 5 1.12 11.21.21 13.64a8.27 8.27 0 01-15.5-5.8z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 11}
+            isShown={seeds >= 11}
             id="seed11"
             coords={{ x: 0, y: 70 }}
             className="cls-8"
@@ -313,35 +308,35 @@ const Tomato = props => {
         </g>
         <g id="seeds_3" data-name="seeds 3">
           <AnimateSeed
-            isShown={props.seeds >= 10}
+            isShown={seeds >= 10}
             id="seed10"
             coords={{ x: 10, y: 70 }}
             className="cls-8"
             d="M176.27 243.58c-.52-2.55.93-8.65 2.29-13.45a3.73 3.73 0 016.47-1.35c3.16 3.87 6.92 8.89 7.45 11.43a8.28 8.28 0 01-16.21 3.37z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 9}
+            isShown={seeds >= 9}
             id="seed9"
             coords={{ x: 40, y: 60 }}
             className="cls-8"
             d="M197.38 237.23c-1.12-2.34-1.16-8.62-1-13.61a3.72 3.72 0 016-2.84c4 3 8.84 7 10 9.31a8.27 8.27 0 11-14.93 7.14z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 8}
+            isShown={seeds >= 8}
             id="seed8"
             coords={{ x: 60, y: 60 }}
             className="cls-8"
             d="M219.32 227c-2.1-1.52-5.15-7-7.38-11.47a3.72 3.72 0 013.86-5.35c4.94.72 11.11 1.89 13.21 3.41a8.27 8.27 0 11-9.69 13.41z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 7}
+            isShown={seeds >= 7}
             id="seed7"
             coords={{ x: 60, y: 20 }}
             className="cls-8"
             d="M232.08 208.33c-2.44-.91-6.82-5.41-10.16-9.12a3.72 3.72 0 012.32-6.18c4.95-.61 11.21-1.12 13.64-.21a8.28 8.28 0 01-5.8 15.51z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 6}
+            isShown={seeds >= 6}
             id="seed6"
             coords={{ x: 70, y: 0 }}
             className="cls-8"
@@ -350,35 +345,35 @@ const Tomato = props => {
         </g>
         <g id="seeds_4" data-name="seeds 4">
           <AnimateSeed
-            isShown={props.seeds >= 5}
+            isShown={seeds >= 5}
             id="seed5"
             coords={{ x: 70, y: -10 }}
             className="cls-8"
             d="M244.92 144.43c-2.58.3-8.53-1.7-13.19-3.48a3.71 3.71 0 01-.77-6.55c4.13-2.81 9.47-6.11 12-6.41a8.28 8.28 0 011.91 16.44z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 4}
+            isShown={seeds >= 4}
             id="seed4"
             coords={{ x: 60, y: -20 }}
             className="cls-8"
             d="M239.26 123.92c-2.35 1.12-8.62 1.16-13.61 1a3.72 3.72 0 01-2.85-6c3-4 7-8.84 9.32-10a8.27 8.27 0 017.14 14.93z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 3}
+            isShown={seeds >= 3}
             id="seed3"
             coords={{ x: 60, y: -60 }}
             className="cls-8"
             d="M228.53 102.32c-1.83 1.84-7.74 4-12.5 5.47a3.73 3.73 0 01-4.67-4.67c1.5-4.76 3.63-10.67 5.47-12.5a8.27 8.27 0 0111.7 11.7z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 2}
+            isShown={seeds >= 2}
             id="seed2"
             coords={{ x: 40, y: -60 }}
             className="cls-8"
             d="M211.35 88.23c-.91 2.43-5.4 6.81-9.11 10.15a3.73 3.73 0 01-6.19-2.32c-.6-5-1.11-11.21-.2-13.64a8.28 8.28 0 0115.5 5.81z"
           />
           <AnimateSeed
-            isShown={props.seeds >= 1}
+            isShown={seeds >= 1}
             id="seed1"
             coords={{ x: 0, y: -70 }}
             className="cls-8"
@@ -391,7 +386,7 @@ const Tomato = props => {
           id="quarter_1"
           data-name="quarter 1"
           initial={{ opacity: 1, scale: 1 }}
-          animate={props.pomo < 1 ? 'start' : 'finish'}
+          animate={pomo < 1 ? 'start' : 'finish'}
           variants={{
             start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
             finish: { opacity: 0, scale: 0.8, x: -60, y: -60, rotate: -20 },
@@ -422,7 +417,7 @@ const Tomato = props => {
           id="quarter_2"
           data-name="quarter 2"
           initial={{ opacity: 1, scale: 1 }}
-          animate={props.pomo < 2 ? 'start' : 'finish'}
+          animate={pomo < 2 ? 'start' : 'finish'}
           variants={{
             start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
             finish: { opacity: 0, scale: 0.8, x: -60, y: 60, rotate: -20 },
@@ -453,7 +448,7 @@ const Tomato = props => {
           id="quarter_3"
           data-name="quarter 3"
           initial={{ opacity: 1, scale: 1 }}
-          animate={props.pomo < 3 ? 'start' : 'finish'}
+          animate={pomo < 3 ? 'start' : 'finish'}
           variants={{
             start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
             finish: { opacity: 0, scale: 0.8, x: 60, y: 60, rotate: -20 },
@@ -484,7 +479,7 @@ const Tomato = props => {
           id="quarter_4"
           data-name="quarter 4"
           initial={{ opacity: 1, scale: 1 }}
-          animate={props.pomo < 4 ? 'start' : 'finish'}
+          animate={pomo < 4 ? 'start' : 'finish'}
           variants={{
             start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
             finish: { opacity: 0, scale: 0.8, x: 60, y: -60, rotate: -20 },
