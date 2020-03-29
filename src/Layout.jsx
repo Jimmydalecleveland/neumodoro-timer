@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useRef } from 'react'
 
 import reducer from './reducer'
 import useInterval from './useInterval'
@@ -12,11 +12,28 @@ const initialState = {
   isPomoActive: false,
   isTimerActive: false,
   areAlertsOn: true,
+  mode: 'Pomodoro',
+}
+
+const colorVariants = {
+  Pomodoro: {
+    backgroundColor: '#ff6138',
+  },
+  'Short Break': {
+    backgroundColor: '#06c7f3',
+  },
 }
 
 const Layout = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const { time, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+  const { time, mode, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+  const modeSwitchConstraintsRef = useRef(null)
+  console.log(modeSwitchConstraintsRef)
+
+  if (modeSwitchConstraintsRef.current) {
+    console.log('GOT CURRENT')
+    console.log(modeSwitchConstraintsRef.current.clientWidth)
+  }
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
@@ -94,7 +111,22 @@ const Layout = () => {
       <Styled.Container>
         <h1>Neumodoro Timer</h1>
 
+        <Styled.SwitchWrapper
+          ref={modeSwitchConstraintsRef}
+          animate={mode}
+          variants={colorVariants}
+        >
+          <Styled.Switch
+            animate={{ x: mode === 'Pomodoro' ? 0 : 100 }}
+            // drag="x"
+            // dragConstraints={modeSwitchConstraintsRef}
+          >
+            {mode}
+          </Styled.Switch>
+        </Styled.SwitchWrapper>
+
         <Tomato
+          style={{ width: '70%' }}
           pomo={pomo}
           isPomoActive={isPomoActive}
           seeds={currentSeeds()}
@@ -117,7 +149,14 @@ const Layout = () => {
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onClick={() =>
+                dispatch({
+                  type: 'SWITCH_MODE',
+                  payload: mode === 'Pomodoro' ? 'Short Break' : 'Pomodoro',
+                })}
+            />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import 'typeface-poppins'
 
 export const Wrapper = styled.div`
@@ -43,6 +44,9 @@ export const Wrapper = styled.div`
 `
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   padding: 30px;
   background: #eaf2f9;
@@ -55,6 +59,7 @@ export const Raised = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 20px 25px;
   background: #e6eef7;
   box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
@@ -71,10 +76,44 @@ export const Raised = styled.div`
   }
 `
 
+export const SwitchWrapper = styled(motion.div)`
+  margin: 0 0 40px;
+  border-radius: 13px;
+  width: 60%;
+  height: 40px;
+  background-color: #ff6138;
+  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,
+    inset -5px -5px 10px #ffb6a1;
+  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+`
+
+export const Switch = styled(motion.div)`
+  height: 100%;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  background: #e6eef7;
+  border-radius: 13px;
+  box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),
+    5px 5px 10px rgba(111, 129, 149, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+`
+
 export const NavWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  width: 100%;
 `
 
 export const Toggle = styled.label`

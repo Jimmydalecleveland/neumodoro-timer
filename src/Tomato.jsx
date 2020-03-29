@@ -8,9 +8,9 @@ const tweenTransition = {
   ease: [0.9, 0.2, 0.1, 0.1],
 }
 
-const Tomato = ({ seeds, pomo }) => {
+const Tomato = ({ seeds, pomo, style }) => {
   return (
-    <motion.svg viewBox="0 0 318.34 318.34">
+    <motion.svg viewBox="0 0 318.34 318.34" style={style}>
       <defs>
         <radialGradient
           id="radial-gradient"
