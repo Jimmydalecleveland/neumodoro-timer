@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useReducer } from 'react'
 import * as Styled from './Layout.styles'
 
-// import tomato from "./assets/tomato.svg";
 import Tomato from './Tomato'
 
-const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500
+const TWENTY_FIVE_MINUTES_IN_SECONDS = 3
+// const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500
 const FIVE_MINUTES_IN_SECONDS = 300
 
 /**
@@ -16,11 +16,29 @@ const FIVE_MINUTES_IN_SECONDS = 300
  */
 
 function reducer(state, action) {
-  const { time, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+  const { time, pomo, isTimerActive, areAlertsOn } = state
+  if (action.type !== 'DECREMENT_TIMER') {
+    console.log(
+      '%cDispatch Fired',
+      'color: tomato; font-weight: bold',
+      `
+      type: ${action.type}
+      payload: ${action.payload}
+    `,
+      state
+    )
+  }
 
   switch (action.type) {
+    case 'TOGGLE_ALERTS': {
+      return { ...state, areAlertsOn: !areAlertsOn }
+    }
+    case 'DECREMENT_TIMER': {
+      return { ...state, time: time - 1 }
+    }
     case 'START_NEW_POMO': {
-      const nextPomo = pomo === 4 ? 0 : pomo + 1
+      const nextPomo = pomo === 4 ? 1 : pomo + 1
+
       return { ...state, isPomoActive: true, pomo: nextPomo }
     }
     case 'TOGGLE_TIMER_ACTIVE': {
@@ -32,11 +50,21 @@ function reducer(state, action) {
     case 'START_SHORT_BREAK': {
       return { ...state, time: FIVE_MINUTES_IN_SECONDS, isPomoActive: false }
     }
+    case 'START_LONG_BREAK': {
+      return {
+        ...state,
+        time: TWENTY_FIVE_MINUTES_IN_SECONDS,
+        isPomoActive: false,
+      }
+    }
     case 'END_BREAK': {
+      const wasLongBreak = pomo === 4
+
       return {
         ...state,
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
         isTimerActive: false,
+        pomo: wasLongBreak ? 0 : pomo,
       }
     }
     default: {
@@ -62,13 +90,13 @@ function useInterval(callback, delay) {
       return () => clearInterval(id)
     }
 
-    return null
+    return undefined
   }, [delay])
 }
 
 const initialState = {
   time: TWENTY_FIVE_MINUTES_IN_SECONDS,
-  pomo: 0,
+  pomo: 3,
   isPomoActive: false,
   isTimerActive: false,
   areAlertsOn: true,
@@ -88,7 +116,14 @@ const Layout = () => {
 
   const sendNotification = (title, body) => {
     if (areAlertsOn) {
-      Notification(title, { body })
+      // TODO: is there a way to store this one time and call .show()
+      // on it with updated messages?
+      const notification = new Notification(title, {
+        silent: false,
+        icon: 'icon-location',
+        urgency: 'normal',
+        body,
+      })
     }
   }
 
@@ -101,31 +136,26 @@ const Layout = () => {
               'Time is up!',
               'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
             )
-            dispatch({
-              type: 'UPDATE_TIME',
-              payload: TWENTY_FIVE_MINUTES_IN_SECONDS,
-            })
+            dispatch({ type: 'START_LONG_BREAK' })
           } else {
             sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
-            dispatch({
-              type: 'START_SHORT_BREAK',
-            })
+            dispatch({ type: 'START_SHORT_BREAK' })
           }
         } else {
           // Break is over
           if (pomo === 4) {
             sendNotification('Start a new tomato?')
           } else {
-            sendNotification('Back to work! (╯▔皿▔)╯', 'Ganbatte!')
+            sendNotification('Back to work! (╯▔皿▔)╯')
           }
           dispatch({ type: 'END_BREAK' })
           clearInterval(intervalId)
         }
       } else {
-        setTime(time - 1)
+        dispatch({ type: 'DECREMENT_TIMER' })
       }
     },
-    isTimerActive ? 2 : null
+    isTimerActive ? 1000 : null
   )
 
   const currentSeeds = () => {
@@ -171,23 +201,17 @@ const Layout = () => {
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
-            <input
-              type="checkbox"
-              onClick={() => setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)}
-            />
+            <input type="checkbox" />
+            <span />
+          </Styled.Toggle>
+          <Styled.Toggle>
+            <input type="checkbox" />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
             <input
               type="checkbox"
-              onClick={() => setTime(FIVE_MINUTES_IN_SECONDS)}
-            />
-            <span />
-          </Styled.Toggle>
-          <Styled.Toggle>
-            <input
-              type="checkbox"
-              onClick={() => setAreAlertsOn(!areAlertsOn)}
+              onClick={() => dispatch({ type: 'TOGGLE_ALERTS' })}
             />
             <span />
           </Styled.Toggle>
