@@ -1,8 +1,5 @@
-import styled from 'styled-components';
-import SVG from "react-inlinesvg";
-import 'typeface-poppins';
-
-import TomatoSVG from './Tomato'
+import styled from 'styled-components'
+import 'typeface-poppins'
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -43,7 +40,7 @@ export const Wrapper = styled.div`
   * {
     box-sizing: border-box;
   }
-`;
+`
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -52,7 +49,7 @@ export const Container = styled.div`
   width: 480px;
   box-shadow: 5px 5px 30px #c1c9d2;
   border-radius: 20px;
-`;
+`
 
 export const Raised = styled.div`
   display: flex;
@@ -72,13 +69,13 @@ export const Raised = styled.div`
     font-size: 20px;
     font-weight: 500;
   }
-`;
+`
 
 export const NavWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
-`;
+`
 
 export const Toggle = styled.label`
   input[type='checkbox'] {
@@ -103,7 +100,7 @@ export const Toggle = styled.label`
     box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,
       inset -5px -5px 10px #ffffff;
   }
-`;
+`
 
 export const CircleButton = styled.div`
   position: relative;
@@ -119,8 +116,4 @@ export const CircleButton = styled.div`
   span {
     position: absolute;
   }
-`;
-
-export const Tomato = styled(TomatoSVG)`
-
 `
