@@ -44,12 +44,6 @@ const Layout = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { time, mode, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
   const modeSwitchConstraintsRef = useRef(null)
-  console.log(modeSwitchConstraintsRef)
-
-  if (modeSwitchConstraintsRef.current) {
-    console.log('GOT CURRENT')
-    console.log(modeSwitchConstraintsRef.current.clientWidth)
-  }
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
@@ -122,6 +116,18 @@ const Layout = () => {
     dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })
   }
 
+  const getSwitchPosition = () => {
+    const switchWidth = 120
+
+    if (mode === 'Pomodoro') {
+      return 0
+    }
+    if (mode === 'Short Break') {
+      return modeSwitchConstraintsRef.current.clientWidth / 2 - switchWidth / 2
+    }
+    return modeSwitchConstraintsRef.current.clientWidth - switchWidth
+  }
+
   return (
     <Styled.Wrapper>
       <Styled.Container>
@@ -156,7 +162,7 @@ const Layout = () => {
           </Styled.SwitchText>
           <Styled.Switch
             animate={{
-              x: mode === 'Pomodoro' ? 0 : mode === 'Short Break' ? 115 : 230,
+              x: getSwitchPosition(),
             }}
             transition={{
               type: 'spring',

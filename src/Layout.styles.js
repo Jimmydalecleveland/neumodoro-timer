@@ -77,7 +77,7 @@ export const Raised = styled.div`
 `
 
 export const SwitchWrapper = styled(motion.div)`
-  margin: 0 0 40px;
+  margin: 0 0 10px;
   border-radius: 13px;
   width: 83%;
   height: 50px;
