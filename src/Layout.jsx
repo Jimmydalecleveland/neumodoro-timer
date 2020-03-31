@@ -1,107 +1,187 @@
-import React, { useState, useEffect, useRef } from "react";
-import * as Styled from "./Layout.styles";
+import React, { useReducer, useRef } from 'react'
 
-import tomato from "./assets/tomato.svg";
+import reducer from './reducer'
+import useInterval from './useInterval'
+import Tomato from './Tomato'
+import * as Styled from './Layout.styles'
+import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 
-const TWENTY_FIVE_MINUTES_IN_SECONDS = 1500;
-const FIVE_MINUTES_IN_SECONDS = 300;
+const initialState = {
+  time: TWENTY_FIVE_MINUTES_IN_SECONDS,
+  pomo: 0,
+  isPomoActive: false,
+  isTimerActive: false,
+  areAlertsOn: true,
+  mode: 'Pomodoro',
+}
 
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
+// Higher contrast
+// const colorVariants = {
+//   Pomodoro: {
+//     backgroundColor: '#ff6138',
+//   },
+//   'Short Break': {
+//     backgroundColor: '#06c7f3',
+//   },
+//   'Long Break': {
+//     backgroundColor: '#06c7f3',
+//   },
+// }
 
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  useEffect(() => {
-    function tick(id) {
-      savedCallback.current(id);
-    }
-
-    if (delay !== null) {
-      let id = setInterval(() => tick(id), delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
+const colorVariants = {
+  Pomodoro: {
+    backgroundColor: '#ffcec0',
+  },
+  'Short Break': {
+    backgroundColor: '#cedefa',
+  },
+  'Long Break': {
+    backgroundColor: '#d1d7f8',
+  },
 }
 
 const Layout = () => {
-  const [time, setTime] = useState(3);
-  const [pomo, setPomo] = useState(0);
-  const [isPomoActive, setIsPomoActive] = useState(false);
-  const [isTimerActive, setIsTimerActive] = useState(false);
-  const [isBreakTime, setIsBreakTime] = useState(false);
-  const [areAlertsOn, setAreAlertsOn] = useState(true);
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { time, mode, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+  const modeSwitchConstraintsRef = useRef(null)
 
   const displayTime = () => {
-    let minutes = Math.floor(time / 60).toString();
-    let seconds = Math.floor(time % 60).toString();
-    if (minutes < 10) minutes = "0" + minutes;
-    if (seconds < 10) seconds = "0" + seconds;
-    return `${minutes}:${seconds}`;
-  };
+    let minutes = Math.floor(time / 60).toString()
+    let seconds = Math.floor(time % 60).toString()
+    if (minutes < 10) minutes = `0${minutes}`
+    if (seconds < 10) seconds = `0${seconds}`
+    return `${minutes}:${seconds}`
+  }
 
   const sendNotification = (title, body) => {
     if (areAlertsOn) {
-      new Notification(title, { body });
+      // TODO: is there a way to store this one time and call .show()
+      // on it with updated messages?
+      const notification = new Notification(title, {
+        silent: false,
+        icon: 'icon-location',
+        urgency: 'normal',
+        body,
+      })
     }
-  };
+  }
 
   useInterval(
-    intervalId => {
+    (intervalId) => {
       if (time <= 0) {
         if (isPomoActive) {
           if (pomo === 4) {
             sendNotification(
-              "Time is up!",
-              "You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break."
-            );
-            setTime(5);
+              'Time is up!',
+              'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
+            )
+            dispatch({ type: 'START_LONG_BREAK' })
           } else {
-            sendNotification("Time is up!", "Will you take a 5?!?! (￣﹃￣)");
-            setTime(2);
+            sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
+            dispatch({ type: 'START_SHORT_BREAK' })
           }
-          setIsBreakTime(true);
-          setIsPomoActive(false);
         } else {
-          if (pomo === 4) setPomo(0);
-          sendNotification("Back to work! (╯▔皿▔)╯", "Ganbatte!");
-          clearInterval(intervalId);
-          setIsBreakTime(false);
-          setTime(3);
-          setIsTimerActive(false);
+          // Break is over
+          if (pomo === 4) {
+            sendNotification('Start a new tomato?')
+          } else {
+            sendNotification('Back to work! (╯▔皿▔)╯')
+          }
+          dispatch({ type: 'END_BREAK' })
+          clearInterval(intervalId)
         }
       } else {
-        setTime(time - 1);
+        dispatch({ type: 'DECREMENT_TIMER' })
       }
     },
     isTimerActive ? 1000 : null
-  );
+  )
 
   const currentSeeds = () => {
-    const minutes = Math.ceil(time / 60);
-    return Math.ceil(minutes / 5);
-  };
+    const seedsBehindQuarters = 20 - pomo * 5
+    // If in the middle of a pomodoro, use time to calculate
+    // how many seeds to show
+    if (isPomoActive) {
+      const minutes = Math.ceil(time / 60)
+      console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
+      return seedsBehindQuarters + Math.ceil(minutes / 5)
+    }
+    return seedsBehindQuarters
+  }
 
   const startStopTimer = () => {
     if (!isPomoActive) {
-      setIsPomoActive(true);
-      setPomo(pomo + 1);
+      dispatch({ type: 'START_NEW_POMO' })
     }
-    setIsTimerActive(!isTimerActive);
-  };
+    dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })
+  }
+
+  const getSwitchPosition = () => {
+    const switchWidth = 120
+
+    if (mode === 'Pomodoro') {
+      return 0
+    }
+    if (mode === 'Short Break') {
+      return modeSwitchConstraintsRef.current.clientWidth / 2 - switchWidth / 2
+    }
+    return modeSwitchConstraintsRef.current.clientWidth - switchWidth
+  }
 
   return (
     <Styled.Wrapper>
       <Styled.Container>
         <h1>Neumodoro Timer</h1>
 
-        <Styled.Tomato
-          src={tomato}
+        <Styled.SwitchWrapper
+          ref={modeSwitchConstraintsRef}
+          animate={mode}
+          variants={colorVariants}
+          transition={{ duration: 0.6 }}
+        >
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Pomodoro' })
+            }
+          >
+            Pomodoro
+          </Styled.SwitchText>
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Short Break' })
+            }
+          >
+            Short Break
+          </Styled.SwitchText>
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Long Break' })
+            }
+          >
+            Long Break
+          </Styled.SwitchText>
+          <Styled.Switch
+            animate={{
+              x: getSwitchPosition(),
+            }}
+            transition={{
+              type: 'spring',
+              mass: '0.2',
+              damping: '6.3',
+            }}
+            // drag="x"
+            // dragConstraints={modeSwitchConstraintsRef}
+          >
+            {mode}
+          </Styled.Switch>
+        </Styled.SwitchWrapper>
+
+        <Tomato
+          style={{ width: '70%' }}
           pomo={pomo}
           isPomoActive={isPomoActive}
           seeds={currentSeeds()}
-        ></Styled.Tomato>
+        />
 
         <Styled.Raised>
           <h4>Time Left: </h4>
@@ -116,30 +196,32 @@ const Layout = () => {
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
-            <input
-              type="checkbox"
-              onClick={() => setTime(TWENTY_FIVE_MINUTES_IN_SECONDS)}
-            />
-            <span></span>
+            <input type="checkbox" />
+            <span />
           </Styled.Toggle>
           <Styled.Toggle>
             <input
               type="checkbox"
-              onClick={() => setTime(FIVE_MINUTES_IN_SECONDS)}
+              onClick={() =>
+                dispatch({
+                  type: 'SWITCH_MODE',
+                  payload: mode === 'Pomodoro' ? 'Short Break' : 'Pomodoro',
+                })
+              }
             />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
             <input
               type="checkbox"
-              onClick={() => setAreAlertsOn(!areAlertsOn)}
+              onClick={() => dispatch({ type: 'TOGGLE_ALERTS' })}
             />
             <span />
           </Styled.Toggle>
         </Styled.NavWrapper>
       </Styled.Container>
     </Styled.Wrapper>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import SVG from "react-inlinesvg";
-import 'typeface-poppins';
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import 'typeface-poppins'
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -41,21 +41,25 @@ export const Wrapper = styled.div`
   * {
     box-sizing: border-box;
   }
-`;
+`
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   padding: 30px;
   background: #eaf2f9;
   width: 480px;
   box-shadow: 5px 5px 30px #c1c9d2;
   border-radius: 20px;
-`;
+`
 
 export const Raised = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 20px 25px;
   background: #e6eef7;
   box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
@@ -70,13 +74,70 @@ export const Raised = styled.div`
     font-size: 20px;
     font-weight: 500;
   }
-`;
+`
+
+export const SwitchWrapper = styled(motion.div)`
+  margin: 0 0 10px;
+  border-radius: 13px;
+  width: 83%;
+  height: 50px;
+  background-color: #eaf2f9;
+  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,
+    inset -5px -5px 10px #ffb6a1;
+  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+`
+
+export const SwitchText = styled.div`
+  flex: 0 0 30%;
+  padding: 7px 10px;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(46, 46, 46, 0.4);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+`
+
+export const Switch = styled(motion.div)`
+  height: 100%;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  background: #e6eef7;
+  border-radius: 13px;
+  color: #6e7d9b;
+  box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),
+    5px 5px 10px rgba(111, 129, 149, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+  position: absolute;
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+`
 
 export const NavWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
-`;
+  width: 100%;
+`
 
 export const Toggle = styled.label`
   input[type='checkbox'] {
@@ -101,7 +162,7 @@ export const Toggle = styled.label`
     box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,
       inset -5px -5px 10px #ffffff;
   }
-`;
+`
 
 export const CircleButton = styled.div`
   position: relative;
@@ -116,59 +177,5 @@ export const CircleButton = styled.div`
 
   span {
     position: absolute;
-  }
-`;
-
-export const Tomato = styled(SVG)`
-  #quarter_1 {
-    display: ${props => props.pomo >= 1 ? 'none' : 'inherit' };
-  }
-  #quarter_2 {
-    display: ${props => props.pomo >= 2 ? 'none' : 'inherit' };
-  }
-  #quarter_3 {
-    display: ${props => props.pomo >= 3 ? 'none' : 'inherit' };
-  }
-  #quarter_4 {
-    display: ${props => props.pomo >= 4 ? 'none' : 'inherit' };
-  }
-
-  #seeds_1 {
-    ${props => props.pomo > 1 && 'display: none' };
-  }
-
-  #seeds_2 {
-    ${props => props.pomo > 2 && 'display: none' };
-  }
-
-  #seeds_3 {
-    ${props => props.pomo > 3 && 'display: none' };
-  }
-
-  #seeds_4 {
-    ${props => props.pomo > 4 && 'display: none' };
-  }
-
-  #seeds_5 {
-    ${props => props.pomo > 5 && 'display: none' };
-  }
-
-  #seeds_${props => props.pomo} {
-    
-    #seed_${props => props.pomo}-1 {
-      display: ${props => !props.isPomoActive || 1 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-2 {
-      display: ${props => !props.isPomoActive || 2 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-3 {
-      display: ${props => !props.isPomoActive || 3 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-4 {
-      display: ${props => !props.isPomoActive || 4 > props.seeds ? 'none' : 'inherit'};
-    }
-    #seed_${props => props.pomo}-5 {
-      display: ${props => !props.isPomoActive || 5 > props.seeds ? 'none' : 'inherit'};
-    }
   }
 `
