@@ -15,12 +15,28 @@ const initialState = {
   mode: 'Pomodoro',
 }
 
+// Higher contrast
+// const colorVariants = {
+//   Pomodoro: {
+//     backgroundColor: '#ff6138',
+//   },
+//   'Short Break': {
+//     backgroundColor: '#06c7f3',
+//   },
+//   'Long Break': {
+//     backgroundColor: '#06c7f3',
+//   },
+// }
+
 const colorVariants = {
   Pomodoro: {
-    backgroundColor: '#ff6138',
+    backgroundColor: '#ffcec0',
   },
   'Short Break': {
-    backgroundColor: '#06c7f3',
+    backgroundColor: '#cedefa',
+  },
+  'Long Break': {
+    backgroundColor: '#d1d7f8',
   },
 }
 
@@ -28,12 +44,6 @@ const Layout = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { time, mode, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
   const modeSwitchConstraintsRef = useRef(null)
-  console.log(modeSwitchConstraintsRef)
-
-  if (modeSwitchConstraintsRef.current) {
-    console.log('GOT CURRENT')
-    console.log(modeSwitchConstraintsRef.current.clientWidth)
-  }
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
@@ -106,6 +116,18 @@ const Layout = () => {
     dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })
   }
 
+  const getSwitchPosition = () => {
+    const switchWidth = 120
+
+    if (mode === 'Pomodoro') {
+      return 0
+    }
+    if (mode === 'Short Break') {
+      return modeSwitchConstraintsRef.current.clientWidth / 2 - switchWidth / 2
+    }
+    return modeSwitchConstraintsRef.current.clientWidth - switchWidth
+  }
+
   return (
     <Styled.Wrapper>
       <Styled.Container>
@@ -115,9 +137,38 @@ const Layout = () => {
           ref={modeSwitchConstraintsRef}
           animate={mode}
           variants={colorVariants}
+          transition={{ duration: 0.6 }}
         >
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Pomodoro' })
+            }
+          >
+            Pomodoro
+          </Styled.SwitchText>
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Short Break' })
+            }
+          >
+            Short Break
+          </Styled.SwitchText>
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Long Break' })
+            }
+          >
+            Long Break
+          </Styled.SwitchText>
           <Styled.Switch
-            animate={{ x: mode === 'Pomodoro' ? 0 : 100 }}
+            animate={{
+              x: getSwitchPosition(),
+            }}
+            transition={{
+              type: 'spring',
+              mass: '0.2',
+              damping: '6.3',
+            }}
             // drag="x"
             // dragConstraints={modeSwitchConstraintsRef}
           >
@@ -155,7 +206,8 @@ const Layout = () => {
                 dispatch({
                   type: 'SWITCH_MODE',
                   payload: mode === 'Pomodoro' ? 'Short Break' : 'Pomodoro',
-                })}
+                })
+              }
             />
             <span />
           </Styled.Toggle>
