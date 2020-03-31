@@ -37,7 +37,7 @@ function reducer(state, action) {
     case 'START_NEW_POMO': {
       const nextPomo = pomo === 4 ? 1 : pomo + 1
 
-      return { ...state, isPomoActive: true, pomo: nextPomo }
+      return { ...state, isPomoActive: true, pomo: nextPomo, mode: 'Pomodoro' }
     }
     case 'TOGGLE_TIMER_ACTIVE': {
       return { ...state, isTimerActive: !isTimerActive }
@@ -46,13 +46,19 @@ function reducer(state, action) {
       return { ...state, time: action.payload }
     }
     case 'START_SHORT_BREAK': {
-      return { ...state, time: FIVE_MINUTES_IN_SECONDS, isPomoActive: false }
+      return {
+        ...state,
+        time: FIVE_MINUTES_IN_SECONDS,
+        isPomoActive: false,
+        mode: 'Short Break',
+      }
     }
     case 'START_LONG_BREAK': {
       return {
         ...state,
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
         isPomoActive: false,
+        mode: 'Long Break',
       }
     }
     case 'END_BREAK': {

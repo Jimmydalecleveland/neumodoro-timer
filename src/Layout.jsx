@@ -15,15 +15,28 @@ const initialState = {
   mode: 'Pomodoro',
 }
 
+// Higher contrast
+// const colorVariants = {
+//   Pomodoro: {
+//     backgroundColor: '#ff6138',
+//   },
+//   'Short Break': {
+//     backgroundColor: '#06c7f3',
+//   },
+//   'Long Break': {
+//     backgroundColor: '#06c7f3',
+//   },
+// }
+
 const colorVariants = {
   Pomodoro: {
-    backgroundColor: '#ff6138',
+    backgroundColor: '#ffcec0',
   },
   'Short Break': {
-    backgroundColor: '#06c7f3',
+    backgroundColor: '#cedefa',
   },
   'Long Break': {
-    backgroundColor: '#06c7f3',
+    backgroundColor: '#d1d7f8',
   },
 }
 
@@ -118,6 +131,7 @@ const Layout = () => {
           ref={modeSwitchConstraintsRef}
           animate={mode}
           variants={colorVariants}
+          transition={{ duration: 0.6 }}
         >
           <Styled.SwitchText
             onClick={() =>
@@ -144,8 +158,13 @@ const Layout = () => {
             animate={{
               x: mode === 'Pomodoro' ? 0 : mode === 'Short Break' ? 115 : 230,
             }}
-          // drag="x"
-          // dragConstraints={modeSwitchConstraintsRef}
+            transition={{
+              type: 'spring',
+              mass: '0.2',
+              damping: '6.3',
+            }}
+            // drag="x"
+            // dragConstraints={modeSwitchConstraintsRef}
           >
             {mode}
           </Styled.Switch>
@@ -181,7 +200,8 @@ const Layout = () => {
                 dispatch({
                   type: 'SWITCH_MODE',
                   payload: mode === 'Pomodoro' ? 'Short Break' : 'Pomodoro',
-                })}
+                })
+              }
             />
             <span />
           </Styled.Toggle>
