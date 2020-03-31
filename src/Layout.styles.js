@@ -79,13 +79,26 @@ export const Raised = styled.div`
 export const SwitchWrapper = styled(motion.div)`
   margin: 0 0 40px;
   border-radius: 13px;
-  width: 60%;
-  height: 40px;
+  width: 83%;
+  height: 50px;
   background-color: #ff6138;
   box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,
     inset -5px -5px 10px #ffb6a1;
   box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),
     inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+`
+
+export const SwitchText = styled.div`
+  flex: 0 0 30%;
+  padding: 7px 10px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 `
 
 export const Switch = styled(motion.div)`
@@ -101,6 +114,7 @@ export const Switch = styled(motion.div)`
   box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),
     5px 5px 10px rgba(111, 129, 149, 0.5),
     -5px -5px 10px rgba(255, 255, 255, 0.5);
+  position: absolute;
 
   p {
     margin: 0;

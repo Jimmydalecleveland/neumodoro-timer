@@ -22,6 +22,9 @@ const colorVariants = {
   'Short Break': {
     backgroundColor: '#06c7f3',
   },
+  'Long Break': {
+    backgroundColor: '#06c7f3',
+  },
 }
 
 const Layout = () => {
@@ -116,10 +119,33 @@ const Layout = () => {
           animate={mode}
           variants={colorVariants}
         >
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Pomodoro' })
+            }
+          >
+            Pomodoro
+          </Styled.SwitchText>
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Short Break' })
+            }
+          >
+            Short Break
+          </Styled.SwitchText>
+          <Styled.SwitchText
+            onClick={() =>
+              dispatch({ type: 'SWITCH_MODE', payload: 'Long Break' })
+            }
+          >
+            Long Break
+          </Styled.SwitchText>
           <Styled.Switch
-            animate={{ x: mode === 'Pomodoro' ? 0 : 100 }}
-            // drag="x"
-            // dragConstraints={modeSwitchConstraintsRef}
+            animate={{
+              x: mode === 'Pomodoro' ? 0 : mode === 'Short Break' ? 115 : 230,
+            }}
+          // drag="x"
+          // dragConstraints={modeSwitchConstraintsRef}
           >
             {mode}
           </Styled.Switch>
