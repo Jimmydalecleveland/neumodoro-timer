@@ -1,8 +1,16 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import 'typeface-poppins'
+import DigitalClock from './assets/DigitalClock.woff'
 
 export const Wrapper = styled.div`
+  @font-face {
+    font-family: 'Digital Clock';
+    src: url('${DigitalClock}') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   height: 100vh;
   padding: 30px;
   font-family: 'Poppins', sans-serif;
@@ -177,5 +185,65 @@ export const CircleButton = styled.div`
 
   span {
     position: absolute;
+  }
+`
+
+export const TimeWrapper = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+`
+
+export const Time = styled.p`
+  z-index: 1;
+  margin: 0;
+  font-size: 64px;
+  font-family: 'Digital Clock', sans-serif;
+`
+
+export const TimeAfterImage = styled.p`
+  z-index: 0;
+  position: absolute;
+  margin: 0;
+  font-size: 64px;
+  font-family: 'Digital Clock', sans-serif;
+  color: #d7deeb;
+`
+
+export const PlayPauseWrapper = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #e6eef7;
+  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
+
+  height: 70px;
+  width: 70px;
+
+  &.paused {
+    svg {
+      margin-left: 7px;
+    }
+  }
+
+  &.playing {
+    border: solid 3px #fcfeff;
+    filter: blur(1px);
+    box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,
+      inset -5px -5px 10px #ffffff;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    path {
+      color: #31456a;
+    }
   }
 `

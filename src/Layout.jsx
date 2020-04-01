@@ -3,6 +3,8 @@ import React, { useReducer, useRef } from 'react'
 import reducer from './reducer'
 import useInterval from './useInterval'
 import Tomato from './Tomato'
+import PlayIcon from './PlayIcon'
+import PauseIcon from './PauseIcon'
 import * as Styled from './Layout.styles'
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 
@@ -183,16 +185,21 @@ const Layout = () => {
           seeds={currentSeeds()}
         />
 
-        <Styled.Raised>
-          <h4>Time Left: </h4>
-          <p>{displayTime()}</p>
-          <Styled.CircleButton>
-            <span>›</span>
-          </Styled.CircleButton>
-        </Styled.Raised>
+        <Styled.TimeWrapper>
+          <Styled.Time>{displayTime()}</Styled.Time>
+          <Styled.TimeAfterImage>88:88</Styled.TimeAfterImage>
+        </Styled.TimeWrapper>
+
+        <Styled.PlayPauseWrapper
+          onClick={startStopTimer}
+          className={isTimerActive ? 'playing' : 'paused'}
+        >
+          {isTimerActive ? <PauseIcon /> : <PlayIcon />}
+        </Styled.PlayPauseWrapper>
+
         <Styled.NavWrapper>
           <Styled.Toggle>
-            <input type="checkbox" onClick={startStopTimer} />
+            <input type="checkbox" />
             <span />
           </Styled.Toggle>
           <Styled.Toggle>
