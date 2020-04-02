@@ -77,10 +77,10 @@ const Layout = () => {
               'Time is up!',
               'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
             )
-            dispatch({ type: 'START_LONG_BREAK' })
+            dispatch({ type: 'AUTO_START_LONG_BREAK' })
           } else {
             sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
-            dispatch({ type: 'START_SHORT_BREAK' })
+            dispatch({ type: 'AUTO_START_SHORT_BREAK' })
           }
         } else {
           // Break is over
@@ -96,7 +96,7 @@ const Layout = () => {
         dispatch({ type: 'DECREMENT_TIMER' })
       }
     },
-    isTimerActive ? 1000 : null
+    isTimerActive ? 20 : null
   )
 
   const currentSeeds = () => {
@@ -108,14 +108,8 @@ const Layout = () => {
       console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
       return seedsBehindQuarters + Math.ceil(minutes / 5)
     }
-    return seedsBehindQuarters
-  }
 
-  const startStopTimer = () => {
-    if (!isPomoActive) {
-      dispatch({ type: 'START_NEW_POMO' })
-    }
-    dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })
+    return seedsBehindQuarters
   }
 
   const getSwitchPosition = () => {
@@ -141,24 +135,16 @@ const Layout = () => {
           variants={colorVariants}
           transition={{ duration: 0.6 }}
         >
-          <Styled.SwitchText
-            onClick={() =>
-              dispatch({ type: 'SWITCH_MODE', payload: 'Pomodoro' })
-            }
-          >
+          <Styled.SwitchText onClick={() => dispatch({ type: 'PREP_POMO' })}>
             Pomodoro
           </Styled.SwitchText>
           <Styled.SwitchText
-            onClick={() =>
-              dispatch({ type: 'SWITCH_MODE', payload: 'Short Break' })
-            }
+            onClick={() => dispatch({ type: 'PREP_SHORT_BREAK' })}
           >
             Short Break
           </Styled.SwitchText>
           <Styled.SwitchText
-            onClick={() =>
-              dispatch({ type: 'SWITCH_MODE', payload: 'Long Break' })
-            }
+            onClick={() => dispatch({ type: 'PREP_LONG_BREAK' })}
           >
             Long Break
           </Styled.SwitchText>
@@ -191,7 +177,7 @@ const Layout = () => {
         </Styled.TimeWrapper>
 
         <Styled.PlayPauseWrapper
-          onClick={startStopTimer}
+          onClick={() => dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })}
           className={isTimerActive ? 'playing' : 'paused'}
         >
           {isTimerActive ? <PauseIcon /> : <PlayIcon />}
