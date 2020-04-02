@@ -5,6 +5,9 @@ import useInterval from './useInterval'
 import Tomato from './Tomato'
 import PlayIcon from './PlayIcon'
 import PauseIcon from './PauseIcon'
+import NotificationIcon from './NotificationIcon'
+import SoundOffIcon from './SoundOffIcon'
+import SoundOnIcon from './SoundOnIcon'
 import * as Styled from './Layout.styles'
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 
@@ -14,6 +17,7 @@ const initialState = {
   isPomoActive: false,
   isTimerActive: false,
   areAlertsOn: true,
+  areSoundsOn: true,
   mode: 'Pomodoro',
 }
 
@@ -44,7 +48,15 @@ const colorVariants = {
 
 const Layout = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const { time, mode, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+  const {
+    time,
+    mode,
+    pomo,
+    isPomoActive,
+    isTimerActive,
+    areAlertsOn,
+    areSoundsOn,
+  } = state
   const modeSwitchConstraintsRef = useRef(null)
 
   const displayTime = () => {
@@ -157,8 +169,8 @@ const Layout = () => {
               mass: '0.2',
               damping: '6.3',
             }}
-            // drag="x"
-            // dragConstraints={modeSwitchConstraintsRef}
+          // drag="x"
+          // dragConstraints={modeSwitchConstraintsRef}
           >
             {mode}
           </Styled.Switch>
@@ -176,40 +188,31 @@ const Layout = () => {
           <Styled.TimeAfterImage>88:88</Styled.TimeAfterImage>
         </Styled.TimeWrapper>
 
-        <Styled.PlayPauseWrapper
-          onClick={() => dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })}
-          className={isTimerActive ? 'playing' : 'paused'}
-        >
-          {isTimerActive ? <PauseIcon /> : <PlayIcon />}
-        </Styled.PlayPauseWrapper>
-
         <Styled.NavWrapper>
           <Styled.Toggle>
-            <input type="checkbox" />
-            <span />
-          </Styled.Toggle>
-          <Styled.Toggle>
-            <input type="checkbox" />
-            <span />
-          </Styled.Toggle>
-          <Styled.Toggle>
+            {/* input needs to be controlled because the slider bar also can start/stop the timer */}
             <input
+              onClick={() => dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })}
               type="checkbox"
-              onClick={() =>
-                dispatch({
-                  type: 'SWITCH_MODE',
-                  payload: mode === 'Pomodoro' ? 'Short Break' : 'Pomodoro',
-                })
-              }
+              checked={isTimerActive}
             />
-            <span />
+            <span>{isTimerActive ? <PauseIcon /> : <PlayIcon />}</span>
           </Styled.Toggle>
           <Styled.Toggle>
             <input
               type="checkbox"
               onClick={() => dispatch({ type: 'TOGGLE_ALERTS' })}
             />
-            <span />
+            <span>
+              <NotificationIcon />
+            </span>
+          </Styled.Toggle>
+          <Styled.Toggle>
+            <input
+              type="checkbox"
+              onClick={() => dispatch({ type: 'TOGGLE_SOUNDS' })}
+            />
+            <span>{areSoundsOn ? <SoundOffIcon /> : <SoundOnIcon />}</span>
           </Styled.Toggle>
         </Styled.NavWrapper>
       </Styled.Container>

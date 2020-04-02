@@ -142,7 +142,7 @@ export const Switch = styled(motion.div)`
 
 export const NavWrapper = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 50px;
   width: 100%;
 `
@@ -156,6 +156,7 @@ export const Toggle = styled.label`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 24px;
     background: #e6eef7;
     box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
     border-radius: 20px;

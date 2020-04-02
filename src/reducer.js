@@ -27,6 +27,9 @@ function reducer(state, action) {
     case 'TOGGLE_ALERTS': {
       return { ...state, areAlertsOn: !state.areAlertsOn }
     }
+    case 'TOGGLE_SOUNDS': {
+      return { ...state, areSoundsOn: !state.areSoundsOn }
+    }
     case 'SWITCH_MODE': {
       return { ...state, mode: action.payload }
     }
