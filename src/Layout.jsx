@@ -196,24 +196,39 @@ const Layout = () => {
               type="checkbox"
               checked={isTimerActive}
             />
-            <span>{isTimerActive ? <PauseIcon /> : <PlayIcon />}</span>
+            <span />
           </Styled.Toggle>
+
+          <Styled.ToggleIcon1>
+            {isTimerActive ? <PauseIcon /> : <PlayIcon />}
+          </Styled.ToggleIcon1>
+
           <Styled.Toggle>
             <input
               type="checkbox"
+              checked={areAlertsOn}
               onClick={() => dispatch({ type: 'TOGGLE_ALERTS' })}
             />
-            <span>
-              <NotificationIcon />
-            </span>
+            <span />
           </Styled.Toggle>
+
+          <Styled.ToggleIcon2>
+            <NotificationIcon />
+          </Styled.ToggleIcon2>
+
           <Styled.Toggle>
             <input
               type="checkbox"
+              checked={areSoundsOn}
               onClick={() => dispatch({ type: 'TOGGLE_SOUNDS' })}
             />
-            <span>{areSoundsOn ? <SoundOffIcon /> : <SoundOnIcon />}</span>
+            <span />
           </Styled.Toggle>
+
+          <Styled.ToggleIcon3>
+            {/* {areSoundsOn ? <SoundOffIcon /> : <SoundOnIcon />} */}
+            <SoundOnIcon />
+          </Styled.ToggleIcon3>
         </Styled.NavWrapper>
       </Styled.Container>
     </Styled.Wrapper>

@@ -112,6 +112,7 @@ export const SwitchText = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
+  cursor: pointer;
 `
 
 export const Switch = styled(motion.div)`
@@ -132,6 +133,7 @@ export const Switch = styled(motion.div)`
     5px 5px 10px rgba(111, 129, 149, 0.5),
     -5px -5px 10px rgba(255, 255, 255, 0.5);
   position: absolute;
+  cursor: default;
 
   p {
     margin: 0;
@@ -142,6 +144,7 @@ export const Switch = styled(motion.div)`
 
 export const NavWrapper = styled.nav`
   display: flex;
+  position: relative;
   justify-content: space-evenly;
   margin-top: 50px;
   width: 100%;
@@ -160,6 +163,7 @@ export const Toggle = styled.label`
     background: #e6eef7;
     box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
     border-radius: 20px;
+    cursor: pointer;
 
     height: 70px;
     width: 70px;
@@ -173,6 +177,28 @@ export const Toggle = styled.label`
   }
 `
 
+export const ToggleIcon1 = styled.span`
+  position: absolute;
+  width: 20px;
+  top: 24px;
+  left: 80px;
+  pointer-events: none;
+`
+export const ToggleIcon2 = styled.span`
+  position: absolute;
+  width: 22px;
+  top: 26px;
+  left: 200px;
+  pointer-events: none;
+`
+
+export const ToggleIcon3 = styled.span`
+  position: absolute;
+  width: 25px;
+  top: 25px;
+  left: 323px;
+  pointer-events: none;
+`
 export const CircleButton = styled.div`
   position: relative;
   display: flex;
