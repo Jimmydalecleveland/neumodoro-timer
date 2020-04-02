@@ -4,7 +4,6 @@ function PauseIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      ariaHidden="true"
       className="svg-inline--fa fa-pause fa-w-14"
       data-icon="pause"
       data-prefix="fas"

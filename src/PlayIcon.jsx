@@ -3,9 +3,8 @@ import React from 'react'
 function PlayIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      ariaHidden="true"
       className="svg-inline--fa fa-play fa-w-14"
+      xmlns="http://www.w3.org/2000/svg"
       data-icon="play"
       data-prefix="fas"
       viewBox="0 0 448 512"
