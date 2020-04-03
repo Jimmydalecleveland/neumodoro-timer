@@ -58,8 +58,13 @@ function reducer(state, action) {
       return { ...state, time: action.payload }
     }
     case 'PREP_POMO': {
+      let { pomo } = state
+      if (action.payload || action.payload === 0) {
+        pomo = action.payload
+      }
       return {
         ...state,
+        pomo,
         isTimerActive: false,
         mode: 'Pomodoro',
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,

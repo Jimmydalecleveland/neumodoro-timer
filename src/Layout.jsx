@@ -169,8 +169,8 @@ const Layout = () => {
               mass: '0.2',
               damping: '6.3',
             }}
-          // drag="x"
-          // dragConstraints={modeSwitchConstraintsRef}
+            // drag="x"
+            // dragConstraints={modeSwitchConstraintsRef}
           >
             {mode}
           </Styled.Switch>
@@ -181,6 +181,7 @@ const Layout = () => {
           pomo={pomo}
           isPomoActive={isPomoActive}
           seeds={currentSeeds()}
+          setQuadrant={dispatch}
         />
 
         <Styled.TimeWrapper>

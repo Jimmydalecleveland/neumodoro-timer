@@ -8,7 +8,7 @@ const tweenTransition = {
   ease: [0.9, 0.2, 0.1, 0.1],
 }
 
-const Tomato = ({ seeds, pomo, style }) => {
+const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
   return (
     <motion.svg viewBox="0 0 318.34 318.34" style={style}>
       <defs>
@@ -161,7 +161,9 @@ const Tomato = ({ seeds, pomo, style }) => {
           <path className="cls-1" d="M158.34 31.14h128v128h-128z" />
         </clipPath>
         <style>
-          {'.cls-1{fill:none}.cls-7{fill:#aa2f1f}.cls-8{fill:#f4e39a}'}
+          {
+            '.cls-1{fill:none}.cls-7{fill:#aa2f1f}.cls-8{fill:#f4e39a}.cls-25{opacity:0}'
+          }
         </style>
       </defs>
       <title>tomato9</title>
@@ -505,6 +507,39 @@ const Tomato = ({ seeds, pomo, style }) => {
             fill="url(#radial-gradient-15)"
           />
         </motion.g>
+
+        <path
+          d="M159.34 31.38H159A127.83 127.83 0 0031.34 152.65v6.49h128z"
+          id="quarter_1_copy"
+          data-name="quarter 1 copy"
+          className="cls-25"
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 0 })}
+          style={{ cursor: 'pointer' }}
+        />
+        <path
+          d="M31.34 164.76A127.83 127.83 0 00159 286h.34V158.14h-128z"
+          id="quarter_2_copy"
+          data-name="quarter 2 copy"
+          className="cls-25"
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 1 })}
+          style={{ cursor: 'pointer' }}
+        />
+        <path
+          d="M158.34 286a127.82 127.82 0 00127.48-127.8v-.06H158.34z"
+          id="quarter_3_copy"
+          data-name="quarter 3 copy"
+          className="cls-25"
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 2 })}
+          style={{ cursor: 'pointer' }}
+        />
+        <path
+          d="M158.34 31.38v127.76h127.48A127.82 127.82 0 00158.34 31.38z"
+          id="quarter_4_copy"
+          data-name="quarter 4 copy"
+          className="cls-25"
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 3 })}
+          style={{ cursor: 'pointer' }}
+        />
       </g>
     </motion.svg>
   )
