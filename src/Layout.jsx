@@ -194,24 +194,24 @@ const Layout = () => {
 
         <Styled.NavWrapper>
           <ToggleButton
-            active={isTimerActive}
+            isActive={isTimerActive}
             setActive={() => dispatch({ type: actions.TOGGLE_TIMER_ACTIVE })}
           >
-            <PlayIcon />
+            <PlayIcon isActive={isTimerActive} />
           </ToggleButton>
 
           <ToggleButton
-            active={areAlertsOn}
+            isActive={areAlertsOn}
             setActive={() => dispatch({ type: actions.TOGGLE_ALERTS })}
           >
-            <NotificationIcon />
+            <NotificationIcon isActive={areAlertsOn} />
           </ToggleButton>
 
           <ToggleButton
-            active={areSoundsOn}
+            isActive={areSoundsOn}
             setActive={() => dispatch({ type: actions.TOGGLE_SOUNDS })}
           >
-            <SoundOnIcon />
+            <SoundOnIcon isActive={areSoundsOn} />
           </ToggleButton>
         </Styled.NavWrapper>
       </Styled.Container>

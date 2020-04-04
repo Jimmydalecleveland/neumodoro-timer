@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PlayIcon() {
+function PlayIcon({ isActive }) {
   return (
     <svg
       viewBox="0 0 433.98 484.57"
@@ -8,7 +8,7 @@ function PlayIcon() {
         position: 'absolute',
         width: '25px',
         marginLeft: '5px',
-        fill: '#a8afb5',
+        fill: isActive ? 'tomato' : '#a8afb5',
       }}
     >
       <title>play-outline</title>
