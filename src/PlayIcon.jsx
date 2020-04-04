@@ -8,7 +8,7 @@ function PlayIcon({ isActive }) {
         position: 'absolute',
         width: '25px',
         marginLeft: '5px',
-        fill: isActive ? 'tomato' : '#a8afb5',
+        fill: isActive ? '#ff977c' : '#a8afb5',
       }}
     >
       <title>play-outline</title>

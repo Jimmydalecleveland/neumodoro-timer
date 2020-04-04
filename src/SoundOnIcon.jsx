@@ -16,7 +16,7 @@ const SoundOnIcon = ({ isActive }) => {
         width: '35px',
         marginLeft: '4px',
         marginTop: '3px',
-        fill: isActive ? 'tomato' : '#a8afb5',
+        fill: isActive ? '#ff977c' : '#a8afb5',
       }}
     >
       <path d="M261.92,462a53.79,53.79,0,0,1-38.1-15.82L143.64,366H54A54.06,54.06,0,0,1,0,312V168a54.06,54.06,0,0,1,54-54h89.64l80.18-80.16A54,54,0,0,1,316,72V408a54.09,54.09,0,0,1-54.08,54ZM60,306H168.48L256,393.5v-307L168.48,174H60Z" />
