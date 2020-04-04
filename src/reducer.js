@@ -50,34 +50,26 @@ function reducer(state, action) {
       return { ...state, time: state.time - 1 }
     }
     case TOGGLE_TIMER_ACTIVE: {
-      let { isPomoActive, isTimerActive, pomo } = state
+      let { showCurrentExo, isTimerActive } = state
       isTimerActive = !isTimerActive
 
       if (state.mode === 'Pomodoro') {
-        if (!isPomoActive) {
-          pomo = pomo >= 4 ? 1 : pomo + 1
-          isPomoActive = true
-        }
+        showCurrentExo = false
       }
 
       return {
         ...state,
         isTimerActive,
-        isPomoActive,
-        pomo,
+        showCurrentExo,
       }
     }
     case UPDATE_TIME: {
       return { ...state, time: action.payload }
     }
     case PREP_POMO: {
-      let { pomo } = state
-      if (action.payload || action.payload === 0) {
-        pomo = action.payload
-      }
       return {
         ...state,
-        pomo,
+        pomo: action.payload || state.pomo,
         isTimerActive: false,
         mode: 'Pomodoro',
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
@@ -86,8 +78,8 @@ function reducer(state, action) {
     case PREP_SHORT_BREAK: {
       return {
         ...state,
-        pomo: state.pomo > 0 ? state.pomo - 1 : 0,
-        isPomoActive: false,
+        pomo: state.pomo,
+        showCurrentExo: true,
         isTimerActive: false,
         mode: 'Short Break',
         time: FIVE_MINUTES_IN_SECONDS,
@@ -96,7 +88,6 @@ function reducer(state, action) {
     case AUTO_START_SHORT_BREAK: {
       return {
         ...state,
-        isPomoActive: false,
         mode: 'Short Break',
         time: FIVE_MINUTES_IN_SECONDS,
       }
@@ -104,9 +95,9 @@ function reducer(state, action) {
     case PREP_LONG_BREAK: {
       return {
         ...state,
-        pomo: state.pomo > 0 ? state.pomo - 1 : 0,
+        pomo: 4,
+        showCurrentExo: false,
         isTimerActive: false,
-        isPomoActive: false,
         mode: 'Long Break',
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
@@ -114,20 +105,19 @@ function reducer(state, action) {
     case AUTO_START_LONG_BREAK: {
       return {
         ...state,
-        isPomoActive: false,
+        showCurrentExo: false,
         mode: 'Long Break',
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
     }
     case END_BREAK: {
-      const wasLongBreak = state.pomo === 4
-
       return {
         ...state,
-        time: TWENTY_FIVE_MINUTES_IN_SECONDS,
-        isTimerActive: false,
-        pomo: wasLongBreak ? 0 : state.pomo,
         mode: 'Pomodoro',
+        showCurrentExo: true,
+        isTimerActive: false,
+        pomo: state.mode === 'Long Break' ? 1 : state.pomo + 1,
+        time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
     }
     default: {

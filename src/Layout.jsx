@@ -5,17 +5,15 @@ import useInterval from './useInterval'
 import Tomato from './Tomato'
 import ToggleButton from './ToggleButton'
 import PlayIcon from './PlayIcon'
-import PauseIcon from './PauseIcon'
 import NotificationIcon from './NotificationIcon'
-import SoundOffIcon from './SoundOffIcon'
 import SoundOnIcon from './SoundOnIcon'
 import * as Styled from './Layout.styles'
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 
 const initialState = {
   time: TWENTY_FIVE_MINUTES_IN_SECONDS,
-  pomo: 0,
-  isPomoActive: false,
+  pomo: 1,
+  showCurrentExo: true,
   isTimerActive: false,
   areAlertsOn: true,
   areSoundsOn: true,
@@ -53,7 +51,7 @@ const Layout = () => {
     time,
     mode,
     pomo,
-    isPomoActive,
+    showCurrentExo,
     isTimerActive,
     areAlertsOn,
     areSoundsOn,
@@ -84,7 +82,7 @@ const Layout = () => {
   useInterval(
     (intervalId) => {
       if (time <= 0) {
-        if (isPomoActive) {
+        if (mode === 'Pomodoro') {
           if (pomo === 4) {
             sendNotification(
               'Time is up!',
@@ -113,16 +111,28 @@ const Layout = () => {
   )
 
   const currentSeeds = () => {
-    const seedsBehindQuarters = 20 - pomo * 5
-    // If in the middle of a pomodoro, use time to calculate
-    // how many seeds to show
-    if (isPomoActive) {
-      const minutes = Math.ceil(time / 60)
-      console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
-      return seedsBehindQuarters + Math.ceil(minutes / 5)
-    }
+    // const seedsBehindQuarters = 20 - pomo * 5
+    // // If in the middle of a pomodoro, use time to calculate
+    // // how many seeds to show
+    // if (showCurrentExo) {
+    //   const minutes = Math.ceil(time / 60)
+    //   console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
+    //   return seedsBehindQuarters + Math.ceil(minutes / 5)
+    // }
 
-    return seedsBehindQuarters
+    // return seedsBehindQuarters
+
+    // return Math.ceil(
+    //   ((pomo + 1) * TWENTY_FIVE_MINUTES_IN_SECONDS + time) / 60 / 5
+    // )
+
+    const startingSeedsForCurrentPomo = 20 - (pomo - 1) * 5
+    if (mode === 'Pomodoro') {
+      const seeds = Math.ceil(time / 60 / 5)
+
+      return startingSeedsForCurrentPomo - (5 - seeds)
+    }
+    return startingSeedsForCurrentPomo - 5
   }
 
   const getSwitchPosition = () => {
@@ -182,7 +192,7 @@ const Layout = () => {
         <Tomato
           style={{ width: '70%' }}
           pomo={pomo}
-          isPomoActive={isPomoActive}
+          showCurrentExo={showCurrentExo}
           seeds={currentSeeds()}
           setQuadrant={dispatch}
         />

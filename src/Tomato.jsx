@@ -8,7 +8,7 @@ const tweenTransition = {
   ease: [0.9, 0.2, 0.1, 0.1],
 }
 
-const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
+const Tomato = ({ seeds, pomo, showCurrentExo, style, setQuadrant }) => {
   return (
     <motion.svg viewBox="0 0 318.34 318.34" style={style}>
       <defs>
@@ -388,10 +388,10 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_1"
           data-name="quarter 1"
           initial={{ opacity: 1, scale: 1 }}
-          animate={pomo < 1 ? 'start' : 'finish'}
+          animate={pomo === 1 && showCurrentExo ? 'show' : 'hide'}
           variants={{
-            start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
-            finish: { opacity: 0, scale: 0.8, x: -60, y: -60, rotate: -20 },
+            show: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
+            hide: { opacity: 0, scale: 0.8, x: -60, y: -60, rotate: -20 },
           }}
           transition={tweenTransition}
         >
@@ -419,10 +419,10 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_2"
           data-name="quarter 2"
           initial={{ opacity: 1, scale: 1 }}
-          animate={pomo < 2 ? 'start' : 'finish'}
+          animate={(pomo === 2 && showCurrentExo) || pomo < 2 ? 'show' : 'hide'}
           variants={{
-            start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
-            finish: { opacity: 0, scale: 0.8, x: -60, y: 60, rotate: -20 },
+            show: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
+            hide: { opacity: 0, scale: 0.8, x: -60, y: 60, rotate: -20 },
           }}
           transition={tweenTransition}
         >
@@ -450,10 +450,10 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_3"
           data-name="quarter 3"
           initial={{ opacity: 1, scale: 1 }}
-          animate={pomo < 3 ? 'start' : 'finish'}
+          animate={(pomo === 3 && showCurrentExo) || pomo < 3 ? 'show' : 'hide'}
           variants={{
-            start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
-            finish: { opacity: 0, scale: 0.8, x: 60, y: 60, rotate: -20 },
+            show: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
+            hide: { opacity: 0, scale: 0.8, x: 60, y: 60, rotate: -20 },
           }}
           transition={tweenTransition}
         >
@@ -481,10 +481,10 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_4"
           data-name="quarter 4"
           initial={{ opacity: 1, scale: 1 }}
-          animate={pomo < 4 ? 'start' : 'finish'}
+          animate={(pomo === 4 && showCurrentExo) || pomo < 4 ? 'show' : 'hide'}
           variants={{
-            start: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
-            finish: { opacity: 0, scale: 0.8, x: 60, y: -60, rotate: -20 },
+            show: { opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 },
+            hide: { opacity: 0, scale: 0.8, x: 60, y: -60, rotate: -20 },
           }}
           transition={tweenTransition}
         >
@@ -513,7 +513,7 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_1_copy"
           data-name="quarter 1 copy"
           className="cls-25"
-          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 0 })}
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 1 })}
           style={{ cursor: 'pointer' }}
         />
         <path
@@ -521,7 +521,7 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_2_copy"
           data-name="quarter 2 copy"
           className="cls-25"
-          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 1 })}
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 2 })}
           style={{ cursor: 'pointer' }}
         />
         <path
@@ -529,7 +529,7 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_3_copy"
           data-name="quarter 3 copy"
           className="cls-25"
-          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 2 })}
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 3 })}
           style={{ cursor: 'pointer' }}
         />
         <path
@@ -537,7 +537,7 @@ const Tomato = ({ seeds, pomo, style, setQuadrant }) => {
           id="quarter_4_copy"
           data-name="quarter 4 copy"
           className="cls-25"
-          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 3 })}
+          onClick={() => setQuadrant({ type: 'PREP_POMO', payload: 4 })}
           style={{ cursor: 'pointer' }}
         />
       </g>
