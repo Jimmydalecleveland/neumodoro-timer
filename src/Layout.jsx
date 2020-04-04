@@ -195,22 +195,15 @@ const Layout = () => {
           <Styled.ToggleWrapper
             onClick={() => dispatch({ type: actions.TOGGLE_TIMER_ACTIVE })}
           >
-            <Styled.Toggle>
-              {/* input needs to be controlled because the slider bar also can start/stop the timer */}
-              <input type="checkbox" checked={isTimerActive} />
-              <span />
-            </Styled.Toggle>
+            <Styled.Toggle className={isTimerActive && 'active'} />
 
-            {isTimerActive ? <PauseIcon /> : <PlayIcon />}
+            <PlayIcon />
           </Styled.ToggleWrapper>
 
           <Styled.ToggleWrapper
             onClick={() => dispatch({ type: actions.TOGGLE_ALERTS })}
           >
-            <Styled.Toggle>
-              <input type="checkbox" checked={areAlertsOn} />
-              <span />
-            </Styled.Toggle>
+            <Styled.Toggle className={areAlertsOn && 'active'} />
 
             <NotificationIcon />
           </Styled.ToggleWrapper>
@@ -218,11 +211,7 @@ const Layout = () => {
           <Styled.ToggleWrapper
             onClick={() => dispatch({ type: actions.TOGGLE_SOUNDS })}
           >
-            <Styled.Toggle>
-              <input type="checkbox" checked={areSoundsOn} />
-              <span />
-            </Styled.Toggle>
-            {/* {areSoundsOn ? <SoundOffIcon /> : <SoundOnIcon />} */}
+            <Styled.Toggle className={areSoundsOn && 'active'} />
             <SoundOnIcon />
           </Styled.ToggleWrapper>
         </Styled.NavWrapper>

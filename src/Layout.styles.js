@@ -150,33 +150,29 @@ export const NavWrapper = styled.nav`
   width: 100%;
 `
 
-export const ToggleWrapper = styled.div`
+export const ToggleWrapper = styled.button`
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
 `
 
-export const Toggle = styled.label`
-  input[type='checkbox'] {
-    display: none;
-  }
+export const Toggle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #e6eef7;
+  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
+  border-radius: 20px;
 
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: #e6eef7;
-    box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
-    border-radius: 20px;
-    cursor: pointer;
+  height: 70px;
+  width: 70px;
 
-    height: 70px;
-    width: 70px;
-  }
-
-  input:checked ~ span {
+  &.active {
     border: solid 3px #fcfeff;
     filter: blur(1px);
     box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,
@@ -184,25 +180,6 @@ export const Toggle = styled.label`
   }
 `
 
-export const ToggleIcon1 = styled(PlayIcon)`
-  position: absolute;
-  width: 25px;
-`
-export const ToggleIcon2 = styled.span`
-  position: absolute;
-  width: 22px;
-  top: 26px;
-  left: 200px;
-  pointer-events: none;
-`
-
-export const ToggleIcon3 = styled.span`
-  position: absolute;
-  width: 25px;
-  top: 25px;
-  left: 323px;
-  pointer-events: none;
-`
 export const CircleButton = styled.div`
   position: relative;
   display: flex;
