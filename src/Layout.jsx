@@ -3,6 +3,7 @@ import React, { useReducer, useRef } from 'react'
 import reducer, * as actions from './reducer'
 import useInterval from './useInterval'
 import Tomato from './Tomato'
+import ToggleButton from './ToggleButton'
 import PlayIcon from './PlayIcon'
 import PauseIcon from './PauseIcon'
 import NotificationIcon from './NotificationIcon'
@@ -192,28 +193,26 @@ const Layout = () => {
         </Styled.TimeWrapper>
 
         <Styled.NavWrapper>
-          <Styled.ToggleWrapper
-            onClick={() => dispatch({ type: actions.TOGGLE_TIMER_ACTIVE })}
+          <ToggleButton
+            active={isTimerActive}
+            setActive={() => dispatch({ type: actions.TOGGLE_TIMER_ACTIVE })}
           >
-            <Styled.Toggle className={isTimerActive && 'active'} />
-
             <PlayIcon />
-          </Styled.ToggleWrapper>
+          </ToggleButton>
 
-          <Styled.ToggleWrapper
-            onClick={() => dispatch({ type: actions.TOGGLE_ALERTS })}
+          <ToggleButton
+            active={areAlertsOn}
+            setActive={() => dispatch({ type: actions.TOGGLE_ALERTS })}
           >
-            <Styled.Toggle className={areAlertsOn && 'active'} />
-
             <NotificationIcon />
-          </Styled.ToggleWrapper>
+          </ToggleButton>
 
-          <Styled.ToggleWrapper
-            onClick={() => dispatch({ type: actions.TOGGLE_SOUNDS })}
+          <ToggleButton
+            active={areSoundsOn}
+            setActive={() => dispatch({ type: actions.TOGGLE_SOUNDS })}
           >
-            <Styled.Toggle className={areSoundsOn && 'active'} />
             <SoundOnIcon />
-          </Styled.ToggleWrapper>
+          </ToggleButton>
         </Styled.NavWrapper>
       </Styled.Container>
     </Styled.Wrapper>
