@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from 'react'
 
-import reducer from './reducer'
+import reducer, * as actions from './reducer'
 import useInterval from './useInterval'
 import Tomato from './Tomato'
 import PlayIcon from './PlayIcon'
@@ -89,10 +89,10 @@ const Layout = () => {
               'Time is up!',
               'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
             )
-            dispatch({ type: 'AUTO_START_LONG_BREAK' })
+            dispatch({ type: actions.AUTO_START_LONG_BREAK })
           } else {
             sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
-            dispatch({ type: 'AUTO_START_SHORT_BREAK' })
+            dispatch({ type: actions.AUTO_START_SHORT_BREAK })
           }
         } else {
           // Break is over
@@ -101,11 +101,11 @@ const Layout = () => {
           } else {
             sendNotification('Back to work! (╯▔皿▔)╯')
           }
-          dispatch({ type: 'END_BREAK' })
+          dispatch({ type: actions.END_BREAK })
           clearInterval(intervalId)
         }
       } else {
-        dispatch({ type: 'DECREMENT_TIMER' })
+        dispatch({ type: actions.DECREMENT_TIMER })
       }
     },
     isTimerActive ? 20 : null
@@ -147,16 +147,18 @@ const Layout = () => {
           variants={colorVariants}
           transition={{ duration: 0.6 }}
         >
-          <Styled.SwitchText onClick={() => dispatch({ type: 'PREP_POMO' })}>
+          <Styled.SwitchText
+            onClick={() => dispatch({ type: actions.PREP_POMO })}
+          >
             Pomodoro
           </Styled.SwitchText>
           <Styled.SwitchText
-            onClick={() => dispatch({ type: 'PREP_SHORT_BREAK' })}
+            onClick={() => dispatch({ type: actions.PREP_SHORT_BREAK })}
           >
             Short Break
           </Styled.SwitchText>
           <Styled.SwitchText
-            onClick={() => dispatch({ type: 'PREP_LONG_BREAK' })}
+            onClick={() => dispatch({ type: actions.PREP_LONG_BREAK })}
           >
             Long Break
           </Styled.SwitchText>
@@ -190,46 +192,39 @@ const Layout = () => {
         </Styled.TimeWrapper>
 
         <Styled.NavWrapper>
-          <Styled.Toggle>
-            {/* input needs to be controlled because the slider bar also can start/stop the timer */}
-            <input
-              onClick={() => dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })}
-              type="checkbox"
-              checked={isTimerActive}
-            />
-            <span />
-          </Styled.Toggle>
+          <Styled.ToggleWrapper
+            onClick={() => dispatch({ type: actions.TOGGLE_TIMER_ACTIVE })}
+          >
+            <Styled.Toggle>
+              {/* input needs to be controlled because the slider bar also can start/stop the timer */}
+              <input type="checkbox" checked={isTimerActive} />
+              <span />
+            </Styled.Toggle>
 
-          <Styled.ToggleIcon1>
             {isTimerActive ? <PauseIcon /> : <PlayIcon />}
-          </Styled.ToggleIcon1>
+          </Styled.ToggleWrapper>
 
-          <Styled.Toggle>
-            <input
-              type="checkbox"
-              checked={areAlertsOn}
-              onClick={() => dispatch({ type: 'TOGGLE_ALERTS' })}
-            />
-            <span />
-          </Styled.Toggle>
+          <Styled.ToggleWrapper
+            onClick={() => dispatch({ type: actions.TOGGLE_ALERTS })}
+          >
+            <Styled.Toggle>
+              <input type="checkbox" checked={areAlertsOn} />
+              <span />
+            </Styled.Toggle>
 
-          <Styled.ToggleIcon2>
             <NotificationIcon />
-          </Styled.ToggleIcon2>
+          </Styled.ToggleWrapper>
 
-          <Styled.Toggle>
-            <input
-              type="checkbox"
-              checked={areSoundsOn}
-              onClick={() => dispatch({ type: 'TOGGLE_SOUNDS' })}
-            />
-            <span />
-          </Styled.Toggle>
-
-          <Styled.ToggleIcon3>
+          <Styled.ToggleWrapper
+            onClick={() => dispatch({ type: actions.TOGGLE_SOUNDS })}
+          >
+            <Styled.Toggle>
+              <input type="checkbox" checked={areSoundsOn} />
+              <span />
+            </Styled.Toggle>
             {/* {areSoundsOn ? <SoundOffIcon /> : <SoundOnIcon />} */}
             <SoundOnIcon />
-          </Styled.ToggleIcon3>
+          </Styled.ToggleWrapper>
         </Styled.NavWrapper>
       </Styled.Container>
     </Styled.Wrapper>

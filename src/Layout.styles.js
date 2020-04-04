@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import 'typeface-poppins'
 import DigitalClock from './assets/DigitalClock.woff'
+import PlayIcon from './PlayIcon'
 
 export const Wrapper = styled.div`
   @font-face {
@@ -144,10 +145,16 @@ export const Switch = styled(motion.div)`
 
 export const NavWrapper = styled.nav`
   display: flex;
-  position: relative;
   justify-content: space-evenly;
   margin-top: 50px;
   width: 100%;
+`
+
+export const ToggleWrapper = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 `
 
 export const Toggle = styled.label`
@@ -177,12 +184,9 @@ export const Toggle = styled.label`
   }
 `
 
-export const ToggleIcon1 = styled.span`
+export const ToggleIcon1 = styled(PlayIcon)`
   position: absolute;
-  width: 20px;
-  top: 24px;
-  left: 80px;
-  pointer-events: none;
+  width: 25px;
 `
 export const ToggleIcon2 = styled.span`
   position: absolute;
@@ -236,41 +240,4 @@ export const TimeAfterImage = styled.p`
   font-size: 64px;
   font-family: 'Digital Clock', sans-serif;
   color: #d7deeb;
-`
-
-export const PlayPauseWrapper = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border: none;
-  background: none;
-  border-radius: 50%;
-  cursor: pointer;
-  background: #e6eef7;
-  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
-
-  height: 70px;
-  width: 70px;
-
-  &.paused {
-    svg {
-      margin-left: 7px;
-    }
-  }
-
-  &.playing {
-    border: solid 3px #fcfeff;
-    filter: blur(1px);
-    box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,
-      inset -5px -5px 10px #ffffff;
-  }
-
-  svg {
-    width: 30px;
-    height: 30px;
-    path {
-      color: #31456a;
-    }
-  }
 `

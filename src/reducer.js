@@ -3,6 +3,19 @@ import {
   TWENTY_FIVE_MINUTES_IN_SECONDS,
 } from './utils'
 
+export const TOGGLE_ALERTS = 'TOGGLE_ALERTS'
+export const TOGGLE_SOUNDS = 'TOGGLE_SOUNDS'
+export const SWITCH_MODE = 'SWITCH_MODE'
+export const DECREMENT_TIMER = 'DECREMENT_TIMER'
+export const TOGGLE_TIMER_ACTIVE = 'TOGGLE_TIMER_ACTIVE'
+export const UPDATE_TIME = 'UPDATE_TIME'
+export const PREP_POMO = 'PREP_POMO'
+export const PREP_SHORT_BREAK = 'PREP_SHORT_BREAK'
+export const AUTO_START_SHORT_BREAK = 'AUTO_START_SHORT_BREAK'
+export const PREP_LONG_BREAK = 'PREP_LONG_BREAK'
+export const AUTO_START_LONG_BREAK = 'AUTO_START_LONG_BREAK'
+export const END_BREAK = 'END_BREAK'
+
 /**
  * Reducer function to be used with useReducer for all pomodoro state
  * @param {Object} state - State object
@@ -11,7 +24,7 @@ import {
  * @property {any} [payload] - Any additional information needed to update state
  */
 function reducer(state, action) {
-  if (action.type !== 'DECREMENT_TIMER') {
+  if (action.type !== DECREMENT_TIMER) {
     console.log(
       '%cDispatch Fired',
       'color: tomato; font-weight: bold',
@@ -24,19 +37,19 @@ function reducer(state, action) {
   }
 
   switch (action.type) {
-    case 'TOGGLE_ALERTS': {
+    case TOGGLE_ALERTS: {
       return { ...state, areAlertsOn: !state.areAlertsOn }
     }
-    case 'TOGGLE_SOUNDS': {
+    case TOGGLE_SOUNDS: {
       return { ...state, areSoundsOn: !state.areSoundsOn }
     }
-    case 'SWITCH_MODE': {
+    case SWITCH_MODE: {
       return { ...state, mode: action.payload }
     }
-    case 'DECREMENT_TIMER': {
+    case DECREMENT_TIMER: {
       return { ...state, time: state.time - 1 }
     }
-    case 'TOGGLE_TIMER_ACTIVE': {
+    case TOGGLE_TIMER_ACTIVE: {
       let { isPomoActive, isTimerActive, pomo } = state
       isTimerActive = !isTimerActive
 
@@ -54,10 +67,10 @@ function reducer(state, action) {
         pomo,
       }
     }
-    case 'UPDATE_TIME': {
+    case UPDATE_TIME: {
       return { ...state, time: action.payload }
     }
-    case 'PREP_POMO': {
+    case PREP_POMO: {
       let { pomo } = state
       if (action.payload || action.payload === 0) {
         pomo = action.payload
@@ -70,7 +83,7 @@ function reducer(state, action) {
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
     }
-    case 'PREP_SHORT_BREAK': {
+    case PREP_SHORT_BREAK: {
       return {
         ...state,
         pomo: state.pomo > 0 ? state.pomo - 1 : 0,
@@ -80,7 +93,7 @@ function reducer(state, action) {
         time: FIVE_MINUTES_IN_SECONDS,
       }
     }
-    case 'AUTO_START_SHORT_BREAK': {
+    case AUTO_START_SHORT_BREAK: {
       return {
         ...state,
         isPomoActive: false,
@@ -88,7 +101,7 @@ function reducer(state, action) {
         time: FIVE_MINUTES_IN_SECONDS,
       }
     }
-    case 'PREP_LONG_BREAK': {
+    case PREP_LONG_BREAK: {
       return {
         ...state,
         pomo: state.pomo > 0 ? state.pomo - 1 : 0,
@@ -98,7 +111,7 @@ function reducer(state, action) {
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
     }
-    case 'AUTO_START_LONG_BREAK': {
+    case AUTO_START_LONG_BREAK: {
       return {
         ...state,
         isPomoActive: false,
@@ -106,7 +119,7 @@ function reducer(state, action) {
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
     }
-    case 'END_BREAK': {
+    case END_BREAK: {
       const wasLongBreak = state.pomo === 4
 
       return {

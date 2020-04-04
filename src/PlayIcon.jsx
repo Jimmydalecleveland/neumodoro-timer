@@ -3,16 +3,18 @@ import React from 'react'
 function PlayIcon() {
   return (
     <svg
-      className="svg-inline--fa fa-play fa-w-14"
-      xmlns="http://www.w3.org/2000/svg"
-      data-icon="play"
-      data-prefix="fas"
-      viewBox="0 0 448 512"
+      viewBox="0 0 433.98 484.57"
+      style={{
+        position: 'absolute',
+        width: '25px',
+        marginLeft: '5px',
+        fill: '#a8afb5',
+      }}
     >
-      <path
-        fill="currentColor"
-        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-      />
+      <title>play-outline</title>
+      <g data-name="Layer 2">
+        <path d="M77.92,484.57A78,78,0,0,1,39.3,474.36,77,77,0,0,1,0,406.67V77.88c0-28.5,14.35-53.71,38.38-67.42a79,79,0,0,1,79.18.35L395.67,175.23a77.89,77.89,0,0,1,0,134.18L117.56,473.74A77.74,77.74,0,0,1,77.92,484.57ZM80,81.54V403L351.94,242.32Zm0-4.27h0Z" />
+      </g>
     </svg>
   )
 }
