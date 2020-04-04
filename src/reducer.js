@@ -71,6 +71,7 @@ function reducer(state, action) {
         ...state,
         pomo: action.payload || state.pomo,
         isTimerActive: false,
+        showCurrentExo: true,
         mode: 'Pomodoro',
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
@@ -78,9 +79,8 @@ function reducer(state, action) {
     case PREP_SHORT_BREAK: {
       return {
         ...state,
-        pomo: state.pomo,
-        showCurrentExo: true,
         isTimerActive: false,
+        showCurrentExo: false,
         mode: 'Short Break',
         time: FIVE_MINUTES_IN_SECONDS,
       }
@@ -88,6 +88,7 @@ function reducer(state, action) {
     case AUTO_START_SHORT_BREAK: {
       return {
         ...state,
+        showCurrentExo: false,
         mode: 'Short Break',
         time: FIVE_MINUTES_IN_SECONDS,
       }
@@ -111,12 +112,23 @@ function reducer(state, action) {
       }
     }
     case END_BREAK: {
+      let { pomo } = state
+
+      if (
+        state.mode === 'Long Break' ||
+        (state.mode === 'Short Break' && pomo === 4)
+      ) {
+        pomo = 1
+      } else {
+        pomo += 1
+      }
+
       return {
         ...state,
+        pomo,
         mode: 'Pomodoro',
         showCurrentExo: true,
         isTimerActive: false,
-        pomo: state.mode === 'Long Break' ? 1 : state.pomo + 1,
         time: TWENTY_FIVE_MINUTES_IN_SECONDS,
       }
     }

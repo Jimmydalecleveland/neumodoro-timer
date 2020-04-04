@@ -9,6 +9,7 @@ import NotificationIcon from './NotificationIcon'
 import SoundOnIcon from './SoundOnIcon'
 import * as Styled from './Layout.styles'
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
+import audio from './assets/Notification.mp3'
 
 const initialState = {
   time: TWENTY_FIVE_MINUTES_IN_SECONDS,
@@ -19,19 +20,6 @@ const initialState = {
   areSoundsOn: true,
   mode: 'Pomodoro',
 }
-
-// Higher contrast
-// const colorVariants = {
-//   Pomodoro: {
-//     backgroundColor: '#ff6138',
-//   },
-//   'Short Break': {
-//     backgroundColor: '#06c7f3',
-//   },
-//   'Long Break': {
-//     backgroundColor: '#06c7f3',
-//   },
-// }
 
 const colorVariants = {
   Pomodoro: {
@@ -58,12 +46,20 @@ const Layout = () => {
   } = state
   const modeSwitchConstraintsRef = useRef(null)
 
+  const notificationSound = new Audio(audio)
+
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
     if (minutes < 10) minutes = `0${minutes}`
     if (seconds < 10) seconds = `0${seconds}`
     return `${minutes}:${seconds}`
+  }
+
+  const playNotificationSound = () => {
+    if (areSoundsOn) {
+      notificationSound.play()
+    }
   }
 
   const sendNotification = (title, body) => {
@@ -82,6 +78,7 @@ const Layout = () => {
   useInterval(
     (intervalId) => {
       if (time <= 0) {
+        playNotificationSound()
         if (mode === 'Pomodoro') {
           if (pomo === 4) {
             sendNotification(
@@ -111,21 +108,6 @@ const Layout = () => {
   )
 
   const currentSeeds = () => {
-    // const seedsBehindQuarters = 20 - pomo * 5
-    // // If in the middle of a pomodoro, use time to calculate
-    // // how many seeds to show
-    // if (showCurrentExo) {
-    //   const minutes = Math.ceil(time / 60)
-    //   console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
-    //   return seedsBehindQuarters + Math.ceil(minutes / 5)
-    // }
-
-    // return seedsBehindQuarters
-
-    // return Math.ceil(
-    //   ((pomo + 1) * TWENTY_FIVE_MINUTES_IN_SECONDS + time) / 60 / 5
-    // )
-
     const startingSeedsForCurrentPomo = 20 - (pomo - 1) * 5
     if (mode === 'Pomodoro') {
       const seeds = Math.ceil(time / 60 / 5)

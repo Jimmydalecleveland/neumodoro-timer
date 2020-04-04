@@ -42,6 +42,14 @@ module.exports = {
         ],
       },
       {
+        test: /\.(mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
