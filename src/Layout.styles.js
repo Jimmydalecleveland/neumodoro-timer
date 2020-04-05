@@ -33,6 +33,7 @@ export const Wrapper = styled.div`
   }
 
   h1 {
+    font-size: 28px;
     text-align: center;
   }
 
@@ -58,7 +59,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 30px;
   background: #eaf2f9;
-  width: 480px;
+  width: 360px;
   box-shadow: 5px 5px 30px #c1c9d2;
   border-radius: 20px;
 `
@@ -85,23 +86,22 @@ export const Raised = styled.div`
 `
 
 export const SwitchWrapper = styled(motion.div)`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 42px;
   margin: 0 0 10px;
-  border-radius: 13px;
-  width: 83%;
-  height: 50px;
+  border-radius: 12px;
   background-color: #eaf2f9;
   box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,
     inset -5px -5px 10px #ffb6a1;
   box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),
     inset -5px -5px 10px rgba(255, 255, 255, 0.5);
-  display: flex;
   position: relative;
-  justify-content: space-between;
 `
 
 export const SwitchText = styled.div`
   flex: 0 0 30%;
-  padding: 7px 10px;
   text-align: center;
   line-height: 1;
   display: flex;
@@ -111,13 +111,13 @@ export const SwitchText = styled.div`
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
   cursor: pointer;
 `
 
 export const Switch = styled(motion.div)`
   height: 100%;
-  width: 120px;
+  width: 105px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,9 +125,9 @@ export const Switch = styled(motion.div)`
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   background: #e6eef7;
-  border-radius: 13px;
+  border-radius: 12px;
   color: #6e7d9b;
   box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),
     5px 5px 10px rgba(111, 129, 149, 0.5),
@@ -144,25 +144,9 @@ export const Switch = styled(motion.div)`
 
 export const NavWrapper = styled.nav`
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
+  justify-content: space-around;
+  margin-top: 40px;
   width: 100%;
-`
-
-export const CircleButton = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background: #e6eef7;
-  box-shadow: 5px 5px 10px #d1d7de, -5px -5px 10px #ffffff;
-  border-radius: 50%;
-  font-size: 36px;
-  font-weight: 300;
-
-  span {
-    position: absolute;
-  }
 `
 
 export const TimeWrapper = styled.div`
@@ -170,12 +154,13 @@ export const TimeWrapper = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 `
 
 export const Time = styled.p`
   z-index: 1;
   margin: 0;
-  font-size: 64px;
+  font-size: 54px;
   font-family: 'Digital Clock', sans-serif;
 `
 
@@ -183,7 +168,7 @@ export const TimeAfterImage = styled.p`
   z-index: 0;
   position: absolute;
   margin: 0;
-  font-size: 64px;
+  font-size: 54px;
   font-family: 'Digital Clock', sans-serif;
   color: #d7deeb;
 `

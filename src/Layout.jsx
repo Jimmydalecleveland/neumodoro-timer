@@ -121,7 +121,7 @@ const Layout = () => {
   }
 
   const getSwitchPosition = () => {
-    const switchWidth = 120
+    const switchWidth = 105
 
     if (mode === 'Pomodoro') {
       return 0
@@ -146,17 +146,23 @@ const Layout = () => {
           <Styled.SwitchText
             onClick={() => dispatch({ type: actions.PREP_POMO })}
           >
-            Pomodoro
+            Pomo
+            <br />
+            doro
           </Styled.SwitchText>
           <Styled.SwitchText
             onClick={() => dispatch({ type: actions.PREP_SHORT_BREAK })}
           >
-            Short Break
+            Short
+            <br />
+            Break
           </Styled.SwitchText>
           <Styled.SwitchText
             onClick={() => dispatch({ type: actions.PREP_LONG_BREAK })}
           >
-            Long Break
+            Long
+            <br />
+            Break
           </Styled.SwitchText>
           <Styled.Switch
             animate={{
@@ -175,7 +181,7 @@ const Layout = () => {
         </Styled.SwitchWrapper>
 
         <Tomato
-          style={{ width: '70%' }}
+          style={{ width: '80%' }}
           pomo={pomo}
           showCurrentExo={showCurrentExo}
           seeds={currentSeeds()}
