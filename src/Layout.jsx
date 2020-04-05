@@ -1,5 +1,6 @@
 import React, { useReducer, useRef } from 'react'
 
+import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 import reducer, * as actions from './reducer'
 import useInterval from './useInterval'
 import Tomato from './Tomato'
@@ -8,7 +9,6 @@ import PlayIcon from './PlayIcon'
 import NotificationIcon from './NotificationIcon'
 import SoundOnIcon from './SoundOnIcon'
 import * as Styled from './Layout.styles'
-import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 import alertLong from './assets/long-electric-piano-organ.mp3'
 import alertShort from './assets/short-jazz-organ-note.mp3'
 

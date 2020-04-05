@@ -1,54 +1,22 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import 'typeface-poppins'
-import DigitalClock from './assets/DigitalClock.woff'
 
 export const Wrapper = styled.div`
-  @font-face {
-    font-family: 'Digital Clock';
-    src: url('${DigitalClock}') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+  padding: 20px;
+`
 
-  height: 100vh;
-  padding: 30px;
-  font-family: 'Poppins', sans-serif;
-  background: #d4dfee;
-  color: #31456a;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 1em;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-weight: 600;
-  }
-
-  h1 {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  h4,
-  h5 {
-    color: #7888a3;
-    font-weight: 400;
-  }
-
-  h4 {
-    font-size: 20px;
-  }
+export const Header = styled.header`
+  -webkit-app-region: drag;
+  padding: 5px 10px;
+  display: flex;
+  width: 100%;
+  height: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  background: #cbd5e1;
 
   * {
-    box-sizing: border-box;
+    -webkit-app-region: no-drag;
   }
 `
 

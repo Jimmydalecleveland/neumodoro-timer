@@ -41495,13 +41495,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _themes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./themes */ "./src/themes.js");
 /* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Layout */ "./src/Layout.jsx");
+/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! typeface-poppins */ "./node_modules/typeface-poppins/index.css");
+/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(typeface_poppins__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_DigitalClock_woff__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/DigitalClock.woff */ "./src/assets/DigitalClock.woff");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Header */ "./src/Header.jsx");
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
 })();
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  body {\n    padding: 0;\n    margin: 0;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n\n  body {\n    height: 100vh;\n    padding: 0;\n    margin: 0;\n    background: #d4dfee;\n    color: #31456a;\n    font-family: 'Poppins', sans-serif;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -41521,12 +41525,15 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
-var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"])(_templateObject());
+
+
+
+var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"])(_templateObject(), _assets_DigitalClock_woff__WEBPACK_IMPORTED_MODULE_6__["default"]);
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(styled_components__WEBPACK_IMPORTED_MODULE_1__["ThemeProvider"], {
     theme: _themes__WEBPACK_IMPORTED_MODULE_3__["lightTheme"]
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalStyle, null));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalStyle, null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 };
 
 var _default = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__["hot"])(module)(App);
@@ -41541,9 +41548,68 @@ var _default = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__["hot"])(modu
     return;
   }
 
-  reactHotLoader.register(GlobalStyle, "GlobalStyle", "M:\\Code\\neumodoro-timer\\src\\App.jsx");
-  reactHotLoader.register(App, "App", "M:\\Code\\neumodoro-timer\\src\\App.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(GlobalStyle, "GlobalStyle", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(App, "App", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/Header.jsx":
+/*!************************!*\
+  !*** ./src/Header.jsx ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Layout_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Layout.styles */ "./src/Layout.styles.js");
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
+
+
+
+
+var Header = function Header() {
+  var handleClose = function handleClose() {
+    remote.app.quit();
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_1__["Header"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    onClick: handleClose
+  }, "X"));
+};
+
+var _default = Header;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(Header, "Header", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Header.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Header.jsx");
 })();
 
 ;
@@ -41567,15 +41633,15 @@ var _default = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__["hot"])(modu
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducer */ "./src/reducer.js");
-/* harmony import */ var _useInterval__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useInterval */ "./src/useInterval.js");
-/* harmony import */ var _Tomato__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Tomato */ "./src/Tomato.jsx");
-/* harmony import */ var _ToggleButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ToggleButton */ "./src/ToggleButton.jsx");
-/* harmony import */ var _PlayIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PlayIcon */ "./src/PlayIcon.jsx");
-/* harmony import */ var _NotificationIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./NotificationIcon */ "./src/NotificationIcon.jsx");
-/* harmony import */ var _SoundOnIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SoundOnIcon */ "./src/SoundOnIcon.jsx");
-/* harmony import */ var _Layout_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Layout.styles */ "./src/Layout.styles.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
+/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducer */ "./src/reducer.js");
+/* harmony import */ var _useInterval__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useInterval */ "./src/useInterval.js");
+/* harmony import */ var _Tomato__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Tomato */ "./src/Tomato.jsx");
+/* harmony import */ var _ToggleButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ToggleButton */ "./src/ToggleButton.jsx");
+/* harmony import */ var _PlayIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PlayIcon */ "./src/PlayIcon.jsx");
+/* harmony import */ var _NotificationIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./NotificationIcon */ "./src/NotificationIcon.jsx");
+/* harmony import */ var _SoundOnIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SoundOnIcon */ "./src/SoundOnIcon.jsx");
+/* harmony import */ var _Layout_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Layout.styles */ "./src/Layout.styles.js");
 /* harmony import */ var _assets_long_electric_piano_organ_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/long-electric-piano-organ.mp3 */ "./src/assets/long-electric-piano-organ.mp3");
 /* harmony import */ var _assets_short_jazz_organ_note_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./assets/short-jazz-organ-note.mp3 */ "./src/assets/short-jazz-organ-note.mp3");
 (function () {
@@ -41608,7 +41674,7 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 var initialState = {
-  time: _utils__WEBPACK_IMPORTED_MODULE_9__["TWENTY_FIVE_MINUTES_IN_SECONDS"],
+  time: _utils__WEBPACK_IMPORTED_MODULE_1__["TWENTY_FIVE_MINUTES_IN_SECONDS"],
   pomo: 1,
   showCurrentExo: true,
   isTimerActive: false,
@@ -41629,7 +41695,7 @@ var colorVariants = {
 };
 
 var Layout = function Layout() {
-  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], initialState),
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], initialState),
       _useReducer2 = _slicedToArray(_useReducer, 2),
       state = _useReducer2[0],
       dispatch = _useReducer2[1];
@@ -41672,7 +41738,7 @@ var Layout = function Layout() {
     }
   };
 
-  Object(_useInterval__WEBPACK_IMPORTED_MODULE_2__["default"])(function (intervalId) {
+  Object(_useInterval__WEBPACK_IMPORTED_MODULE_3__["default"])(function (intervalId) {
     if (time <= 0) {
       if (mode === 'Pomodoro') {
         playNotificationSound(audioAlertLong);
@@ -41680,12 +41746,12 @@ var Layout = function Layout() {
         if (pomo === 4) {
           sendNotification('Time is up!', 'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.');
           dispatch({
-            type: _reducer__WEBPACK_IMPORTED_MODULE_1__["AUTO_START_LONG_BREAK"]
+            type: _reducer__WEBPACK_IMPORTED_MODULE_2__["AUTO_START_LONG_BREAK"]
           });
         } else {
           sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)');
           dispatch({
-            type: _reducer__WEBPACK_IMPORTED_MODULE_1__["AUTO_START_SHORT_BREAK"]
+            type: _reducer__WEBPACK_IMPORTED_MODULE_2__["AUTO_START_SHORT_BREAK"]
           });
         }
       } else {
@@ -41699,13 +41765,13 @@ var Layout = function Layout() {
         }
 
         dispatch({
-          type: _reducer__WEBPACK_IMPORTED_MODULE_1__["END_BREAK"]
+          type: _reducer__WEBPACK_IMPORTED_MODULE_2__["END_BREAK"]
         });
         clearInterval(intervalId);
       }
     } else {
       dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["DECREMENT_TIMER"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["DECREMENT_TIMER"]
       });
     }
   }, isTimerActive ? 20 : null);
@@ -41735,32 +41801,32 @@ var Layout = function Layout() {
     return modeSwitchConstraintsRef.current.clientWidth - switchWidth;
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["Wrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neumodoro Timer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchWrapper"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["Wrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Neumodoro Timer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["SwitchWrapper"], {
     ref: modeSwitchConstraintsRef,
     animate: mode,
     variants: colorVariants,
     transition: {
       duration: 0.6
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["SwitchText"], {
     onClick: function onClick() {
       return dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["PREP_POMO"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["PREP_POMO"]
       });
     }
-  }, "Pomo", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "doro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
+  }, "Pomo", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "doro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["SwitchText"], {
     onClick: function onClick() {
       return dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["PREP_SHORT_BREAK"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["PREP_SHORT_BREAK"]
       });
     }
-  }, "Short", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
+  }, "Short", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["SwitchText"], {
     onClick: function onClick() {
       return dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["PREP_LONG_BREAK"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["PREP_LONG_BREAK"]
       });
     }
-  }, "Long", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["Switch"], {
+  }, "Long", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["Switch"], {
     animate: {
       x: getSwitchPosition()
     },
@@ -41771,7 +41837,7 @@ var Layout = function Layout() {
     } // drag="x"
     // dragConstraints={modeSwitchConstraintsRef}
 
-  }, mode)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tomato__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, mode)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tomato__WEBPACK_IMPORTED_MODULE_4__["default"], {
     style: {
       width: '80%'
     },
@@ -41779,38 +41845,38 @@ var Layout = function Layout() {
     showCurrentExo: showCurrentExo,
     seeds: currentSeeds(),
     setQuadrant: dispatch
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["TimeWrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["Time"], null, displayTime()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["TimeAfterImage"], null, "88:88")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["NavWrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["TimeWrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["Time"], null, displayTime()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["TimeAfterImage"], null, "88:88")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_9__["NavWrapper"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
     isActive: isTimerActive,
     setActive: function setActive() {
       return dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["TOGGLE_TIMER_ACTIVE"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["TOGGLE_TIMER_ACTIVE"]
       });
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PlayIcon__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PlayIcon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     isActive: isTimerActive
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
     isActive: areAlertsOn,
     setActive: function setActive() {
       return dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["TOGGLE_ALERTS"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["TOGGLE_ALERTS"]
       });
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NotificationIcon__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NotificationIcon__WEBPACK_IMPORTED_MODULE_7__["default"], {
     isActive: areAlertsOn
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ToggleButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
     isActive: areSoundsOn,
     setActive: function setActive() {
       return dispatch({
-        type: _reducer__WEBPACK_IMPORTED_MODULE_1__["TOGGLE_SOUNDS"]
+        type: _reducer__WEBPACK_IMPORTED_MODULE_2__["TOGGLE_SOUNDS"]
       });
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SoundOnIcon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SoundOnIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
     isActive: areSoundsOn
   })))));
 };
 
 __signature__(Layout, "useReducer{[state, dispatch](initialState)}\nuseRef{modeSwitchConstraintsRef}\nuseInterval{}", function () {
-  return [_useInterval__WEBPACK_IMPORTED_MODULE_2__["default"]];
+  return [_useInterval__WEBPACK_IMPORTED_MODULE_3__["default"]];
 });
 
 var _default = Layout;
@@ -41824,10 +41890,10 @@ var _default = Layout;
     return;
   }
 
-  reactHotLoader.register(initialState, "initialState", "M:\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(colorVariants, "colorVariants", "M:\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(Layout, "Layout", "M:\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(initialState, "initialState", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(colorVariants, "colorVariants", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(Layout, "Layout", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
 })();
 
 ;
@@ -41844,12 +41910,13 @@ var _default = Layout;
 /*!******************************!*\
   !*** ./src/Layout.styles.js ***!
   \******************************/
-/*! exports provided: Wrapper, Container, Raised, SwitchWrapper, SwitchText, Switch, NavWrapper, TimeWrapper, Time, TimeAfterImage */
+/*! exports provided: Wrapper, Header, Container, Raised, SwitchWrapper, SwitchText, Switch, NavWrapper, TimeWrapper, Time, TimeAfterImage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Wrapper", function() { return Wrapper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return Container; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Raised", function() { return Raised; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwitchWrapper", function() { return SwitchWrapper; });
@@ -41861,16 +41928,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeAfterImage", function() { return TimeAfterImage; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
-/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! typeface-poppins */ "./node_modules/typeface-poppins/index.css");
-/* harmony import */ var typeface_poppins__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(typeface_poppins__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _assets_DigitalClock_woff__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/DigitalClock.woff */ "./src/assets/DigitalClock.woff");
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
 })();
 
-function _templateObject10() {
+function _templateObject11() {
   var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -41880,7 +41954,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -41890,7 +41964,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-around;\n  margin-top: 40px;\n  width: 100%;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -41900,7 +41974,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-around;\n  margin-top: 40px;\n  width: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  width: 105px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 12px;\n  background: #e6eef7;\n  border-radius: 12px;\n  color: #6e7d9b;\n  box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),\n    5px 5px 10px rgba(111, 129, 149, 0.5),\n    -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: absolute;\n  cursor: default;\n\n  p {\n    margin: 0;\n    font-size: 20px;\n    font-weight: 500;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -41910,7 +41984,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  width: 105px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 12px;\n  background: #e6eef7;\n  border-radius: 12px;\n  color: #6e7d9b;\n  box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),\n    5px 5px 10px rgba(111, 129, 149, 0.5),\n    -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: absolute;\n  cursor: default;\n\n  p {\n    margin: 0;\n    font-size: 20px;\n    font-weight: 500;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  flex: 0 0 30%;\n  text-align: center;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: rgba(46, 46, 46, 0.4);\n  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 11px;\n  cursor: pointer;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -41920,7 +41994,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  flex: 0 0 30%;\n  text-align: center;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: rgba(46, 46, 46, 0.4);\n  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 11px;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  height: 42px;\n  margin: 0 0 10px;\n  border-radius: 12px;\n  background-color: #eaf2f9;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,\n    inset -5px -5px 10px #ffb6a1;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),\n    inset -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: relative;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -41930,7 +42004,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  height: 42px;\n  margin: 0 0 10px;\n  border-radius: 12px;\n  background-color: #eaf2f9;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,\n    inset -5px -5px 10px #ffb6a1;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),\n    inset -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: relative;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  padding: 20px 25px;\n  background: #e6eef7;\n  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;\n  border-radius: 20px;\n\n  h4 {\n    margin: 0;\n  }\n\n  p {\n    margin: 0;\n    font-size: 20px;\n    font-weight: 500;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -41940,7 +42014,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  padding: 20px 25px;\n  background: #e6eef7;\n  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;\n  border-radius: 20px;\n\n  h4 {\n    margin: 0;\n  }\n\n  p {\n    margin: 0;\n    font-size: 20px;\n    font-weight: 500;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 auto;\n  padding: 30px;\n  background: #eaf2f9;\n  width: 360px;\n  box-shadow: 5px 5px 30px #c1c9d2;\n  border-radius: 20px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -41950,7 +42024,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 auto;\n  padding: 30px;\n  background: #eaf2f9;\n  width: 360px;\n  box-shadow: 5px 5px 30px #c1c9d2;\n  border-radius: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  -webkit-app-region: drag;\n  padding: 5px 10px;\n  display: flex;\n  width: 100%;\n  height: 30px;\n  justify-content: flex-end;\n  align-items: center;\n  background: #cbd5e1;\n\n  * {\n    -webkit-app-region: no-drag;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -41960,7 +42034,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n  height: 100vh;\n  padding: 30px;\n  font-family: 'Poppins', sans-serif;\n  background: #d4dfee;\n  color: #31456a;\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -41977,18 +42051,17 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
-
-
-var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject(), _assets_DigitalClock_woff__WEBPACK_IMPORTED_MODULE_3__["default"]);
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2());
-var Raised = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3());
-var SwitchWrapper = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div)(_templateObject4());
-var SwitchText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5());
-var Switch = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div)(_templateObject6());
-var NavWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav(_templateObject7());
-var TimeWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject8());
-var Time = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject9());
-var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject10());
+var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject());
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject2());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3());
+var Raised = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4());
+var SwitchWrapper = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div)(_templateObject5());
+var SwitchText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject6());
+var Switch = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div)(_templateObject7());
+var NavWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav(_templateObject8());
+var TimeWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject9());
+var Time = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject10());
+var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject11());
 ;
 
 (function () {
@@ -41998,16 +42071,17 @@ var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p
     return;
   }
 
-  reactHotLoader.register(Wrapper, "Wrapper", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Container, "Container", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Raised, "Raised", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(SwitchWrapper, "SwitchWrapper", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(SwitchText, "SwitchText", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Switch, "Switch", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(NavWrapper, "NavWrapper", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(TimeWrapper, "TimeWrapper", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Time, "Time", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Wrapper, "Wrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Header, "Header", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Container, "Container", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Raised, "Raised", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(SwitchWrapper, "SwitchWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(SwitchText, "SwitchText", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Switch, "Switch", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(NavWrapper, "NavWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(TimeWrapper, "TimeWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Time, "Time", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
 })();
 
 ;
@@ -42069,8 +42143,8 @@ var _default = NotificationIcon;
     return;
   }
 
-  reactHotLoader.register(NotificationIcon, "NotificationIcon", "M:\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
+  reactHotLoader.register(NotificationIcon, "NotificationIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
 })();
 
 ;
@@ -42134,8 +42208,8 @@ var _default = PlayIcon;
     return;
   }
 
-  reactHotLoader.register(PlayIcon, "PlayIcon", "M:\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
+  reactHotLoader.register(PlayIcon, "PlayIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
 })();
 
 ;
@@ -42220,8 +42294,8 @@ var _default = Seed;
     return;
   }
 
-  reactHotLoader.register(Seed, "Seed", "M:\\Code\\neumodoro-timer\\src\\Seed.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\Seed.jsx");
+  reactHotLoader.register(Seed, "Seed", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Seed.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Seed.jsx");
 })();
 
 ;
@@ -42295,8 +42369,8 @@ var _default = SoundOnIcon;
     return;
   }
 
-  reactHotLoader.register(SoundOnIcon, "SoundOnIcon", "M:\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
+  reactHotLoader.register(SoundOnIcon, "SoundOnIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
 })();
 
 ;
@@ -42355,8 +42429,8 @@ var _default = ToggleButton;
     return;
   }
 
-  reactHotLoader.register(ToggleButton, "ToggleButton", "M:\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
+  reactHotLoader.register(ToggleButton, "ToggleButton", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
 })();
 
 ;
@@ -42424,8 +42498,8 @@ var Toggle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_temp
     return;
   }
 
-  reactHotLoader.register(ToggleWrapper, "ToggleWrapper", "M:\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
-  reactHotLoader.register(Toggle, "Toggle", "M:\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
+  reactHotLoader.register(ToggleWrapper, "ToggleWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
+  reactHotLoader.register(Toggle, "Toggle", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
 })();
 
 ;
@@ -43127,9 +43201,9 @@ var _default = Tomato;
     return;
   }
 
-  reactHotLoader.register(tweenTransition, "tweenTransition", "M:\\Code\\neumodoro-timer\\src\\Tomato.jsx");
-  reactHotLoader.register(Tomato, "Tomato", "M:\\Code\\neumodoro-timer\\src\\Tomato.jsx");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\Tomato.jsx");
+  reactHotLoader.register(tweenTransition, "tweenTransition", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
+  reactHotLoader.register(Tomato, "Tomato", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
 })();
 
 ;
@@ -43408,20 +43482,20 @@ var _default = reducer;
     return;
   }
 
-  reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(DECREMENT_TIMER, "DECREMENT_TIMER", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(TOGGLE_TIMER_ACTIVE, "TOGGLE_TIMER_ACTIVE", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(UPDATE_TIME, "UPDATE_TIME", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_POMO, "PREP_POMO", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_SHORT_BREAK, "PREP_SHORT_BREAK", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(AUTO_START_SHORT_BREAK, "AUTO_START_SHORT_BREAK", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_LONG_BREAK, "PREP_LONG_BREAK", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(AUTO_START_LONG_BREAK, "AUTO_START_LONG_BREAK", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(END_BREAK, "END_BREAK", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(reducer, "reducer", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(DECREMENT_TIMER, "DECREMENT_TIMER", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(TOGGLE_TIMER_ACTIVE, "TOGGLE_TIMER_ACTIVE", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(UPDATE_TIME, "UPDATE_TIME", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(PREP_POMO, "PREP_POMO", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(PREP_SHORT_BREAK, "PREP_SHORT_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(AUTO_START_SHORT_BREAK, "AUTO_START_SHORT_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(PREP_LONG_BREAK, "PREP_LONG_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(AUTO_START_LONG_BREAK, "AUTO_START_LONG_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(END_BREAK, "END_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(reducer, "reducer", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
 })();
 
 ;
@@ -43476,8 +43550,8 @@ var darkTheme = {
     return;
   }
 
-  reactHotLoader.register(lightTheme, "lightTheme", "M:\\Code\\neumodoro-timer\\src\\themes.js");
-  reactHotLoader.register(darkTheme, "darkTheme", "M:\\Code\\neumodoro-timer\\src\\themes.js");
+  reactHotLoader.register(lightTheme, "lightTheme", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\themes.js");
+  reactHotLoader.register(darkTheme, "darkTheme", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\themes.js");
 })();
 
 ;
@@ -43548,8 +43622,8 @@ var _default = useInterval;
     return;
   }
 
-  reactHotLoader.register(useInterval, "useInterval", "M:\\Code\\neumodoro-timer\\src\\useInterval.js");
-  reactHotLoader.register(_default, "default", "M:\\Code\\neumodoro-timer\\src\\useInterval.js");
+  reactHotLoader.register(useInterval, "useInterval", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\useInterval.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\useInterval.js");
 })();
 
 ;
@@ -43593,8 +43667,8 @@ var FIVE_MINUTES_IN_SECONDS = 300;
     return;
   }
 
-  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "M:\\Code\\neumodoro-timer\\src\\utils.js");
-  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "M:\\Code\\neumodoro-timer\\src\\utils.js");
+  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\utils.js");
+  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\utils.js");
 })();
 
 ;

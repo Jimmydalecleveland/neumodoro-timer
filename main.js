@@ -4,11 +4,12 @@ Menu.setApplicationMenu(null)
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 380,
-    height: 620,
+    width: 420,
+    height: 680,
     webPreferences: {
       nodeIntegration: true,
     },
+    frame: false,
     titleBarStyle: 'hiddenInset',
   })
 
