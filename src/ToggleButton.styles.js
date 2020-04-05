@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const ToggleWrapper = styled.button`
+  all: unset;
   display: flex;
   position: relative;
   align-items: center;
@@ -8,13 +9,10 @@ export const ToggleWrapper = styled.button`
   border: none;
   background: none;
   padding: 0;
+  outline: none;
 `
 
 export const Toggle = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
   background: #e6eef7;
   box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;
   border-radius: 20px;

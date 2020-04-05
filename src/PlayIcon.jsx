@@ -9,6 +9,7 @@ function PlayIcon({ isActive }) {
         width: '25px',
         marginLeft: '5px',
         fill: isActive ? '#ff977c' : '#a8afb5',
+        transform: 'translate(-2px, 0px)',
       }}
     >
       <title>play-outline</title>

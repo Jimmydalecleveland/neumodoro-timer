@@ -41576,7 +41576,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SoundOnIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SoundOnIcon */ "./src/SoundOnIcon.jsx");
 /* harmony import */ var _Layout_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Layout.styles */ "./src/Layout.styles.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
-/* harmony import */ var _assets_Notification_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/Notification.mp3 */ "./src/assets/Notification.mp3");
+/* harmony import */ var _assets_long_electric_piano_organ_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/long-electric-piano-organ.mp3 */ "./src/assets/long-electric-piano-organ.mp3");
+/* harmony import */ var _assets_short_jazz_organ_note_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./assets/short-jazz-organ-note.mp3 */ "./src/assets/short-jazz-organ-note.mp3");
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
@@ -41593,6 +41594,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
   return a;
 };
+
 
 
 
@@ -41640,7 +41642,8 @@ var Layout = function Layout() {
       areAlertsOn = state.areAlertsOn,
       areSoundsOn = state.areSoundsOn;
   var modeSwitchConstraintsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  var notificationSound = new Audio(_assets_Notification_mp3__WEBPACK_IMPORTED_MODULE_10__["default"]);
+  var audioAlertLong = new Audio(_assets_long_electric_piano_organ_mp3__WEBPACK_IMPORTED_MODULE_10__["default"]);
+  var audioAlertShort = new Audio(_assets_short_jazz_organ_note_mp3__WEBPACK_IMPORTED_MODULE_11__["default"]);
 
   var displayTime = function displayTime() {
     var minutes = Math.floor(time / 60).toString();
@@ -41650,9 +41653,9 @@ var Layout = function Layout() {
     return "".concat(minutes, ":").concat(seconds);
   };
 
-  var playNotificationSound = function playNotificationSound() {
+  var playNotificationSound = function playNotificationSound(sound) {
     if (areSoundsOn) {
-      notificationSound.play();
+      sound.play();
     }
   };
 
@@ -41671,9 +41674,9 @@ var Layout = function Layout() {
 
   Object(_useInterval__WEBPACK_IMPORTED_MODULE_2__["default"])(function (intervalId) {
     if (time <= 0) {
-      playNotificationSound();
-
       if (mode === 'Pomodoro') {
+        playNotificationSound(audioAlertLong);
+
         if (pomo === 4) {
           sendNotification('Time is up!', 'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.');
           dispatch({
@@ -41687,6 +41690,8 @@ var Layout = function Layout() {
         }
       } else {
         // Break is over
+        playNotificationSound(audioAlertShort);
+
         if (pomo === 4) {
           sendNotification('Start a new tomato?');
         } else {
@@ -41717,7 +41722,7 @@ var Layout = function Layout() {
   };
 
   var getSwitchPosition = function getSwitchPosition() {
-    var switchWidth = 120;
+    var switchWidth = 105;
 
     if (mode === 'Pomodoro') {
       return 0;
@@ -41743,19 +41748,19 @@ var Layout = function Layout() {
         type: _reducer__WEBPACK_IMPORTED_MODULE_1__["PREP_POMO"]
       });
     }
-  }, "Pomodoro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
+  }, "Pomo", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "doro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
     onClick: function onClick() {
       return dispatch({
         type: _reducer__WEBPACK_IMPORTED_MODULE_1__["PREP_SHORT_BREAK"]
       });
     }
-  }, "Short Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
+  }, "Short", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["SwitchText"], {
     onClick: function onClick() {
       return dispatch({
         type: _reducer__WEBPACK_IMPORTED_MODULE_1__["PREP_LONG_BREAK"]
       });
     }
-  }, "Long Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["Switch"], {
+  }, "Long", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Break"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout_styles__WEBPACK_IMPORTED_MODULE_8__["Switch"], {
     animate: {
       x: getSwitchPosition()
     },
@@ -41768,7 +41773,7 @@ var Layout = function Layout() {
 
   }, mode)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tomato__WEBPACK_IMPORTED_MODULE_3__["default"], {
     style: {
-      width: '70%'
+      width: '80%'
     },
     pomo: pomo,
     showCurrentExo: showCurrentExo,
@@ -41839,7 +41844,7 @@ var _default = Layout;
 /*!******************************!*\
   !*** ./src/Layout.styles.js ***!
   \******************************/
-/*! exports provided: Wrapper, Container, Raised, SwitchWrapper, SwitchText, Switch, NavWrapper, CircleButton, TimeWrapper, Time, TimeAfterImage */
+/*! exports provided: Wrapper, Container, Raised, SwitchWrapper, SwitchText, Switch, NavWrapper, TimeWrapper, Time, TimeAfterImage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41851,7 +41856,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwitchText", function() { return SwitchText; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return Switch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavWrapper", function() { return NavWrapper; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CircleButton", function() { return CircleButton; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeWrapper", function() { return TimeWrapper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Time", function() { return Time; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeAfterImage", function() { return TimeAfterImage; });
@@ -41865,18 +41869,8 @@ __webpack_require__.r(__webpack_exports__);
   enterModule && enterModule(module);
 })();
 
-function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 64px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n"]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 64px;\n  font-family: 'Digital Clock', sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -41886,7 +41880,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -41896,7 +41890,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 20px;\n  background: #e6eef7;\n  box-shadow: 5px 5px 10px #d1d7de, -5px -5px 10px #ffffff;\n  border-radius: 50%;\n  font-size: 36px;\n  font-weight: 300;\n\n  span {\n    position: absolute;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -41906,7 +41900,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-evenly;\n  margin-top: 50px;\n  width: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-around;\n  margin-top: 40px;\n  width: 100%;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -41916,7 +41910,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  width: 120px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 14px;\n  background: #e6eef7;\n  border-radius: 13px;\n  color: #6e7d9b;\n  box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),\n    5px 5px 10px rgba(111, 129, 149, 0.5),\n    -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: absolute;\n  cursor: default;\n\n  p {\n    margin: 0;\n    font-size: 20px;\n    font-weight: 500;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  width: 105px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 12px;\n  background: #e6eef7;\n  border-radius: 12px;\n  color: #6e7d9b;\n  box-shadow: -1px -1px 1px rgba(201, 211, 221, 0.5),\n    5px 5px 10px rgba(111, 129, 149, 0.5),\n    -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: absolute;\n  cursor: default;\n\n  p {\n    margin: 0;\n    font-size: 20px;\n    font-weight: 500;\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -41926,7 +41920,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  flex: 0 0 30%;\n  padding: 7px 10px;\n  text-align: center;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: rgba(46, 46, 46, 0.4);\n  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 12px;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  flex: 0 0 30%;\n  text-align: center;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: rgba(46, 46, 46, 0.4);\n  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 11px;\n  cursor: pointer;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -41936,7 +41930,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  margin: 0 0 10px;\n  border-radius: 13px;\n  width: 83%;\n  height: 50px;\n  background-color: #eaf2f9;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,\n    inset -5px -5px 10px #ffb6a1;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),\n    inset -5px -5px 10px rgba(255, 255, 255, 0.5);\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  height: 42px;\n  margin: 0 0 10px;\n  border-radius: 12px;\n  background-color: #eaf2f9;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px #aa2f1f,\n    inset -5px -5px 10px #ffb6a1;\n  box-shadow: 1px 1px 2px #fff, inset 5px 5px 10px rgba(42, 42, 42, 0.5),\n    inset -5px -5px 10px rgba(255, 255, 255, 0.5);\n  position: relative;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -41956,7 +41950,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 auto;\n  padding: 30px;\n  background: #eaf2f9;\n  width: 480px;\n  box-shadow: 5px 5px 30px #c1c9d2;\n  border-radius: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 auto;\n  padding: 30px;\n  background: #eaf2f9;\n  width: 360px;\n  box-shadow: 5px 5px 30px #c1c9d2;\n  border-radius: 20px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -41966,7 +41960,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n  height: 100vh;\n  padding: 30px;\n  font-family: 'Poppins', sans-serif;\n  background: #d4dfee;\n  color: #31456a;\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n  height: 100vh;\n  padding: 30px;\n  font-family: 'Poppins', sans-serif;\n  background: #d4dfee;\n  color: #31456a;\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -41992,10 +41986,9 @@ var SwitchWrapper = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["defau
 var SwitchText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5());
 var Switch = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div)(_templateObject6());
 var NavWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav(_templateObject7());
-var CircleButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject8());
-var TimeWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject9());
-var Time = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject10());
-var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject11());
+var TimeWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject8());
+var Time = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject9());
+var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(_templateObject10());
 ;
 
 (function () {
@@ -42012,7 +42005,6 @@ var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p
   reactHotLoader.register(SwitchText, "SwitchText", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
   reactHotLoader.register(Switch, "Switch", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
   reactHotLoader.register(NavWrapper, "NavWrapper", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(CircleButton, "CircleButton", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
   reactHotLoader.register(TimeWrapper, "TimeWrapper", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
   reactHotLoader.register(Time, "Time", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
   reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "M:\\Code\\neumodoro-timer\\src\\Layout.styles.js");
@@ -42054,18 +42046,15 @@ var NotificationIcon = function NotificationIcon(_ref) {
   var isActive = _ref.isActive;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 389.33 393.84",
+    viewBox: "0 0 473.1 418.4",
     style: {
       position: 'absolute',
       width: '30px',
-      marginLeft: '3px',
-      marginTop: '3px',
-      fill: isActive ? '#ff977c' : '#a8afb5'
+      fill: isActive ? '#ff977c' : '#a8afb5',
+      transform: 'translate(1px, 2px)'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M327.72,20H61.62A41.61,41.61,0,0,0,20,61.62V261.69a41.61,41.61,0,0,0,41.62,41.62h86l37.57,65.07a10.9,10.9,0,0,0,18.89,0l37.58-65.07h86a41.61,41.61,0,0,0,41.61-41.62V61.62A41.61,41.61,0,0,0,327.72,20Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M194.67,393.84a31,31,0,0,1-26.77-15.46l-31.8-55.07H61.62A61.69,61.69,0,0,1,0,261.69V61.62A61.69,61.69,0,0,1,61.62,0h266.1a61.68,61.68,0,0,1,61.61,61.62V261.69a61.68,61.68,0,0,1-61.61,61.62H253.23l-31.8,55.07A31,31,0,0,1,194.67,393.84ZM61.62,40A21.65,21.65,0,0,0,40,61.62V261.69a21.65,21.65,0,0,0,21.62,21.62H159.2l35.47,61.44,35.47-61.44h97.58a21.64,21.64,0,0,0,21.61-21.62V61.62A21.64,21.64,0,0,0,327.72,40Z"
+    d: "M236.55,418.4a36.46,36.46,0,0,1-31.48-18.18l-32.86-56.91H69A69.13,69.13,0,0,1,0,274.26V69A69.12,69.12,0,0,1,69,0h335a69.12,69.12,0,0,1,69,69V274.26a69.13,69.13,0,0,1-69,69.05H300.89L268,400.22A36.45,36.45,0,0,1,236.55,418.4ZM69,60a9.06,9.06,0,0,0-9,9V274.26a9.06,9.06,0,0,0,9,9.05H206.85l29.7,51.44,29.7-51.44H404.06a9.06,9.06,0,0,0,9-9.05V69a9.06,9.06,0,0,0-9-9Z"
   }));
 };
 
@@ -42124,7 +42113,8 @@ function PlayIcon(_ref) {
       position: 'absolute',
       width: '25px',
       marginLeft: '5px',
-      fill: isActive ? '#ff977c' : '#a8afb5'
+      fill: isActive ? '#ff977c' : '#a8afb5',
+      transform: 'translate(-2px, 0px)'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "play-outline"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
     "data-name": "Layer 2"
@@ -42280,9 +42270,8 @@ var SoundOnIcon = function SoundOnIcon(_ref) {
     style: {
       position: 'absolute',
       width: '35px',
-      marginLeft: '4px',
-      marginTop: '3px',
-      fill: isActive ? '#ff977c' : '#a8afb5'
+      fill: isActive ? '#ff977c' : '#a8afb5',
+      transform: 'translate(2px, 1px)'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M261.92,462a53.79,53.79,0,0,1-38.1-15.82L143.64,366H54A54.06,54.06,0,0,1,0,312V168a54.06,54.06,0,0,1,54-54h89.64l80.18-80.16A54,54,0,0,1,316,72V408a54.09,54.09,0,0,1-54.08,54ZM60,306H168.48L256,393.5v-307L168.48,174H60Z"
@@ -42398,7 +42387,7 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 24px;\n  background: #e6eef7;\n  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;\n  border-radius: 20px;\n\n  height: 70px;\n  width: 70px;\n\n  &.active {\n    border: solid 3px #fcfeff;\n    filter: blur(1px);\n    box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,\n      inset -5px -5px 10px #ffffff;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background: #e6eef7;\n  box-shadow: 5px 5px 10px #c1c9d2, -5px -5px 10px #ffffff;\n  border-radius: 20px;\n\n  height: 70px;\n  width: 70px;\n\n  &.active {\n    border: solid 3px #fcfeff;\n    filter: blur(1px);\n    box-shadow: 1px 1px 2px #c1c9d2, inset 5px 5px 10px #c1c9d2,\n      inset -5px -5px 10px #ffffff;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -42408,7 +42397,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  padding: 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  all: unset;\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  padding: 0;\n  outline: none;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -43166,16 +43155,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/assets/Notification.mp3":
-/*!*************************************!*\
-  !*** ./src/assets/Notification.mp3 ***!
-  \*************************************/
+/***/ "./src/assets/long-electric-piano-organ.mp3":
+/*!**************************************************!*\
+  !*** ./src/assets/long-electric-piano-organ.mp3 ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d64c1690ed233de5a25664c7634a81f8.mp3");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "baaffb9e9f22d0c0a9087a66351ede49.mp3");
+
+/***/ }),
+
+/***/ "./src/assets/short-jazz-organ-note.mp3":
+/*!**********************************************!*\
+  !*** ./src/assets/short-jazz-organ-note.mp3 ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7419be4839d1bae3007e28ac25cb8ac4.mp3");
 
 /***/ }),
 
