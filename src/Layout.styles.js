@@ -5,20 +5,21 @@ export const Wrapper = styled.div`
   padding: 20px;
 `
 
-export const Header = styled.header`
-  -webkit-app-region: drag;
-  padding: 5px 10px;
-  display: flex;
-  width: 100%;
-  height: 30px;
-  justify-content: flex-end;
-  align-items: center;
-  background: #cbd5e1;
+// TODO: implement custom header
+// export const Header = styled.header`
+//   -webkit-app-region: drag;
+//   padding: 5px 10px;
+//   display: flex;
+//   width: 100%;
+//   height: 30px;
+//   justify-content: flex-end;
+//   align-items: center;
+//   background: #cbd5e1;
 
-  * {
-    -webkit-app-region: no-drag;
-  }
-`
+//   * {
+//     -webkit-app-region: no-drag;
+//   }
+// `
 
 export const Container = styled.div`
   display: flex;

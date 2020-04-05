@@ -9,7 +9,6 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    frame: false,
     titleBarStyle: 'hiddenInset',
   })
 

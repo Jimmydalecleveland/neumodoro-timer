@@ -1,11 +1,10 @@
 import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { hot } from 'react-hot-loader'
-import { lightTheme } from './themes'
-import Layout from './Layout'
 import 'typeface-poppins'
 import DigitalClock from './assets/DigitalClock.woff'
-import Header from './Header'
+import { lightTheme } from './themes'
+import Layout from './Layout'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -64,7 +63,6 @@ const GlobalStyle = createGlobalStyle`
 const App = () => (
   <ThemeProvider theme={lightTheme}>
     <GlobalStyle />
-    <Header />
     <Layout />
   </ThemeProvider>
 )

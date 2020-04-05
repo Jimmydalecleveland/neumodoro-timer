@@ -3,7 +3,8 @@ import * as Styled from './Layout.styles'
 
 const Header = () => {
   const handleClose = () => {
-    remote.app.quit()
+    // TODO: implement close click
+    // remote.app.quit()
   }
 
   return (

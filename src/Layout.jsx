@@ -49,6 +49,8 @@ const Layout = () => {
 
   const audioAlertLong = new Audio(alertLong)
   const audioAlertShort = new Audio(alertShort)
+  audioAlertLong.volume = 0.8
+  audioAlertShort.volume = 0.8
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
