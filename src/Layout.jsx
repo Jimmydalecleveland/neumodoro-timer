@@ -9,7 +9,8 @@ import NotificationIcon from './NotificationIcon'
 import SoundOnIcon from './SoundOnIcon'
 import * as Styled from './Layout.styles'
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
-import audio from './assets/Notification.mp3'
+import alertLong from './assets/long-electric-piano-organ.mp3'
+import alertShort from './assets/short-jazz-organ-note.mp3'
 
 const initialState = {
   time: TWENTY_FIVE_MINUTES_IN_SECONDS,
@@ -46,7 +47,8 @@ const Layout = () => {
   } = state
   const modeSwitchConstraintsRef = useRef(null)
 
-  const notificationSound = new Audio(audio)
+  const audioAlertLong = new Audio(alertLong)
+  const audioAlertShort = new Audio(alertShort)
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
@@ -56,9 +58,9 @@ const Layout = () => {
     return `${minutes}:${seconds}`
   }
 
-  const playNotificationSound = () => {
+  const playNotificationSound = (sound) => {
     if (areSoundsOn) {
-      notificationSound.play()
+      sound.play()
     }
   }
 
@@ -78,8 +80,8 @@ const Layout = () => {
   useInterval(
     (intervalId) => {
       if (time <= 0) {
-        playNotificationSound()
         if (mode === 'Pomodoro') {
+          playNotificationSound(audioAlertLong)
           if (pomo === 4) {
             sendNotification(
               'Time is up!',
@@ -92,6 +94,7 @@ const Layout = () => {
           }
         } else {
           // Break is over
+          playNotificationSound(audioAlertShort)
           if (pomo === 4) {
             sendNotification('Start a new tomato?')
           } else {
