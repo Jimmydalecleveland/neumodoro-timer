@@ -6,10 +6,11 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 420,
     height: 680,
+    icon: './src/assets/tomato-icon.png',
+    titleBarStyle: 'hiddenInset',
     webPreferences: {
       nodeIntegration: true,
     },
-    titleBarStyle: 'hiddenInset',
   })
 
   win.loadFile('./dist/index.html')

@@ -41649,6 +41649,8 @@ var Layout = function Layout() {
   var modeSwitchConstraintsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   var audioAlertLong = new Audio(_assets_long_electric_piano_organ_mp3__WEBPACK_IMPORTED_MODULE_10__["default"]);
   var audioAlertShort = new Audio(_assets_short_jazz_organ_note_mp3__WEBPACK_IMPORTED_MODULE_11__["default"]);
+  audioAlertLong.volume = 0.8;
+  audioAlertShort.volume = 0.8;
 
   var displayTime = function displayTime() {
     var minutes = Math.floor(time / 60).toString();
