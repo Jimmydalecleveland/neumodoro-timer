@@ -1,32 +1,26 @@
 import React, { useReducer, useRef } from 'react'
 
-import reducer from './reducer'
+import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
+import reducer, * as actions from './reducer'
 import useInterval from './useInterval'
 import Tomato from './Tomato'
+import ToggleButton from './ToggleButton'
+import PlayIcon from './PlayIcon'
+import NotificationIcon from './NotificationIcon'
+import SoundOnIcon from './SoundOnIcon'
 import * as Styled from './Layout.styles'
-import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
+import alertLong from './assets/long-electric-piano-organ.mp3'
+import alertShort from './assets/short-jazz-organ-note.mp3'
 
 const initialState = {
   time: TWENTY_FIVE_MINUTES_IN_SECONDS,
-  pomo: 0,
-  isPomoActive: false,
+  pomo: 1,
+  showCurrentExo: true,
   isTimerActive: false,
   areAlertsOn: true,
+  areSoundsOn: true,
   mode: 'Pomodoro',
 }
-
-// Higher contrast
-// const colorVariants = {
-//   Pomodoro: {
-//     backgroundColor: '#ff6138',
-//   },
-//   'Short Break': {
-//     backgroundColor: '#06c7f3',
-//   },
-//   'Long Break': {
-//     backgroundColor: '#06c7f3',
-//   },
-// }
 
 const colorVariants = {
   Pomodoro: {
@@ -42,8 +36,19 @@ const colorVariants = {
 
 const Layout = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const { time, mode, pomo, isPomoActive, isTimerActive, areAlertsOn } = state
+  const {
+    time,
+    mode,
+    pomo,
+    showCurrentExo,
+    isTimerActive,
+    areAlertsOn,
+    areSoundsOn,
+  } = state
   const modeSwitchConstraintsRef = useRef(null)
+
+  const audioAlertLong = new Audio(alertLong)
+  const audioAlertShort = new Audio(alertShort)
 
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
@@ -51,6 +56,12 @@ const Layout = () => {
     if (minutes < 10) minutes = `0${minutes}`
     if (seconds < 10) seconds = `0${seconds}`
     return `${minutes}:${seconds}`
+  }
+
+  const playNotificationSound = (sound) => {
+    if (areSoundsOn) {
+      sound.play()
+    }
   }
 
   const sendNotification = (title, body) => {
@@ -69,55 +80,48 @@ const Layout = () => {
   useInterval(
     (intervalId) => {
       if (time <= 0) {
-        if (isPomoActive) {
+        if (mode === 'Pomodoro') {
+          playNotificationSound(audioAlertLong)
           if (pomo === 4) {
             sendNotification(
               'Time is up!',
               'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
             )
-            dispatch({ type: 'START_LONG_BREAK' })
+            dispatch({ type: actions.AUTO_START_LONG_BREAK })
           } else {
             sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
-            dispatch({ type: 'START_SHORT_BREAK' })
+            dispatch({ type: actions.AUTO_START_SHORT_BREAK })
           }
         } else {
           // Break is over
+          playNotificationSound(audioAlertShort)
           if (pomo === 4) {
             sendNotification('Start a new tomato?')
           } else {
             sendNotification('Back to work! (╯▔皿▔)╯')
           }
-          dispatch({ type: 'END_BREAK' })
+          dispatch({ type: actions.END_BREAK })
           clearInterval(intervalId)
         }
       } else {
-        dispatch({ type: 'DECREMENT_TIMER' })
+        dispatch({ type: actions.DECREMENT_TIMER })
       }
     },
-    isTimerActive ? 1000 : null
+    isTimerActive ? 20 : null
   )
 
   const currentSeeds = () => {
-    const seedsBehindQuarters = 20 - pomo * 5
-    // If in the middle of a pomodoro, use time to calculate
-    // how many seeds to show
-    if (isPomoActive) {
-      const minutes = Math.ceil(time / 60)
-      console.log(seedsBehindQuarters + Math.ceil(minutes / 5))
-      return seedsBehindQuarters + Math.ceil(minutes / 5)
-    }
-    return seedsBehindQuarters
-  }
+    const startingSeedsForCurrentPomo = 20 - (pomo - 1) * 5
+    if (mode === 'Pomodoro') {
+      const seeds = Math.ceil(time / 60 / 5)
 
-  const startStopTimer = () => {
-    if (!isPomoActive) {
-      dispatch({ type: 'START_NEW_POMO' })
+      return startingSeedsForCurrentPomo - (5 - seeds)
     }
-    dispatch({ type: 'TOGGLE_TIMER_ACTIVE' })
+    return startingSeedsForCurrentPomo - 5
   }
 
   const getSwitchPosition = () => {
-    const switchWidth = 120
+    const switchWidth = 105
 
     if (mode === 'Pomodoro') {
       return 0
@@ -140,25 +144,25 @@ const Layout = () => {
           transition={{ duration: 0.6 }}
         >
           <Styled.SwitchText
-            onClick={() =>
-              dispatch({ type: 'SWITCH_MODE', payload: 'Pomodoro' })
-            }
+            onClick={() => dispatch({ type: actions.PREP_POMO })}
           >
-            Pomodoro
+            Pomo
+            <br />
+            doro
           </Styled.SwitchText>
           <Styled.SwitchText
-            onClick={() =>
-              dispatch({ type: 'SWITCH_MODE', payload: 'Short Break' })
-            }
+            onClick={() => dispatch({ type: actions.PREP_SHORT_BREAK })}
           >
-            Short Break
+            Short
+            <br />
+            Break
           </Styled.SwitchText>
           <Styled.SwitchText
-            onClick={() =>
-              dispatch({ type: 'SWITCH_MODE', payload: 'Long Break' })
-            }
+            onClick={() => dispatch({ type: actions.PREP_LONG_BREAK })}
           >
-            Long Break
+            Long
+            <br />
+            Break
           </Styled.SwitchText>
           <Styled.Switch
             animate={{
@@ -177,47 +181,39 @@ const Layout = () => {
         </Styled.SwitchWrapper>
 
         <Tomato
-          style={{ width: '70%' }}
+          style={{ width: '80%' }}
           pomo={pomo}
-          isPomoActive={isPomoActive}
+          showCurrentExo={showCurrentExo}
           seeds={currentSeeds()}
+          setQuadrant={dispatch}
         />
 
-        <Styled.Raised>
-          <h4>Time Left: </h4>
-          <p>{displayTime()}</p>
-          <Styled.CircleButton>
-            <span>›</span>
-          </Styled.CircleButton>
-        </Styled.Raised>
+        <Styled.TimeWrapper>
+          <Styled.Time>{displayTime()}</Styled.Time>
+          <Styled.TimeAfterImage>88:88</Styled.TimeAfterImage>
+        </Styled.TimeWrapper>
+
         <Styled.NavWrapper>
-          <Styled.Toggle>
-            <input type="checkbox" onClick={startStopTimer} />
-            <span />
-          </Styled.Toggle>
-          <Styled.Toggle>
-            <input type="checkbox" />
-            <span />
-          </Styled.Toggle>
-          <Styled.Toggle>
-            <input
-              type="checkbox"
-              onClick={() =>
-                dispatch({
-                  type: 'SWITCH_MODE',
-                  payload: mode === 'Pomodoro' ? 'Short Break' : 'Pomodoro',
-                })
-              }
-            />
-            <span />
-          </Styled.Toggle>
-          <Styled.Toggle>
-            <input
-              type="checkbox"
-              onClick={() => dispatch({ type: 'TOGGLE_ALERTS' })}
-            />
-            <span />
-          </Styled.Toggle>
+          <ToggleButton
+            isActive={isTimerActive}
+            setActive={() => dispatch({ type: actions.TOGGLE_TIMER_ACTIVE })}
+          >
+            <PlayIcon isActive={isTimerActive} />
+          </ToggleButton>
+
+          <ToggleButton
+            isActive={areAlertsOn}
+            setActive={() => dispatch({ type: actions.TOGGLE_ALERTS })}
+          >
+            <NotificationIcon isActive={areAlertsOn} />
+          </ToggleButton>
+
+          <ToggleButton
+            isActive={areSoundsOn}
+            setActive={() => dispatch({ type: actions.TOGGLE_SOUNDS })}
+          >
+            <SoundOnIcon isActive={areSoundsOn} />
+          </ToggleButton>
         </Styled.NavWrapper>
       </Styled.Container>
     </Styled.Wrapper>

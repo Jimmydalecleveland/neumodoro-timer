@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   // mode defaults to 'production' if not set
@@ -26,24 +26,37 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-      },  
+      },
       {
         test: /\.svg$/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
           {
             loader: 'svg-inline-loader',
             options: {
               jsx: true,
-            }
-          }
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
         ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: false },
+          },
+        ],
       },
     ],
   },
@@ -57,4 +70,4 @@ module.exports = {
   devServer: {
     contentBase: './dist',
   },
-};
+}
