@@ -109,7 +109,7 @@ const Layout = () => {
         dispatch({ type: actions.DECREMENT_TIMER })
       }
     },
-    isTimerActive ? 20 : null
+    isTimerActive ? 1000 : null
   )
 
   const currentSeeds = () => {
