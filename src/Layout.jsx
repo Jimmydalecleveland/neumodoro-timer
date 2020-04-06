@@ -85,20 +85,20 @@ const Layout = () => {
           if (pomo === 4) {
             sendNotification(
               'Time is up!',
-              'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
+              'You completed a tomato set! ♪(^∇^*) Take a 25 minute break.'
             )
             dispatch({ type: actions.AUTO_START_LONG_BREAK })
           } else {
-            sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
+            sendNotification('Time is up!', 'Take a 5 minute break.')
             dispatch({ type: actions.AUTO_START_SHORT_BREAK })
           }
         } else {
           // Break is over
           playNotificationSound(audioAlertShort)
           if (pomo === 4) {
-            sendNotification('Start a new tomato?')
+            sendNotification('I hope you had a nice rest. o(*￣︶￣*)o')
           } else {
-            sendNotification('Back to work! (╯▔皿▔)╯')
+            sendNotification("Break's over!", 'Back to work! (╯▔皿▔)╯')
           }
           dispatch({ type: actions.END_BREAK })
           clearInterval(intervalId)
