@@ -71,9 +71,7 @@ const Layout = () => {
       // TODO: is there a way to store this one time and call .show()
       // on it with updated messages?
       const notification = new Notification(title, {
-        silent: false,
-        icon: 'icon-location',
-        urgency: 'normal',
+        silent: true,
         body,
       })
     }
@@ -175,8 +173,8 @@ const Layout = () => {
               mass: '0.2',
               damping: '6.3',
             }}
-            // drag="x"
-            // dragConstraints={modeSwitchConstraintsRef}
+          // drag="x"
+          // dragConstraints={modeSwitchConstraintsRef}
           >
             {mode}
           </Styled.Switch>
