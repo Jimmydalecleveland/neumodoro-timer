@@ -13,10 +13,12 @@ Menu.setApplicationMenu(null)
 
 function createWindow() {
   const win = new BrowserWindow({
+    title: 'Neumodoro Timer',
     width: 420,
     height: 680,
-    icon: './src/assets/tomato-icon.png',
+    icon: __dirname + '/src/assets/icon',
     titleBarStyle: 'hiddenInset',
+    backgroundColor: '#d4dfee',
     webPreferences: {
       nodeIntegration: true,
     },

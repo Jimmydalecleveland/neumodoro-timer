@@ -41481,7 +41481,7 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n\n  body {\n    height: 100vh;\n    padding: 0;\n    margin: 0;\n    background: #d4dfee;\n    color: #31456a;\n    font-family: 'Poppins', sans-serif;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n\n  body {\n    height: 100vh;\n    padding: 0;\n    margin: 0;\n    background: #d4dfee;\n    color: #31456a;\n    font-family: 'Poppins', sans-serif;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n    -webkit-user-select:none;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -41523,9 +41523,9 @@ var _default = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__["hot"])(modu
     return;
   }
 
-  reactHotLoader.register(GlobalStyle, "GlobalStyle", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
-  reactHotLoader.register(App, "App", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(GlobalStyle, "GlobalStyle", "/Users/jimmy/Projects/neumodoro-timer/src/App.jsx");
+  reactHotLoader.register(App, "App", "/Users/jimmy/Projects/neumodoro-timer/src/App.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/App.jsx");
 })();
 
 ;
@@ -41648,9 +41648,7 @@ var Layout = function Layout() {
       // TODO: is there a way to store this one time and call .show()
       // on it with updated messages?
       var notification = new Notification(title, {
-        silent: false,
-        icon: 'icon-location',
-        urgency: 'normal',
+        silent: true,
         body: body
       });
     }
@@ -41808,10 +41806,10 @@ var _default = Layout;
     return;
   }
 
-  reactHotLoader.register(initialState, "initialState", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(colorVariants, "colorVariants", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(Layout, "Layout", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(initialState, "initialState", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(colorVariants, "colorVariants", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(Layout, "Layout", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
 })();
 
 ;
@@ -41851,7 +41849,7 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n"]);
+  var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n  -webkit-user-select:none;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -41861,7 +41859,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  -webkit-user-select:none;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -41941,7 +41939,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  -webkit-app-region: drag;\n  padding: 35px 20px 20px;\n\n  * {\n    -webkit-app-region: no-drag;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -41991,16 +41989,16 @@ var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p
     return;
   }
 
-  reactHotLoader.register(Wrapper, "Wrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Container, "Container", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Raised, "Raised", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(SwitchWrapper, "SwitchWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(SwitchText, "SwitchText", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Switch, "Switch", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(NavWrapper, "NavWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(TimeWrapper, "TimeWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Time, "Time", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Wrapper, "Wrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Container, "Container", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Raised, "Raised", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(SwitchWrapper, "SwitchWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(SwitchText, "SwitchText", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Switch, "Switch", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(NavWrapper, "NavWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(TimeWrapper, "TimeWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Time, "Time", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
 })();
 
 ;
@@ -42062,8 +42060,8 @@ var _default = NotificationIcon;
     return;
   }
 
-  reactHotLoader.register(NotificationIcon, "NotificationIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
+  reactHotLoader.register(NotificationIcon, "NotificationIcon", "/Users/jimmy/Projects/neumodoro-timer/src/NotificationIcon.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/NotificationIcon.jsx");
 })();
 
 ;
@@ -42127,8 +42125,8 @@ var _default = PlayIcon;
     return;
   }
 
-  reactHotLoader.register(PlayIcon, "PlayIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
+  reactHotLoader.register(PlayIcon, "PlayIcon", "/Users/jimmy/Projects/neumodoro-timer/src/PlayIcon.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/PlayIcon.jsx");
 })();
 
 ;
@@ -42213,8 +42211,8 @@ var _default = Seed;
     return;
   }
 
-  reactHotLoader.register(Seed, "Seed", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Seed.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Seed.jsx");
+  reactHotLoader.register(Seed, "Seed", "/Users/jimmy/Projects/neumodoro-timer/src/Seed.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/Seed.jsx");
 })();
 
 ;
@@ -42288,8 +42286,8 @@ var _default = SoundOnIcon;
     return;
   }
 
-  reactHotLoader.register(SoundOnIcon, "SoundOnIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
+  reactHotLoader.register(SoundOnIcon, "SoundOnIcon", "/Users/jimmy/Projects/neumodoro-timer/src/SoundOnIcon.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/SoundOnIcon.jsx");
 })();
 
 ;
@@ -42348,8 +42346,8 @@ var _default = ToggleButton;
     return;
   }
 
-  reactHotLoader.register(ToggleButton, "ToggleButton", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
+  reactHotLoader.register(ToggleButton, "ToggleButton", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.jsx");
 })();
 
 ;
@@ -42417,8 +42415,8 @@ var Toggle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_temp
     return;
   }
 
-  reactHotLoader.register(ToggleWrapper, "ToggleWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
-  reactHotLoader.register(Toggle, "Toggle", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
+  reactHotLoader.register(ToggleWrapper, "ToggleWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.styles.js");
+  reactHotLoader.register(Toggle, "Toggle", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.styles.js");
 })();
 
 ;
@@ -43120,9 +43118,9 @@ var _default = Tomato;
     return;
   }
 
-  reactHotLoader.register(tweenTransition, "tweenTransition", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
-  reactHotLoader.register(Tomato, "Tomato", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
+  reactHotLoader.register(tweenTransition, "tweenTransition", "/Users/jimmy/Projects/neumodoro-timer/src/Tomato.jsx");
+  reactHotLoader.register(Tomato, "Tomato", "/Users/jimmy/Projects/neumodoro-timer/src/Tomato.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/Tomato.jsx");
 })();
 
 ;
@@ -43401,20 +43399,20 @@ var _default = reducer;
     return;
   }
 
-  reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(DECREMENT_TIMER, "DECREMENT_TIMER", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(TOGGLE_TIMER_ACTIVE, "TOGGLE_TIMER_ACTIVE", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(UPDATE_TIME, "UPDATE_TIME", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_POMO, "PREP_POMO", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_SHORT_BREAK, "PREP_SHORT_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(AUTO_START_SHORT_BREAK, "AUTO_START_SHORT_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_LONG_BREAK, "PREP_LONG_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(AUTO_START_LONG_BREAK, "AUTO_START_LONG_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(END_BREAK, "END_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(reducer, "reducer", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(DECREMENT_TIMER, "DECREMENT_TIMER", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(TOGGLE_TIMER_ACTIVE, "TOGGLE_TIMER_ACTIVE", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(UPDATE_TIME, "UPDATE_TIME", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(PREP_POMO, "PREP_POMO", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(PREP_SHORT_BREAK, "PREP_SHORT_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(AUTO_START_SHORT_BREAK, "AUTO_START_SHORT_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(PREP_LONG_BREAK, "PREP_LONG_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(AUTO_START_LONG_BREAK, "AUTO_START_LONG_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(END_BREAK, "END_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(reducer, "reducer", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
 })();
 
 ;
@@ -43469,8 +43467,8 @@ var darkTheme = {
     return;
   }
 
-  reactHotLoader.register(lightTheme, "lightTheme", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\themes.js");
-  reactHotLoader.register(darkTheme, "darkTheme", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\themes.js");
+  reactHotLoader.register(lightTheme, "lightTheme", "/Users/jimmy/Projects/neumodoro-timer/src/themes.js");
+  reactHotLoader.register(darkTheme, "darkTheme", "/Users/jimmy/Projects/neumodoro-timer/src/themes.js");
 })();
 
 ;
@@ -43541,8 +43539,8 @@ var _default = useInterval;
     return;
   }
 
-  reactHotLoader.register(useInterval, "useInterval", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\useInterval.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\useInterval.js");
+  reactHotLoader.register(useInterval, "useInterval", "/Users/jimmy/Projects/neumodoro-timer/src/useInterval.js");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/useInterval.js");
 })();
 
 ;
@@ -43586,8 +43584,8 @@ var FIVE_MINUTES_IN_SECONDS = 300;
     return;
   }
 
-  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\utils.js");
-  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\utils.js");
+  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "/Users/jimmy/Projects/neumodoro-timer/src/utils.js");
+  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "/Users/jimmy/Projects/neumodoro-timer/src/utils.js");
 })();
 
 ;
