@@ -1,4 +1,5 @@
 import React, { useReducer, useRef } from 'react'
+const { app } = window.require('electron').remote;
 
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 import reducer, * as actions from './reducer'
@@ -55,8 +56,18 @@ const Layout = () => {
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
+
+    // Update taskbar icon badge with current minute
+    if (seconds === '59' || seconds == '0') {
+      const badgeText = minutes === '0' ? '<1m' : `${minutes}m`
+      if (app.dock) {
+        app.dock.setBadge(badgeText)
+      }
+    }
+
     if (minutes < 10) minutes = `0${minutes}`
     if (seconds < 10) seconds = `0${seconds}`
+
     return `${minutes}:${seconds}`
   }
 

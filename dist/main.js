@@ -41579,6 +41579,9 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 
+var app = window.require('electron').remote.app;
+
+
 
 
 
@@ -41631,7 +41634,16 @@ var Layout = function Layout() {
 
   var displayTime = function displayTime() {
     var minutes = Math.floor(time / 60).toString();
-    var seconds = Math.floor(time % 60).toString();
+    var seconds = Math.floor(time % 60).toString(); // Update taskbar icon badge with current minute
+
+    if (seconds === '59' || seconds == '0') {
+      var badgeText = minutes === '0' ? '<1m' : "".concat(minutes, "m");
+
+      if (app.dock) {
+        app.dock.setBadge(badgeText);
+      }
+    }
+
     if (minutes < 10) minutes = "0".concat(minutes);
     if (seconds < 10) seconds = "0".concat(seconds);
     return "".concat(minutes, ":").concat(seconds);
@@ -41660,12 +41672,12 @@ var Layout = function Layout() {
         playNotificationSound(audioAlertLong);
 
         if (pomo === 4) {
-          sendNotification('Time is up!', 'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.');
+          sendNotification('Time is up!', 'You completed a tomato set! ♪(^∇^*) Take a 25 minute break.');
           dispatch({
             type: _reducer__WEBPACK_IMPORTED_MODULE_2__["AUTO_START_LONG_BREAK"]
           });
         } else {
-          sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)');
+          sendNotification('Time is up!', 'Take a 5 minute break.');
           dispatch({
             type: _reducer__WEBPACK_IMPORTED_MODULE_2__["AUTO_START_SHORT_BREAK"]
           });
@@ -41675,9 +41687,9 @@ var Layout = function Layout() {
         playNotificationSound(audioAlertShort);
 
         if (pomo === 4) {
-          sendNotification('Start a new tomato?');
+          sendNotification('I hope you had a nice rest. o(*￣︶￣*)o');
         } else {
-          sendNotification('Back to work! (╯▔皿▔)╯');
+          sendNotification("Break's over!", 'Back to work! (╯▔皿▔)╯');
         }
 
         dispatch({
@@ -41806,6 +41818,7 @@ var _default = Layout;
     return;
   }
 
+  reactHotLoader.register(app, "app", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
   reactHotLoader.register(initialState, "initialState", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
   reactHotLoader.register(colorVariants, "colorVariants", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
   reactHotLoader.register(Layout, "Layout", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
@@ -43235,6 +43248,9 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 };
 
 
+
+var app = window.require('electron').remote.app;
+
 var TOGGLE_ALERTS = 'TOGGLE_ALERTS';
 var TOGGLE_SOUNDS = 'TOGGLE_SOUNDS';
 var SWITCH_MODE = 'SWITCH_MODE';
@@ -43399,6 +43415,7 @@ var _default = reducer;
     return;
   }
 
+  reactHotLoader.register(app, "app", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
   reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
   reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
   reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");

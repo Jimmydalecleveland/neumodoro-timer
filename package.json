@@ -1,6 +1,6 @@
 {
   "name": "neumodoro",
-  "version": "1.0.1",
+  "version": "1.0.0-alpha.1",
   "description": "A neumorphic styled pomodoro timer for Linux, OS X, and Windows",
   "main": "main.js",
   "scripts": {
