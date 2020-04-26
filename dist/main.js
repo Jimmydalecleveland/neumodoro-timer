@@ -43248,9 +43248,6 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 };
 
 
-
-var app = window.require('electron').remote.app;
-
 var TOGGLE_ALERTS = 'TOGGLE_ALERTS';
 var TOGGLE_SOUNDS = 'TOGGLE_SOUNDS';
 var SWITCH_MODE = 'SWITCH_MODE';
@@ -43415,7 +43412,6 @@ var _default = reducer;
     return;
   }
 
-  reactHotLoader.register(app, "app", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
   reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
   reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
   reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
