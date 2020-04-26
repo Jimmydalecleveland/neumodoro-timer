@@ -10,8 +10,10 @@
     "package": "electron-packager . --out build --icon=src/assets/icon",
     "package:mac": "electron-packager . --out build --icon=src/assets/icon.icns",
     "package:all": "electron-packager . --all --out build",
+    "package:linux": "electron-packager . --platform linux --arch x64 --out build --icon=src/assets/icon",
     "installer:win": "node build.js",
-    "installer:mac": "electron-installer-dmg ./build/neumodoro-darwin-x64/neumodoro.app Neumodoro --icon=src/assets/icon.png --title=\"Neumodoro Timer\" --out=build/installers/mac"
+    "installer:mac": "electron-installer-dmg ./build/neumodoro-darwin-x64/neumodoro.app Neumodoro --icon=src/assets/icon.png --title=\"Neumodoro Timer\" --out=build/installers/mac",
+    "installer:debian": "electron-installer-debian --src build/neumodoro-linux-x64/ --dest build/installers/ --arch amd64 --icon src/assets/icon.png"
   },
   "keywords": [
     "neumodoro",
@@ -31,6 +33,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "electron": "^8.2.0",
+    "electron-installer-debian": "^3.0.0",
     "electron-installer-dmg": "^3.0.0",
     "electron-packager": "^14.2.1",
     "electron-winstaller": "^4.0.0",
