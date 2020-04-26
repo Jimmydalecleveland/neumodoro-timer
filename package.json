@@ -1,6 +1,7 @@
 {
   "name": "neumodoro",
-  "version": "1.0.1",
+  "productName": "Neumodoro Timer",
+  "version": "1.0.0-alpha.1",
   "description": "A neumorphic styled pomodoro timer for Linux, OS X, and Windows",
   "main": "main.js",
   "scripts": {
@@ -12,8 +13,8 @@
     "package:all": "electron-packager . --all --out build",
     "package:linux": "electron-packager . --platform linux --arch x64 --out build --icon=src/assets/icon",
     "installer:win": "node build.js",
-    "installer:mac": "electron-installer-dmg ./build/neumodoro-darwin-x64/neumodoro.app Neumodoro --icon=src/assets/icon.png --title=\"Neumodoro Timer\" --out=build/installers/mac",
-    "installer:debian": "electron-installer-debian --src build/neumodoro-linux-x64/ --dest build/installers/ --arch amd64 --icon src/assets/icon.png"
+    "installer:debian": "electron-installer-debian --src build/neumodoro-linux-x64/ --dest build/installers/ --arch amd64 --icon src/assets/icon.png",
+    "installer:mac": "electron-installer-dmg ./build/'Neumodoro Timer-darwin-x64'/'Neumodoro Timer.app' Neumodoro --icon=src/assets/icon.png --background=src/assets/dmg-background.png --out=build/installers/mac"
   },
   "keywords": [
     "neumodoro",
