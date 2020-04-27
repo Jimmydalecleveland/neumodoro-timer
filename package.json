@@ -9,6 +9,7 @@
     "develop": "webpack-dev-server --hot",
     "build": "webpack",
     "package": "electron-packager . --out build --icon=src/assets/icon",
+    "package:win": "electron-packager . --out build --icon=src/assets/icon.ico",
     "package:mac": "electron-packager . --out build --icon=src/assets/icon.icns",
     "package:all": "electron-packager . --all --out build",
     "package:linux": "electron-packager . --platform linux --arch x64 --out build --icon=src/assets/icon",
