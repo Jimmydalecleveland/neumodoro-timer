@@ -7,7 +7,7 @@ function createWindow() {
   const win = new BrowserWindow({
     title: 'Neumodoro Timer',
     width: 420,
-    height: 680,
+    height: 700,
     icon: __dirname + '/src/assets/icon',
     titleBarStyle: 'hiddenInset',
     backgroundColor: '#d4dfee',
