@@ -46,7 +46,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "css-loader": "^3.4.2",
-    "electron": "^8.2.0",
+    "electron": "^8.2.4",
     "file-loader": "^5.1.0",
     "framer-motion": "^1.10.2",
     "prettier": "^2.0.2",
