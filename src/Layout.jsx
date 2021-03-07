@@ -1,4 +1,5 @@
 import React, { useReducer, useRef } from 'react'
+const { app } = window.require('electron').remote;
 
 import { TWENTY_FIVE_MINUTES_IN_SECONDS } from './utils'
 import reducer, * as actions from './reducer'
@@ -55,8 +56,18 @@ const Layout = () => {
   const displayTime = () => {
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
+
+    // Update taskbar icon badge with current minute
+    if (seconds === '59' || seconds == '0') {
+      const badgeText = minutes === '0' ? '<1m' : `${minutes}m`
+      if (app.dock) {
+        app.dock.setBadge(badgeText)
+      }
+    }
+
     if (minutes < 10) minutes = `0${minutes}`
     if (seconds < 10) seconds = `0${seconds}`
+
     return `${minutes}:${seconds}`
   }
 
@@ -71,9 +82,7 @@ const Layout = () => {
       // TODO: is there a way to store this one time and call .show()
       // on it with updated messages?
       const notification = new Notification(title, {
-        silent: false,
-        icon: 'icon-location',
-        urgency: 'normal',
+        silent: true,
         body,
       })
     }
@@ -87,20 +96,20 @@ const Layout = () => {
           if (pomo === 4) {
             sendNotification(
               'Time is up!',
-              'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.'
+              'You completed a tomato set! ♪(^∇^*) Take a 25 minute break.'
             )
             dispatch({ type: actions.AUTO_START_LONG_BREAK })
           } else {
-            sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)')
+            sendNotification('Time is up!', 'Take a 5 minute break.')
             dispatch({ type: actions.AUTO_START_SHORT_BREAK })
           }
         } else {
           // Break is over
           playNotificationSound(audioAlertShort)
           if (pomo === 4) {
-            sendNotification('Start a new tomato?')
+            sendNotification('I hope you had a nice rest. o(*￣︶￣*)o')
           } else {
-            sendNotification('Back to work! (╯▔皿▔)╯')
+            sendNotification("Break's over!", 'Back to work! (╯▔皿▔)╯')
           }
           dispatch({ type: actions.END_BREAK })
           clearInterval(intervalId)
@@ -109,7 +118,7 @@ const Layout = () => {
         dispatch({ type: actions.DECREMENT_TIMER })
       }
     },
-    isTimerActive ? 20 : null
+    isTimerActive ? 1000 : null
   )
 
   const currentSeeds = () => {
@@ -175,8 +184,8 @@ const Layout = () => {
               mass: '0.2',
               damping: '6.3',
             }}
-            // drag="x"
-            // dragConstraints={modeSwitchConstraintsRef}
+          // drag="x"
+          // dragConstraints={modeSwitchConstraintsRef}
           >
             {mode}
           </Styled.Switch>

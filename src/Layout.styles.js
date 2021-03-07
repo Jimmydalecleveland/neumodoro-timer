@@ -2,7 +2,12 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 export const Wrapper = styled.div`
-  padding: 20px;
+  -webkit-app-region: drag;
+  padding: 35px 20px 20px;
+
+  * {
+    -webkit-app-region: no-drag;
+  }
 `
 
 // TODO: implement custom header
@@ -131,6 +136,7 @@ export const Time = styled.p`
   margin: 0;
   font-size: 54px;
   font-family: 'Digital Clock', sans-serif;
+  -webkit-user-select:none;
 `
 
 export const TimeAfterImage = styled.p`
@@ -140,4 +146,5 @@ export const TimeAfterImage = styled.p`
   font-size: 54px;
   font-family: 'Digital Clock', sans-serif;
   color: #d7deeb;
+  -webkit-user-select:none;
 `

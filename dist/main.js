@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
 
 
-var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|inert|itemProp|itemScope|itemType|itemID|itemRef|on|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|inert|itemProp|itemScope|itemType|itemID|itemRef|on|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
 
 var index = Object(_emotion_memoize__WEBPACK_IMPORTED_MODULE_0__["default"])(function (prop) {
   return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111
@@ -4384,10 +4384,6 @@ var isRefObject = function (ref) {
 };
 
 var noop = function (v) { return v; };
-/**
- * Don't block the default pointerdown behaviour of these elements.
- */
-var allowDefaultPointerDown = new Set(["INPUT", "TEXTAREA", "SELECT"]);
 var ComponentDragControls = /** @class */ (function () {
     function ComponentDragControls(_a) {
         var ref = _a.ref, values = _a.values, controls = _a.controls;
@@ -4467,20 +4463,7 @@ var ComponentDragControls = /** @class */ (function () {
         var _this = this;
         var _b = (_a === void 0 ? {} : _a).snapToCursor, snapToCursor = _b === void 0 ? false : _b;
         snapToCursor && this.snapToCursor(originEvent);
-        var onSessionStart = function (event) {
-            // Prevent browser-specific behaviours like text selection or Chrome's image dragging.
-            if (event.target &&
-                !allowDefaultPointerDown.has(event.target.tagName)) {
-                // On iOS it's important to not `preventDefault` the `touchstart`
-                // event, as otherwise clicks won't fire inside the draggable element.
-                if (!supportsTouchEvents()) {
-                    event.preventDefault();
-                    // Make sure input elements loose focus when we prevent the default.
-                    if (document.activeElement instanceof HTMLElement) {
-                        document.activeElement.blur();
-                    }
-                }
-            }
+        var onSessionStart = function () {
             // Initiate viewport scroll blocking on touch start. This is a very aggressive approach
             // which has come out of the difficulty in us being able to do this once a scroll gesture
             // has initiated in mobile browsers. This means if there's a horizontally-scrolling carousel
@@ -5911,6 +5894,19 @@ function filterValidProps(props) {
     }
     return domProps;
 }
+var buildHTMLProps = function (values, style, isStatic, isDrag) {
+    // The `any` isn't ideal but it is the type of createElement props argument
+    var props = {
+        style: buildStyleAttr(values, style, isStatic),
+    };
+    if (isDrag) {
+        // Disable text selection
+        props.style.userSelect = "none";
+        // Disable the ghost element when a user drags
+        props.draggable = false;
+    }
+    return props;
+};
 var buildSVGProps = function (values, style) {
     var motionValueStyles = resolveCurrent(values);
     var props = Object(stylefire__WEBPACK_IMPORTED_MODULE_4__["buildSVGAttrs"])(motionValueStyles, undefined, undefined, undefined, undefined, false);
@@ -5932,7 +5928,7 @@ function createDomMotionConfig(Component) {
             var forwardedProps = isDOM ? filterValidProps(props) : props;
             var staticVisualStyles = isSVG
                 ? buildSVGProps(values, style)
-                : { style: buildStyleAttr(values, style, isStatic) };
+                : buildHTMLProps(values, style, isStatic, !!props.drag);
             return Object(react__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Component, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, forwardedProps), { ref: ref }), staticVisualStyles));
         },
         /**
@@ -9044,7 +9040,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.0
+/** @license React v16.13.1
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -9490,271 +9486,6 @@ var SuspenseListComponent = 19;
 var FundamentalComponent = 20;
 var ScopeComponent = 21;
 var Block = 22;
-
-var BEFORE_SLASH_RE = /^(.*)[\\\/]/;
-function describeComponentFrame (name, source, ownerName) {
-  var sourceInfo = '';
-
-  if (source) {
-    var path = source.fileName;
-    var fileName = path.replace(BEFORE_SLASH_RE, '');
-
-    {
-      // In DEV, include code for a common special case:
-      // prefer "folder/index.js" instead of just "index.js".
-      if (/^index\./.test(fileName)) {
-        var match = path.match(BEFORE_SLASH_RE);
-
-        if (match) {
-          var pathBeforeSlash = match[1];
-
-          if (pathBeforeSlash) {
-            var folderName = pathBeforeSlash.replace(BEFORE_SLASH_RE, '');
-            fileName = folderName + '/' + fileName;
-          }
-        }
-      }
-    }
-
-    sourceInfo = ' (at ' + fileName + ':' + source.lineNumber + ')';
-  } else if (ownerName) {
-    sourceInfo = ' (created by ' + ownerName + ')';
-  }
-
-  return '\n    in ' + (name || 'Unknown') + sourceInfo;
-}
-
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-var MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-var FAUX_ITERATOR_SYMBOL = '@@iterator';
-function getIteratorFn(maybeIterable) {
-  if (maybeIterable === null || typeof maybeIterable !== 'object') {
-    return null;
-  }
-
-  var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
-
-  if (typeof maybeIterator === 'function') {
-    return maybeIterator;
-  }
-
-  return null;
-}
-
-var Uninitialized = -1;
-var Pending = 0;
-var Resolved = 1;
-var Rejected = 2;
-function refineResolvedLazyComponent(lazyComponent) {
-  return lazyComponent._status === Resolved ? lazyComponent._result : null;
-}
-function initializeLazyComponentType(lazyComponent) {
-  if (lazyComponent._status === Uninitialized) {
-    lazyComponent._status = Pending;
-    var ctor = lazyComponent._ctor;
-    var thenable = ctor();
-    lazyComponent._result = thenable;
-    thenable.then(function (moduleObject) {
-      if (lazyComponent._status === Pending) {
-        var defaultExport = moduleObject.default;
-
-        {
-          if (defaultExport === undefined) {
-            error('lazy: Expected the result of a dynamic import() call. ' + 'Instead received: %s\n\nYour code should look like: \n  ' + "const MyComponent = lazy(() => import('./MyComponent'))", moduleObject);
-          }
-        }
-
-        lazyComponent._status = Resolved;
-        lazyComponent._result = defaultExport;
-      }
-    }, function (error) {
-      if (lazyComponent._status === Pending) {
-        lazyComponent._status = Rejected;
-        lazyComponent._result = error;
-      }
-    });
-  }
-}
-
-function getWrappedName(outerType, innerType, wrapperName) {
-  var functionName = innerType.displayName || innerType.name || '';
-  return outerType.displayName || (functionName !== '' ? wrapperName + "(" + functionName + ")" : wrapperName);
-}
-
-function getComponentName(type) {
-  if (type == null) {
-    // Host root, text node or just invalid type.
-    return null;
-  }
-
-  {
-    if (typeof type.tag === 'number') {
-      error('Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');
-    }
-  }
-
-  if (typeof type === 'function') {
-    return type.displayName || type.name || null;
-  }
-
-  if (typeof type === 'string') {
-    return type;
-  }
-
-  switch (type) {
-    case REACT_FRAGMENT_TYPE:
-      return 'Fragment';
-
-    case REACT_PORTAL_TYPE:
-      return 'Portal';
-
-    case REACT_PROFILER_TYPE:
-      return "Profiler";
-
-    case REACT_STRICT_MODE_TYPE:
-      return 'StrictMode';
-
-    case REACT_SUSPENSE_TYPE:
-      return 'Suspense';
-
-    case REACT_SUSPENSE_LIST_TYPE:
-      return 'SuspenseList';
-  }
-
-  if (typeof type === 'object') {
-    switch (type.$$typeof) {
-      case REACT_CONTEXT_TYPE:
-        return 'Context.Consumer';
-
-      case REACT_PROVIDER_TYPE:
-        return 'Context.Provider';
-
-      case REACT_FORWARD_REF_TYPE:
-        return getWrappedName(type, type.render, 'ForwardRef');
-
-      case REACT_MEMO_TYPE:
-        return getComponentName(type.type);
-
-      case REACT_BLOCK_TYPE:
-        return getComponentName(type.render);
-
-      case REACT_LAZY_TYPE:
-        {
-          var thenable = type;
-          var resolvedThenable = refineResolvedLazyComponent(thenable);
-
-          if (resolvedThenable) {
-            return getComponentName(resolvedThenable);
-          }
-
-          break;
-        }
-    }
-  }
-
-  return null;
-}
-
-var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
-
-function describeFiber(fiber) {
-  switch (fiber.tag) {
-    case HostRoot:
-    case HostPortal:
-    case HostText:
-    case Fragment:
-    case ContextProvider:
-    case ContextConsumer:
-      return '';
-
-    default:
-      var owner = fiber._debugOwner;
-      var source = fiber._debugSource;
-      var name = getComponentName(fiber.type);
-      var ownerName = null;
-
-      if (owner) {
-        ownerName = getComponentName(owner.type);
-      }
-
-      return describeComponentFrame(name, source, ownerName);
-  }
-}
-
-function getStackByFiberInDevAndProd(workInProgress) {
-  var info = '';
-  var node = workInProgress;
-
-  do {
-    info += describeFiber(node);
-    node = node.return;
-  } while (node);
-
-  return info;
-}
-var current = null;
-var phase = null;
-function getCurrentFiberOwnerNameInDevOrNull() {
-  {
-    if (current === null) {
-      return null;
-    }
-
-    var owner = current._debugOwner;
-
-    if (owner !== null && typeof owner !== 'undefined') {
-      return getComponentName(owner.type);
-    }
-  }
-
-  return null;
-}
-function getCurrentFiberStackInDev() {
-  {
-    if (current === null) {
-      return '';
-    } // Safe because if current fiber exists, we are reconciling,
-    // and it is guaranteed to be the work-in-progress version.
-
-
-    return getStackByFiberInDevAndProd(current);
-  }
-}
-function resetCurrentFiber() {
-  {
-    ReactDebugCurrentFrame.getCurrentStack = null;
-    current = null;
-    phase = null;
-  }
-}
-function setCurrentFiber(fiber) {
-  {
-    ReactDebugCurrentFrame.getCurrentStack = getCurrentFiberStackInDev;
-    current = fiber;
-    phase = null;
-  }
-}
-function setCurrentPhase(lifeCyclePhase) {
-  {
-    phase = lifeCyclePhase;
-  }
-}
 
 /**
  * Injectable ordering of event plugins.
@@ -10455,10 +10186,10 @@ properties[xlinkHref] = new PropertyInfoRecord('xlinkHref', STRING, false, // mu
   true);
 });
 
-var ReactDebugCurrentFrame$1 = null;
+var ReactDebugCurrentFrame = null;
 
 {
-  ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+  ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 } // A javascript: URL can contain leading C0 control or \u0020 SPACE,
 // and any newline or tab are filtered out as if they're not part of the URL.
 // https://url.spec.whatwg.org/#url-parsing
@@ -10660,6 +10391,271 @@ function setValueForProperty(node, name, value, isCustomComponentTag) {
     } else {
       node.setAttribute(attributeName, attributeValue);
     }
+  }
+}
+
+var BEFORE_SLASH_RE = /^(.*)[\\\/]/;
+function describeComponentFrame (name, source, ownerName) {
+  var sourceInfo = '';
+
+  if (source) {
+    var path = source.fileName;
+    var fileName = path.replace(BEFORE_SLASH_RE, '');
+
+    {
+      // In DEV, include code for a common special case:
+      // prefer "folder/index.js" instead of just "index.js".
+      if (/^index\./.test(fileName)) {
+        var match = path.match(BEFORE_SLASH_RE);
+
+        if (match) {
+          var pathBeforeSlash = match[1];
+
+          if (pathBeforeSlash) {
+            var folderName = pathBeforeSlash.replace(BEFORE_SLASH_RE, '');
+            fileName = folderName + '/' + fileName;
+          }
+        }
+      }
+    }
+
+    sourceInfo = ' (at ' + fileName + ':' + source.lineNumber + ')';
+  } else if (ownerName) {
+    sourceInfo = ' (created by ' + ownerName + ')';
+  }
+
+  return '\n    in ' + (name || 'Unknown') + sourceInfo;
+}
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+var FAUX_ITERATOR_SYMBOL = '@@iterator';
+function getIteratorFn(maybeIterable) {
+  if (maybeIterable === null || typeof maybeIterable !== 'object') {
+    return null;
+  }
+
+  var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+
+  if (typeof maybeIterator === 'function') {
+    return maybeIterator;
+  }
+
+  return null;
+}
+
+var Uninitialized = -1;
+var Pending = 0;
+var Resolved = 1;
+var Rejected = 2;
+function refineResolvedLazyComponent(lazyComponent) {
+  return lazyComponent._status === Resolved ? lazyComponent._result : null;
+}
+function initializeLazyComponentType(lazyComponent) {
+  if (lazyComponent._status === Uninitialized) {
+    lazyComponent._status = Pending;
+    var ctor = lazyComponent._ctor;
+    var thenable = ctor();
+    lazyComponent._result = thenable;
+    thenable.then(function (moduleObject) {
+      if (lazyComponent._status === Pending) {
+        var defaultExport = moduleObject.default;
+
+        {
+          if (defaultExport === undefined) {
+            error('lazy: Expected the result of a dynamic import() call. ' + 'Instead received: %s\n\nYour code should look like: \n  ' + "const MyComponent = lazy(() => import('./MyComponent'))", moduleObject);
+          }
+        }
+
+        lazyComponent._status = Resolved;
+        lazyComponent._result = defaultExport;
+      }
+    }, function (error) {
+      if (lazyComponent._status === Pending) {
+        lazyComponent._status = Rejected;
+        lazyComponent._result = error;
+      }
+    });
+  }
+}
+
+function getWrappedName(outerType, innerType, wrapperName) {
+  var functionName = innerType.displayName || innerType.name || '';
+  return outerType.displayName || (functionName !== '' ? wrapperName + "(" + functionName + ")" : wrapperName);
+}
+
+function getComponentName(type) {
+  if (type == null) {
+    // Host root, text node or just invalid type.
+    return null;
+  }
+
+  {
+    if (typeof type.tag === 'number') {
+      error('Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');
+    }
+  }
+
+  if (typeof type === 'function') {
+    return type.displayName || type.name || null;
+  }
+
+  if (typeof type === 'string') {
+    return type;
+  }
+
+  switch (type) {
+    case REACT_FRAGMENT_TYPE:
+      return 'Fragment';
+
+    case REACT_PORTAL_TYPE:
+      return 'Portal';
+
+    case REACT_PROFILER_TYPE:
+      return "Profiler";
+
+    case REACT_STRICT_MODE_TYPE:
+      return 'StrictMode';
+
+    case REACT_SUSPENSE_TYPE:
+      return 'Suspense';
+
+    case REACT_SUSPENSE_LIST_TYPE:
+      return 'SuspenseList';
+  }
+
+  if (typeof type === 'object') {
+    switch (type.$$typeof) {
+      case REACT_CONTEXT_TYPE:
+        return 'Context.Consumer';
+
+      case REACT_PROVIDER_TYPE:
+        return 'Context.Provider';
+
+      case REACT_FORWARD_REF_TYPE:
+        return getWrappedName(type, type.render, 'ForwardRef');
+
+      case REACT_MEMO_TYPE:
+        return getComponentName(type.type);
+
+      case REACT_BLOCK_TYPE:
+        return getComponentName(type.render);
+
+      case REACT_LAZY_TYPE:
+        {
+          var thenable = type;
+          var resolvedThenable = refineResolvedLazyComponent(thenable);
+
+          if (resolvedThenable) {
+            return getComponentName(resolvedThenable);
+          }
+
+          break;
+        }
+    }
+  }
+
+  return null;
+}
+
+var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+
+function describeFiber(fiber) {
+  switch (fiber.tag) {
+    case HostRoot:
+    case HostPortal:
+    case HostText:
+    case Fragment:
+    case ContextProvider:
+    case ContextConsumer:
+      return '';
+
+    default:
+      var owner = fiber._debugOwner;
+      var source = fiber._debugSource;
+      var name = getComponentName(fiber.type);
+      var ownerName = null;
+
+      if (owner) {
+        ownerName = getComponentName(owner.type);
+      }
+
+      return describeComponentFrame(name, source, ownerName);
+  }
+}
+
+function getStackByFiberInDevAndProd(workInProgress) {
+  var info = '';
+  var node = workInProgress;
+
+  do {
+    info += describeFiber(node);
+    node = node.return;
+  } while (node);
+
+  return info;
+}
+var current = null;
+var isRendering = false;
+function getCurrentFiberOwnerNameInDevOrNull() {
+  {
+    if (current === null) {
+      return null;
+    }
+
+    var owner = current._debugOwner;
+
+    if (owner !== null && typeof owner !== 'undefined') {
+      return getComponentName(owner.type);
+    }
+  }
+
+  return null;
+}
+function getCurrentFiberStackInDev() {
+  {
+    if (current === null) {
+      return '';
+    } // Safe because if current fiber exists, we are reconciling,
+    // and it is guaranteed to be the work-in-progress version.
+
+
+    return getStackByFiberInDevAndProd(current);
+  }
+}
+function resetCurrentFiber() {
+  {
+    ReactDebugCurrentFrame$1.getCurrentStack = null;
+    current = null;
+    isRendering = false;
+  }
+}
+function setCurrentFiber(fiber) {
+  {
+    ReactDebugCurrentFrame$1.getCurrentStack = getCurrentFiberStackInDev;
+    current = fiber;
+    isRendering = false;
+  }
+}
+function setIsRendering(rendering) {
+  {
+    isRendering = rendering;
   }
 }
 
@@ -14666,7 +14662,6 @@ function validateProperties$2(type, props, canUseEventSystem) {
 }
 
 var didWarnInvalidHydration = false;
-var didWarnShadyDOM = false;
 var DANGEROUSLY_SET_INNER_HTML = 'dangerouslySetInnerHTML';
 var SUPPRESS_CONTENT_EDITABLE_WARNING = 'suppressContentEditableWarning';
 var SUPPRESS_HYDRATION_WARNING = 'suppressHydrationWarning';
@@ -14986,12 +14981,6 @@ function setInitialProperties(domElement, tag, rawProps, rootContainerElement) {
 
   {
     validatePropertiesInDevelopment(tag, rawProps);
-
-    if (isCustomComponentTag && !didWarnShadyDOM && domElement.shadyRoot) {
-      error('%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', getCurrentFiberOwnerNameInDevOrNull() || 'A component');
-
-      didWarnShadyDOM = true;
-    }
   } // TODO: Make sure that we check isMounted before firing any of these events.
 
 
@@ -15345,12 +15334,6 @@ function diffHydratedProperties(domElement, tag, rawProps, parentNamespace, root
     suppressHydrationWarning = rawProps[SUPPRESS_HYDRATION_WARNING] === true;
     isCustomComponentTag = isCustomComponent(tag, rawProps);
     validatePropertiesInDevelopment(tag, rawProps);
-
-    if (isCustomComponentTag && !didWarnShadyDOM && domElement.shadyRoot) {
-      error('%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', getCurrentFiberOwnerNameInDevOrNull() || 'A component');
-
-      didWarnShadyDOM = true;
-    }
   } // TODO: Make sure that we check isMounted before firing any of these events.
 
 
@@ -19871,18 +19854,9 @@ function processChildContext(fiber, type, parentContext) {
     }
 
     var childContext;
-
-    {
-      setCurrentPhase('getChildContext');
-    }
-
     startPhaseTimer(fiber, 'getChildContext');
     childContext = instance.getChildContext();
     stopPhaseTimer();
-
-    {
-      setCurrentPhase(null);
-    }
 
     for (var contextKey in childContext) {
       if (!(contextKey in childContextTypes)) {
@@ -25807,7 +25781,6 @@ var didWarnAboutContextTypeOnFunctionComponent;
 var didWarnAboutGetDerivedStateOnFunctionComponent;
 var didWarnAboutFunctionRefs;
 var didWarnAboutReassigningProps;
-var didWarnAboutMaxDuration;
 var didWarnAboutRevealOrder;
 var didWarnAboutTailOptions;
 
@@ -25818,7 +25791,6 @@ var didWarnAboutTailOptions;
   didWarnAboutGetDerivedStateOnFunctionComponent = {};
   didWarnAboutFunctionRefs = {};
   didWarnAboutReassigningProps = false;
-  didWarnAboutMaxDuration = false;
   didWarnAboutRevealOrder = {};
   didWarnAboutTailOptions = {};
 }
@@ -25882,7 +25854,7 @@ function updateForwardRef(current, workInProgress, Component, nextProps, renderE
 
   {
     ReactCurrentOwner$1.current = workInProgress;
-    setCurrentPhase('render');
+    setIsRendering(true);
     nextChildren = renderWithHooks(current, workInProgress, render, nextProps, ref, renderExpirationTime);
 
     if ( workInProgress.mode & StrictMode) {
@@ -25892,7 +25864,7 @@ function updateForwardRef(current, workInProgress, Component, nextProps, renderE
       }
     }
 
-    setCurrentPhase(null);
+    setIsRendering(false);
   }
 
   if (current !== null && !didReceiveUpdate) {
@@ -26100,7 +26072,7 @@ function updateFunctionComponent(current, workInProgress, Component, nextProps, 
 
   {
     ReactCurrentOwner$1.current = workInProgress;
-    setCurrentPhase('render');
+    setIsRendering(true);
     nextChildren = renderWithHooks(current, workInProgress, Component, nextProps, context, renderExpirationTime);
 
     if ( workInProgress.mode & StrictMode) {
@@ -26110,7 +26082,7 @@ function updateFunctionComponent(current, workInProgress, Component, nextProps, 
       }
     }
 
-    setCurrentPhase(null);
+    setIsRendering(false);
   }
 
   if (current !== null && !didReceiveUpdate) {
@@ -26226,14 +26198,14 @@ function finishClassComponent(current, workInProgress, Component, shouldUpdate, 
     }
   } else {
     {
-      setCurrentPhase('render');
+      setIsRendering(true);
       nextChildren = instance.render();
 
       if ( workInProgress.mode & StrictMode) {
         instance.render();
       }
 
-      setCurrentPhase(null);
+      setIsRendering(false);
     }
   } // React DevTools reads this flag.
 
@@ -26547,8 +26519,10 @@ function mountIndeterminateComponent(_current, workInProgress, Component, render
       ReactStrictModeWarnings.recordLegacyContextWarning(workInProgress, null);
     }
 
+    setIsRendering(true);
     ReactCurrentOwner$1.current = workInProgress;
     value = renderWithHooks(null, workInProgress, Component, props, context, renderExpirationTime);
+    setIsRendering(false);
   } // React DevTools reads this flag.
 
 
@@ -26714,17 +26688,7 @@ function updateSuspenseComponent(current, workInProgress, renderExpirationTime) 
   }
 
   suspenseContext = setDefaultShallowSuspenseContext(suspenseContext);
-  pushSuspenseContext(workInProgress, suspenseContext);
-
-  {
-    if ('maxDuration' in nextProps) {
-      if (!didWarnAboutMaxDuration) {
-        didWarnAboutMaxDuration = true;
-
-        error('maxDuration has been removed from React. ' + 'Remove the maxDuration prop.');
-      }
-    }
-  } // This next part is a bit confusing. If the children timeout, we switch to
+  pushSuspenseContext(workInProgress, suspenseContext); // This next part is a bit confusing. If the children timeout, we switch to
   // showing the fallback children in place of the "primary" children.
   // However, we don't want to delete the primary children because then their
   // state will be lost (both the React state and the host state, e.g.
@@ -26745,7 +26709,6 @@ function updateSuspenseComponent(current, workInProgress, renderExpirationTime) 
   // Otherwise, we render the primary children directly. This requires some
   // custom reconciliation logic to preserve the state of the primary
   // children. It's essentially a very basic form of re-parenting.
-
 
   if (current === null) {
     // If we're currently hydrating, try to hydrate this boundary.
@@ -27379,9 +27342,9 @@ function updateContextConsumer(current, workInProgress, renderExpirationTime) {
 
   {
     ReactCurrentOwner$1.current = workInProgress;
-    setCurrentPhase('render');
+    setIsRendering(true);
     newChildren = render(newValue);
-    setCurrentPhase(null);
+    setIsRendering(false);
   } // React DevTools reads this flag.
 
 
@@ -29893,9 +29856,11 @@ function throwException(root, returnFiber, sourceFiber, value, renderExpirationT
       var currentSource = sourceFiber.alternate;
 
       if (currentSource) {
+        sourceFiber.updateQueue = currentSource.updateQueue;
         sourceFiber.memoizedState = currentSource.memoizedState;
         sourceFiber.expirationTime = currentSource.expirationTime;
       } else {
+        sourceFiber.updateQueue = null;
         sourceFiber.memoizedState = null;
       }
     }
@@ -32293,43 +32258,40 @@ var beginWork$1;
 }
 
 var didWarnAboutUpdateInRender = false;
-var didWarnAboutUpdateInGetChildContext = false;
+var didWarnAboutUpdateInRenderForAnotherComponent;
+
+{
+  didWarnAboutUpdateInRenderForAnotherComponent = new Set();
+}
 
 function warnAboutRenderPhaseUpdatesInDEV(fiber) {
   {
-    if ((executionContext & RenderContext) !== NoContext) {
+    if (isRendering && (executionContext & RenderContext) !== NoContext) {
       switch (fiber.tag) {
         case FunctionComponent:
         case ForwardRef:
         case SimpleMemoComponent:
           {
-            error('Cannot update a component from inside the function body of a ' + 'different component.');
+            var renderingComponentName = workInProgress && getComponentName(workInProgress.type) || 'Unknown'; // Dedupe by the rendering component because it's the one that needs to be fixed.
+
+            var dedupeKey = renderingComponentName;
+
+            if (!didWarnAboutUpdateInRenderForAnotherComponent.has(dedupeKey)) {
+              didWarnAboutUpdateInRenderForAnotherComponent.add(dedupeKey);
+              var setStateComponentName = getComponentName(fiber.type) || 'Unknown';
+
+              error('Cannot update a component (`%s`) while rendering a ' + 'different component (`%s`). To locate the bad setState() call inside `%s`, ' + 'follow the stack trace as described in https://fb.me/setstate-in-render', setStateComponentName, renderingComponentName, renderingComponentName);
+            }
 
             break;
           }
 
         case ClassComponent:
           {
-            switch (phase) {
-              case 'getChildContext':
-                if (didWarnAboutUpdateInGetChildContext) {
-                  return;
-                }
+            if (!didWarnAboutUpdateInRender) {
+              error('Cannot update during an existing state transition (such as ' + 'within `render`). Render methods should be a pure ' + 'function of props and state.');
 
-                error('setState(...): Cannot call setState() inside getChildContext()');
-
-                didWarnAboutUpdateInGetChildContext = true;
-                break;
-
-              case 'render':
-                if (didWarnAboutUpdateInRender) {
-                  return;
-                }
-
-                error('Cannot update during an existing state transition (such as ' + 'within `render`). Render methods should be a pure ' + 'function of props and state.');
-
-                didWarnAboutUpdateInRender = true;
-                break;
+              didWarnAboutUpdateInRender = true;
             }
 
             break;
@@ -33424,7 +33386,7 @@ function updateContainer(element, container, parentComponent, callback) {
   }
 
   {
-    if (phase === 'render' && current !== null && !didWarnAboutNestedUpdates) {
+    if (isRendering && current !== null && !didWarnAboutNestedUpdates) {
       didWarnAboutNestedUpdates = true;
 
       error('Render methods should be a pure function of props and state; ' + 'triggering nested component updates from render is not allowed. ' + 'If necessary, trigger nested updates in componentDidUpdate.\n\n' + 'Check the render method of %s.', getComponentName(current.type) || 'Unknown');
@@ -34000,7 +33962,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.13.0';
+var ReactVersion = '16.13.1';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -34392,7 +34354,7 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.0
+/** @license React v16.13.1
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -34412,7 +34374,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.13.0';
+var ReactVersion = '16.13.1';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -36333,7 +36295,7 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.19.0
+/** @license React v0.19.1
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -36694,7 +36656,7 @@ exports.unstable_wrap = unstable_wrap;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.19.0
+/** @license React v0.19.1
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -40392,7 +40354,10 @@ var translateAlias = {
 function isCustomTemplate(v) {
     return typeof v === 'function';
 }
-function buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration) {
+function buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration, allowTransformNone) {
+    if (allowTransformNone === void 0) {
+        allowTransformNone = true;
+    }
     var transformString = '';
     var transformHasZ = false;
     transformKeys.sort(sortTransformProps);
@@ -40409,12 +40374,12 @@ function buildTransform(state, transform, transformKeys, transformIsDefault, ena
     }
     if (isCustomTemplate(state.transform)) {
         transformString = state.transform(transform, transformIsDefault ? '' : transformString);
-    } else if (transformIsDefault) {
+    } else if (allowTransformNone && transformIsDefault) {
         transformString = 'none';
     }
     return transformString;
 }
-function buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, isDashCase) {
+function buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, isDashCase, allowTransformNone) {
     if (enableHardwareAcceleration === void 0) {
         enableHardwareAcceleration = true;
     }
@@ -40432,6 +40397,9 @@ function buildStyleProperty(state, enableHardwareAcceleration, styles, transform
     }
     if (isDashCase === void 0) {
         isDashCase = false;
+    }
+    if (allowTransformNone === void 0) {
+        allowTransformNone = true;
     }
     var transformIsDefault = true;
     var hasTransform = false;
@@ -40457,27 +40425,28 @@ function buildStyleProperty(state, enableHardwareAcceleration, styles, transform
         }
     }
     if (hasTransform || typeof state.transform === 'function') {
-        styles.transform = buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration);
+        styles.transform = buildTransform(state, transform, transformKeys, transformIsDefault, enableHardwareAcceleration, allowTransformNone);
     }
     if (hasTransformOrigin) {
         styles.transformOrigin = (transformOrigin.originX || '50%') + " " + (transformOrigin.originY || '50%') + " " + (transformOrigin.originZ || 0);
     }
     return styles;
 }
-function createStyleBuilder(enableHardwareAcceleration, isDashCase) {
-    if (enableHardwareAcceleration === void 0) {
-        enableHardwareAcceleration = true;
-    }
-    if (isDashCase === void 0) {
-        isDashCase = true;
-    }
+function createStyleBuilder(_a) {
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.enableHardwareAcceleration,
+        enableHardwareAcceleration = _c === void 0 ? true : _c,
+        _d = _b.isDashCase,
+        isDashCase = _d === void 0 ? true : _d,
+        _e = _b.allowTransformNone,
+        allowTransformNone = _e === void 0 ? true : _e;
     var styles = {};
     var transform = {};
     var transformOrigin = {};
     var transformKeys = [];
     return function (state) {
         transformKeys.length = 0;
-        buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, isDashCase);
+        buildStyleProperty(state, enableHardwareAcceleration, styles, transform, transformOrigin, transformKeys, isDashCase, allowTransformNone);
         return styles;
     };
 }
@@ -40526,8 +40495,12 @@ function createCssStyler(element, _a) {
         _a = {};
     }
     var enableHardwareAcceleration = _a.enableHardwareAcceleration,
-        props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["enableHardwareAcceleration"]);
-    return cssStyler(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ element: element, buildStyles: createStyleBuilder(enableHardwareAcceleration), preparseOutput: true }, props));
+        allowTransformNone = _a.allowTransformNone,
+        props = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["enableHardwareAcceleration", "allowTransformNone"]);
+    return cssStyler(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ element: element, buildStyles: createStyleBuilder({
+            enableHardwareAcceleration: enableHardwareAcceleration,
+            allowTransformNone: allowTransformNone
+        }), preparseOutput: true }, props));
 }
 
 var camelCaseAttributes = /*#__PURE__*/new Set(['baseFrequency', 'diffuseConstant', 'kernelMatrix', 'kernelUnitLength', 'keySplines', 'keyTimes', 'limitingConeAngle', 'markerHeight', 'markerWidth', 'numOctaves', 'targetX', 'targetY', 'surfaceScale', 'specularConstant', 'specularExponent', 'stdDeviation', 'tableValues']);
@@ -40548,12 +40521,16 @@ function calcOrigin(origin, offset, size) {
 function calculateSVGTransformOrigin(dimensions, originX, originY) {
     return calcOrigin(originX, dimensions.x, dimensions.width) + " " + calcOrigin(originY, dimensions.y, dimensions.height);
 }
+var svgStyleConfig = {
+    enableHardwareAcceleration: false,
+    isDashCase: false
+};
 function buildSVGAttrs(_a, dimensions, totalPathLength, cssBuilder, attrs, isDashCase) {
     if (dimensions === void 0) {
         dimensions = unmeasured;
     }
     if (cssBuilder === void 0) {
-        cssBuilder = createStyleBuilder(false, false);
+        cssBuilder = createStyleBuilder(svgStyleConfig);
     }
     if (attrs === void 0) {
         attrs = svgAttrsTemplate();
@@ -40596,7 +40573,7 @@ function createAttrBuilder(dimensions, totalPathLength, isDashCase) {
         isDashCase = true;
     }
     var attrs = svgAttrsTemplate();
-    var cssBuilder = createStyleBuilder(false, false);
+    var cssBuilder = createStyleBuilder(svgStyleConfig);
     return function (state) {
         return buildSVGAttrs(state, dimensions, totalPathLength, cssBuilder, attrs, isDashCase);
     };
@@ -40954,7 +40931,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ad37abfaab272d36dae659840954d1d6.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "a579dbf55978680841e35fed7b78b49e.woff");
 
 /***/ }),
 
@@ -40967,7 +40944,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "46a15b4fc54cfca883f84d6dd080cd3d.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "8ebb4a74b00466d816b009993eff44dc.woff2");
 
 /***/ }),
 
@@ -40980,7 +40957,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f1dcb8253031e839d164463115ce13bd.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "60f39029a12cf930ec82162a10c02012.woff");
 
 /***/ }),
 
@@ -40993,7 +40970,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "a1c50095d922a8f4222ab83911a13dbd.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4caa50919d14a8efbd561e12de0eaa8e.woff2");
 
 /***/ }),
 
@@ -41006,7 +40983,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7eef082fb93671877eff57d4ee4f3990.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b1c688b4b66d30d02d409d0b2a9d1f2a.woff");
 
 /***/ }),
 
@@ -41019,7 +40996,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4e9592cdcbbbf7a0c610c754cb389fe1.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0860234c96407093c7e2ba429ebb4f9a.woff2");
 
 /***/ }),
 
@@ -41032,7 +41009,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "db53fe94622d2fbbf2fc6a22411cbd7e.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "3ea05e9cee8dd0ce6ee5a26233a327ae.woff");
 
 /***/ }),
 
@@ -41045,7 +41022,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "de4421341942d11714a20399e6ba09ef.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b71743c2936d8e2309d2b20aea681d1d.woff2");
 
 /***/ }),
 
@@ -41058,7 +41035,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "5c5aa25747e329a14d9ab8be881cbe02.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "5a770bfdb0e87028ce0943d994734efd.woff");
 
 /***/ }),
 
@@ -41071,7 +41048,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e8794816c5eaeaa9dd20a6d77ea3b272.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7e5a94810d176249ca5ccf57f546708d.woff2");
 
 /***/ }),
 
@@ -41084,7 +41061,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e125f1e2de9a2150a521f55c482b8151.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4b6afc19cf887bdf310f4f9ef599416c.woff");
 
 /***/ }),
 
@@ -41097,7 +41074,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "263658ab20600be255b10da96fe872b5.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "be47e0209e3e25bb19a75bcfdcdf083f.woff2");
 
 /***/ }),
 
@@ -41110,7 +41087,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "46a7d48240d428c9dc3d4ff579199312.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e78693354999fe502e16d2a47bf68e1d.woff");
 
 /***/ }),
 
@@ -41123,7 +41100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "1a280523d375e9358d5229df34fc8e94.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "5224cd4c8d93efc4fd95dfdeb613ab05.woff2");
 
 /***/ }),
 
@@ -41136,7 +41113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9c9695b08b40f038891a8445c18f05ce.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0236bea70d7076c91aadc9903e666e8f.woff");
 
 /***/ }),
 
@@ -41149,7 +41126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "ac1612e21731e1a027139bd574ecf5e5.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "70c9390d9879136e7a3015fbeae681e7.woff2");
 
 /***/ }),
 
@@ -41162,7 +41139,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "1372de09cfc3e9a62af4234fd331e8e9.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9cce51605ae9e0a9357a6e0c822f38c6.woff");
 
 /***/ }),
 
@@ -41175,7 +41152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "61e2d96d01a7eba5ea3ec1bad7e736a8.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b79065b4eb96ef52df7c12db0c2ae3f5.woff2");
 
 /***/ }),
 
@@ -41188,7 +41165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "335c9c91b108673bd54f574969c1b7ae.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "df4aea25ed16cde9cffb15b58fcc9b54.woff");
 
 /***/ }),
 
@@ -41201,7 +41178,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "2fa39b3957f9546871ce490ebc0ff531.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "a98ae0b07147c8e2e0653f87dd4a6508.woff2");
 
 /***/ }),
 
@@ -41214,7 +41191,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e3bbab8d37ba508809f78c4baf02ebdb.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "eeb783cfa99a6e6793db887dc457cba7.woff");
 
 /***/ }),
 
@@ -41227,7 +41204,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "aa4405ed937295296cf8510f437628e0.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d4e54a8767fc7a098f4aae66e142841a.woff2");
 
 /***/ }),
 
@@ -41240,7 +41217,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4e1036758ebde5e016b4b2c16294a3e6.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4f3ca0e6ab9c868bf05f858c954cd7e4.woff");
 
 /***/ }),
 
@@ -41253,7 +41230,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "148405f9cdfa8278aede01cfc9b40367.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "c72f6c6c0c1dbdd98b09153c655e917b.woff2");
 
 /***/ }),
 
@@ -41266,7 +41243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "bc1e47a3976358aa868a72de5a85de5a.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f4b97733bc584fb5cfba39be5aa76342.woff");
 
 /***/ }),
 
@@ -41279,7 +41256,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e535f7856b24153e0f3146e8f90a45c5.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "c42d83a607aac6b2d4225ae46ea33599.woff2");
 
 /***/ }),
 
@@ -41292,7 +41269,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "89874573d9b2380672f3c5685263f6c4.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0d39823576ffea8036e7c56dff66e83a.woff");
 
 /***/ }),
 
@@ -41305,7 +41282,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "5cfb020a3193dddf2dc041eb7e183ad3.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0ae7f7a077daa97a7ff385f51ff5d22c.woff2");
 
 /***/ }),
 
@@ -41318,7 +41295,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "bde99287fe27e0e3ee89058a0affd4cd.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "41e4c7555ef39bedb32b9f8ad861c067.woff");
 
 /***/ }),
 
@@ -41331,7 +41308,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b5cd7d83a71851bd0d449c3cd5ddadfc.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "d4c7b3ae84d9500185c2a7a76126cc63.woff2");
 
 /***/ }),
 
@@ -41344,7 +41321,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "1d727abb1018c5cc6331c1e26169d590.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "45f62cfdc103159b00fd82330193a473.woff");
 
 /***/ }),
 
@@ -41357,7 +41334,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "28a7dac2331454b658d6861582bf35e6.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "eb544567193cb6798978e0aac94e9368.woff2");
 
 /***/ }),
 
@@ -41370,7 +41347,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "fde0f399fa4b71074e88b511f893c492.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f700c8728f3212cd461f9c673f3e354f.woff");
 
 /***/ }),
 
@@ -41383,7 +41360,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f030f5cfef05f4e5bc834075ec3a6a91.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "c794a42cb5ff18ab1f9b785d3b13fe5d.woff2");
 
 /***/ }),
 
@@ -41396,7 +41373,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "e8d920f5bf6dea0b9fe56768c15fdffd.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "05da310be7bdeea9f697d7f5a2be68c7.woff");
 
 /***/ }),
 
@@ -41409,7 +41386,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f3c803b2d12574ab2cb68f2969e03a65.woff2");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b3c2302709022d03366f45995b749e82.woff2");
 
 /***/ }),
 
@@ -41504,7 +41481,7 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n\n  body {\n    height: 100vh;\n    padding: 0;\n    margin: 0;\n    background: #d4dfee;\n    color: #31456a;\n    font-family: 'Poppins', sans-serif;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @font-face {\n    font-family: 'Digital Clock';\n    src: url('", "') format('woff');\n    font-weight: normal;\n    font-style: normal;\n  }\n\n\n  body {\n    height: 100vh;\n    padding: 0;\n    margin: 0;\n    background: #d4dfee;\n    color: #31456a;\n    font-family: 'Poppins', sans-serif;\n  }\n\n  * {\n    box-sizing: border-box;\n  }\n\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 0 0 1em;\n    -webkit-user-select:none;\n  }\n\n  h1,\n  h2,\n  h3 {\n    font-weight: 600;\n  }\n\n  h1 {\n    font-size: 28px;\n    text-align: center;\n  }\n\n  h4,\n  h5 {\n    color: #7888a3;\n    font-weight: 400;\n  }\n\n  h4 {\n    font-size: 20px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -41546,9 +41523,9 @@ var _default = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_2__["hot"])(modu
     return;
   }
 
-  reactHotLoader.register(GlobalStyle, "GlobalStyle", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
-  reactHotLoader.register(App, "App", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\App.jsx");
+  reactHotLoader.register(GlobalStyle, "GlobalStyle", "/Users/jimmy/Projects/neumodoro-timer/src/App.jsx");
+  reactHotLoader.register(App, "App", "/Users/jimmy/Projects/neumodoro-timer/src/App.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/App.jsx");
 })();
 
 ;
@@ -41600,6 +41577,9 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
   return a;
 };
 
+
+
+var app = window.require('electron').remote.app;
 
 
 
@@ -41654,7 +41634,16 @@ var Layout = function Layout() {
 
   var displayTime = function displayTime() {
     var minutes = Math.floor(time / 60).toString();
-    var seconds = Math.floor(time % 60).toString();
+    var seconds = Math.floor(time % 60).toString(); // Update taskbar icon badge with current minute
+
+    if (seconds === '59' || seconds == '0') {
+      var badgeText = minutes === '0' ? '<1m' : "".concat(minutes, "m");
+
+      if (app.dock) {
+        app.dock.setBadge(badgeText);
+      }
+    }
+
     if (minutes < 10) minutes = "0".concat(minutes);
     if (seconds < 10) seconds = "0".concat(seconds);
     return "".concat(minutes, ":").concat(seconds);
@@ -41671,9 +41660,7 @@ var Layout = function Layout() {
       // TODO: is there a way to store this one time and call .show()
       // on it with updated messages?
       var notification = new Notification(title, {
-        silent: false,
-        icon: 'icon-location',
-        urgency: 'normal',
+        silent: true,
         body: body
       });
     }
@@ -41685,12 +41672,12 @@ var Layout = function Layout() {
         playNotificationSound(audioAlertLong);
 
         if (pomo === 4) {
-          sendNotification('Time is up!', 'You completed a tomato set (≧∇≦)ﾉ. Take a 25 minute break.');
+          sendNotification('Time is up!', 'You completed a tomato set! ♪(^∇^*) Take a 25 minute break.');
           dispatch({
             type: _reducer__WEBPACK_IMPORTED_MODULE_2__["AUTO_START_LONG_BREAK"]
           });
         } else {
-          sendNotification('Time is up!', 'Will you take a 5?!?! (￣﹃￣)');
+          sendNotification('Time is up!', 'Take a 5 minute break.');
           dispatch({
             type: _reducer__WEBPACK_IMPORTED_MODULE_2__["AUTO_START_SHORT_BREAK"]
           });
@@ -41700,9 +41687,9 @@ var Layout = function Layout() {
         playNotificationSound(audioAlertShort);
 
         if (pomo === 4) {
-          sendNotification('Start a new tomato?');
+          sendNotification('I hope you had a nice rest. o(*￣︶￣*)o');
         } else {
-          sendNotification('Back to work! (╯▔皿▔)╯');
+          sendNotification("Break's over!", 'Back to work! (╯▔皿▔)╯');
         }
 
         dispatch({
@@ -41715,7 +41702,7 @@ var Layout = function Layout() {
         type: _reducer__WEBPACK_IMPORTED_MODULE_2__["DECREMENT_TIMER"]
       });
     }
-  }, isTimerActive ? 20 : null);
+  }, isTimerActive ? 1000 : null);
 
   var currentSeeds = function currentSeeds() {
     var startingSeedsForCurrentPomo = 20 - (pomo - 1) * 5;
@@ -41831,10 +41818,11 @@ var _default = Layout;
     return;
   }
 
-  reactHotLoader.register(initialState, "initialState", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(colorVariants, "colorVariants", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(Layout, "Layout", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.jsx");
+  reactHotLoader.register(app, "app", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(initialState, "initialState", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(colorVariants, "colorVariants", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(Layout, "Layout", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.jsx");
 })();
 
 ;
@@ -41874,7 +41862,7 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n"]);
+  var data = _taggedTemplateLiteral(["\n  z-index: 0;\n  position: absolute;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  color: #d7deeb;\n  -webkit-user-select:none;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -41884,7 +41872,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n  z-index: 1;\n  margin: 0;\n  font-size: 54px;\n  font-family: 'Digital Clock', sans-serif;\n  -webkit-user-select:none;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -41964,7 +41952,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  -webkit-app-region: drag;\n  padding: 35px 20px 20px;\n\n  * {\n    -webkit-app-region: no-drag;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -42014,16 +42002,16 @@ var TimeAfterImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p
     return;
   }
 
-  reactHotLoader.register(Wrapper, "Wrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Container, "Container", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Raised, "Raised", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(SwitchWrapper, "SwitchWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(SwitchText, "SwitchText", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Switch, "Switch", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(NavWrapper, "NavWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(TimeWrapper, "TimeWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(Time, "Time", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
-  reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Layout.styles.js");
+  reactHotLoader.register(Wrapper, "Wrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Container, "Container", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Raised, "Raised", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(SwitchWrapper, "SwitchWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(SwitchText, "SwitchText", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Switch, "Switch", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(NavWrapper, "NavWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(TimeWrapper, "TimeWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(Time, "Time", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
+  reactHotLoader.register(TimeAfterImage, "TimeAfterImage", "/Users/jimmy/Projects/neumodoro-timer/src/Layout.styles.js");
 })();
 
 ;
@@ -42085,8 +42073,8 @@ var _default = NotificationIcon;
     return;
   }
 
-  reactHotLoader.register(NotificationIcon, "NotificationIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\NotificationIcon.jsx");
+  reactHotLoader.register(NotificationIcon, "NotificationIcon", "/Users/jimmy/Projects/neumodoro-timer/src/NotificationIcon.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/NotificationIcon.jsx");
 })();
 
 ;
@@ -42150,8 +42138,8 @@ var _default = PlayIcon;
     return;
   }
 
-  reactHotLoader.register(PlayIcon, "PlayIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\PlayIcon.jsx");
+  reactHotLoader.register(PlayIcon, "PlayIcon", "/Users/jimmy/Projects/neumodoro-timer/src/PlayIcon.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/PlayIcon.jsx");
 })();
 
 ;
@@ -42236,8 +42224,8 @@ var _default = Seed;
     return;
   }
 
-  reactHotLoader.register(Seed, "Seed", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Seed.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Seed.jsx");
+  reactHotLoader.register(Seed, "Seed", "/Users/jimmy/Projects/neumodoro-timer/src/Seed.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/Seed.jsx");
 })();
 
 ;
@@ -42311,8 +42299,8 @@ var _default = SoundOnIcon;
     return;
   }
 
-  reactHotLoader.register(SoundOnIcon, "SoundOnIcon", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\SoundOnIcon.jsx");
+  reactHotLoader.register(SoundOnIcon, "SoundOnIcon", "/Users/jimmy/Projects/neumodoro-timer/src/SoundOnIcon.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/SoundOnIcon.jsx");
 })();
 
 ;
@@ -42371,8 +42359,8 @@ var _default = ToggleButton;
     return;
   }
 
-  reactHotLoader.register(ToggleButton, "ToggleButton", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.jsx");
+  reactHotLoader.register(ToggleButton, "ToggleButton", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.jsx");
 })();
 
 ;
@@ -42440,8 +42428,8 @@ var Toggle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_temp
     return;
   }
 
-  reactHotLoader.register(ToggleWrapper, "ToggleWrapper", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
-  reactHotLoader.register(Toggle, "Toggle", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\ToggleButton.styles.js");
+  reactHotLoader.register(ToggleWrapper, "ToggleWrapper", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.styles.js");
+  reactHotLoader.register(Toggle, "Toggle", "/Users/jimmy/Projects/neumodoro-timer/src/ToggleButton.styles.js");
 })();
 
 ;
@@ -43143,9 +43131,9 @@ var _default = Tomato;
     return;
   }
 
-  reactHotLoader.register(tweenTransition, "tweenTransition", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
-  reactHotLoader.register(Tomato, "Tomato", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\Tomato.jsx");
+  reactHotLoader.register(tweenTransition, "tweenTransition", "/Users/jimmy/Projects/neumodoro-timer/src/Tomato.jsx");
+  reactHotLoader.register(Tomato, "Tomato", "/Users/jimmy/Projects/neumodoro-timer/src/Tomato.jsx");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/Tomato.jsx");
 })();
 
 ;
@@ -43167,7 +43155,7 @@ var _default = Tomato;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b75a09a4d9dbcac6de74dd0430737c2f.woff");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7b959f01db144ba17503a0a8ef2bb86e.woff");
 
 /***/ }),
 
@@ -43180,7 +43168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "baaffb9e9f22d0c0a9087a66351ede49.mp3");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "a8cc87f235ec975a42e5e05b438903c2.mp3");
 
 /***/ }),
 
@@ -43193,7 +43181,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7419be4839d1bae3007e28ac25cb8ac4.mp3");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "af5604c93f68d46be77266dfc708d77b.mp3");
 
 /***/ }),
 
@@ -43424,20 +43412,20 @@ var _default = reducer;
     return;
   }
 
-  reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(DECREMENT_TIMER, "DECREMENT_TIMER", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(TOGGLE_TIMER_ACTIVE, "TOGGLE_TIMER_ACTIVE", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(UPDATE_TIME, "UPDATE_TIME", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_POMO, "PREP_POMO", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_SHORT_BREAK, "PREP_SHORT_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(AUTO_START_SHORT_BREAK, "AUTO_START_SHORT_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(PREP_LONG_BREAK, "PREP_LONG_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(AUTO_START_LONG_BREAK, "AUTO_START_LONG_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(END_BREAK, "END_BREAK", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(reducer, "reducer", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\reducer.js");
+  reactHotLoader.register(TOGGLE_ALERTS, "TOGGLE_ALERTS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(TOGGLE_SOUNDS, "TOGGLE_SOUNDS", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(SWITCH_MODE, "SWITCH_MODE", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(DECREMENT_TIMER, "DECREMENT_TIMER", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(TOGGLE_TIMER_ACTIVE, "TOGGLE_TIMER_ACTIVE", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(UPDATE_TIME, "UPDATE_TIME", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(PREP_POMO, "PREP_POMO", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(PREP_SHORT_BREAK, "PREP_SHORT_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(AUTO_START_SHORT_BREAK, "AUTO_START_SHORT_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(PREP_LONG_BREAK, "PREP_LONG_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(AUTO_START_LONG_BREAK, "AUTO_START_LONG_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(END_BREAK, "END_BREAK", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(reducer, "reducer", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/reducer.js");
 })();
 
 ;
@@ -43492,8 +43480,8 @@ var darkTheme = {
     return;
   }
 
-  reactHotLoader.register(lightTheme, "lightTheme", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\themes.js");
-  reactHotLoader.register(darkTheme, "darkTheme", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\themes.js");
+  reactHotLoader.register(lightTheme, "lightTheme", "/Users/jimmy/Projects/neumodoro-timer/src/themes.js");
+  reactHotLoader.register(darkTheme, "darkTheme", "/Users/jimmy/Projects/neumodoro-timer/src/themes.js");
 })();
 
 ;
@@ -43564,8 +43552,8 @@ var _default = useInterval;
     return;
   }
 
-  reactHotLoader.register(useInterval, "useInterval", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\useInterval.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\useInterval.js");
+  reactHotLoader.register(useInterval, "useInterval", "/Users/jimmy/Projects/neumodoro-timer/src/useInterval.js");
+  reactHotLoader.register(_default, "default", "/Users/jimmy/Projects/neumodoro-timer/src/useInterval.js");
 })();
 
 ;
@@ -43609,8 +43597,8 @@ var FIVE_MINUTES_IN_SECONDS = 300;
     return;
   }
 
-  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\utils.js");
-  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "C:\\Users\\jimmy\\Code\\neumodoro-timer\\src\\utils.js");
+  reactHotLoader.register(TWENTY_FIVE_MINUTES_IN_SECONDS, "TWENTY_FIVE_MINUTES_IN_SECONDS", "/Users/jimmy/Projects/neumodoro-timer/src/utils.js");
+  reactHotLoader.register(FIVE_MINUTES_IN_SECONDS, "FIVE_MINUTES_IN_SECONDS", "/Users/jimmy/Projects/neumodoro-timer/src/utils.js");
 })();
 
 ;

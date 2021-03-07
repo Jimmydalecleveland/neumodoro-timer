@@ -1,21 +1,22 @@
+if (require('electron-squirrel-startup')) return
 const { app, BrowserWindow, Menu } = require('electron')
 
 Menu.setApplicationMenu(null)
 
 function createWindow() {
   const win = new BrowserWindow({
+    title: 'Neumodoro Timer',
     width: 420,
-    height: 680,
-    icon: './src/assets/tomato-icon.png',
+    height: 700,
+    icon: __dirname + '/src/assets/icon',
     titleBarStyle: 'hiddenInset',
+    backgroundColor: '#d4dfee',
     webPreferences: {
       nodeIntegration: true,
     },
   })
 
   win.loadFile('./dist/index.html')
-
-  // win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow)

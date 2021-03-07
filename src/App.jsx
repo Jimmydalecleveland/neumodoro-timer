@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     margin: 0 0 1em;
+    -webkit-user-select:none;
   }
 
   h1,

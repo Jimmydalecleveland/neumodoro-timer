@@ -166,7 +166,6 @@ const Tomato = ({ seeds, pomo, showCurrentExo, style, setQuadrant }) => {
           }
         </style>
       </defs>
-      <title>tomato9</title>
       <g id="Layer_2" data-name="Layer 2">
         <circle
           cx={159.17}
